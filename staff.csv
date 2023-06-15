@@ -1,6 +1,6 @@
 ,first_name,last_name,salary,birth_date,start,phone,address_id,email
 0,Tomasz,Stroiński,5000,1995-01-01,2018-05-04,923128647,5,t.stroinski@gamefinity.com
-1,Karolina,Wypych,3500,2001-09-03,2020-01-03,756837957,3,k.wypych@gamefinity.com
-2,Mateusz,Stasiak,3500,2001-10-15,2020-02-18,567938928,1,m.stasiak@gamefinity.com
-3,Wiktoria,Fimińska,3500,2001-02-02,2019-02-04,566552356,2,w.fiminska@gamefinity.com
-4,Julia,Grzegorzewska,3500,2001-09-03,2020-04-08,666555827,4,j.grzegorzewska@gamefinity.com
+1,Wiktoria,Fimińska,3500,2001-02-02,2019-02-04,756837957,3,w.fiminska@gamefinity.com
+2,Karolina,Wypych,3500,2001-09-03,2020-01-03,567938928,1,k.wypych@gamefinity.com
+3,Julia,Grzegorzewska,3500,2001-09-03,2020-02-18,566552356,2,j.grzegorzewska@gamefinity.com
+4,Mateusz,Stasiak,3500,2001-10-15,2020-04-08,666555827,4,m.stasiak@gamefinity.com
