@@ -1,0 +1,7 @@
+start -> 04.01.2021
+end -> 15.06.2023
+
+max rental time -> 1 week
+day fine -> 1/10 rental price
+
+sundays -> only manager works
