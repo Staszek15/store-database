@@ -3,8 +3,8 @@
     "version": "2.2.11",
     "width": 2000,
     "height": 2000,
-    "scrollTop": -492.0697916666671,
-    "scrollLeft": -797.609375,
+    "scrollTop": -43.26979166666677,
+    "scrollLeft": 0,
     "zoomLevel": 0.9,
     "show": {
       "tableComment": true,
@@ -206,13 +206,36 @@
               "widthDefault": 60
             },
             "id": "0d4f2346-8c05-447c-969b-c3ea9ae15bf3"
+          },
+          {
+            "name": "tournament",
+            "comment": "",
+            "dataType": "BOOLEAN",
+            "default": "FALSE",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 67.76171875,
+              "widthComment": 60,
+              "widthDataType": 64.8544921875,
+              "widthDefault": 60
+            },
+            "id": "0e999fc6-8306-4dad-8d2b-5ba88964fc2e"
           }
         ],
         "ui": {
-          "active": false,
+          "active": true,
           "left": 47.2666,
           "top": 0,
-          "zIndex": 10,
+          "zIndex": 36,
           "widthName": 60,
           "widthComment": 60,
           "color": "#FF0000"
@@ -545,7 +568,7 @@
           "active": false,
           "left": 666.7107,
           "top": 9.6667,
-          "zIndex": 8,
+          "zIndex": 7,
           "widthName": 84.3798828125,
           "widthComment": 60,
           "color": "#FF0000"
@@ -723,7 +746,7 @@
           "active": false,
           "left": 1215.9998,
           "top": 509.0224,
-          "zIndex": 12,
+          "zIndex": 10,
           "widthName": 67.76171875,
           "widthComment": 60,
           "color": "#FF00D9"
@@ -1234,7 +1257,7 @@
           "active": false,
           "left": 43.6,
           "top": 295.9779,
-          "zIndex": 7,
+          "zIndex": 6,
           "widthName": 60,
           "widthComment": 60,
           "color": "#00FF2F"
@@ -1366,7 +1389,7 @@
           "active": false,
           "left": 664.6952,
           "top": 904.5779,
-          "zIndex": 9,
+          "zIndex": 8,
           "widthName": 60,
           "widthComment": 60,
           "color": "#00FF1C"
@@ -1515,7 +1538,7 @@
             "955651c6-94c7-4494-af04-56505fb5fa54"
           ],
           "x": 444.91161953125,
-          "y": 35.416666666666664,
+          "y": 38.833333333333336,
           "direction": "right"
         },
         "end": {
@@ -1541,7 +1564,7 @@
             "955651c6-94c7-4494-af04-56505fb5fa54"
           ],
           "x": 444.91161953125,
-          "y": 177.08333333333331,
+          "y": 194.16666666666669,
           "direction": "right"
         },
         "end": {
@@ -1593,7 +1616,7 @@
             "955651c6-94c7-4494-af04-56505fb5fa54"
           ],
           "x": 444.91161953125,
-          "y": 106.25,
+          "y": 116.5,
           "direction": "right"
         },
         "end": {
