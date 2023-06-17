@@ -5,3 +5,13 @@ max rental time -> 1 week
 day fine -> 1/10 rental price
 
 sundays -> only manager works
+
+
+### objaśnienie do tournaments ###
+
+W dniu turnieju dobieram liczbę graczy tak, żeby zajęli 
+przynajmniej o jeden mniej egezmplerzy gier niż ogolnie 
+mamy w sklepie. 
+
+1. 22.01.2021 -> Cosmic Encounter (id 9)
+2. 16.06.2021 -> Marengo (27)
