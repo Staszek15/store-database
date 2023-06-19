@@ -4,8 +4,8 @@
     "width": 2000,
     "height": 2000,
     "scrollTop": 0,
-    "scrollLeft": -49.6395833333327,
-    "zoomLevel": 0.9,
+    "scrollLeft": 0,
+    "zoomLevel": 1,
     "show": {
       "tableComment": true,
       "columnComment": true,
@@ -93,7 +93,7 @@
             "id": "2b585021-5083-4bbf-a3f6-40b7aacdd03f"
           },
           {
-            "name": "PEGI",
+            "name": "age",
             "comment": "",
             "dataType": "INT",
             "default": "",
@@ -255,10 +255,10 @@
           }
         ],
         "ui": {
-          "active": false,
+          "active": true,
           "left": 47.2666,
           "top": 0,
-          "zIndex": 9,
+          "zIndex": 13,
           "widthName": 60,
           "widthComment": 60,
           "color": "#FF0000"
@@ -769,7 +769,7 @@
           "active": false,
           "left": 1227.5555,
           "top": 553.467,
-          "zIndex": 30,
+          "zIndex": 10,
           "widthName": 67.76171875,
           "widthComment": 60,
           "color": "#FF00D9"
@@ -832,7 +832,7 @@
           "active": false,
           "left": 778.6,
           "top": 179.4,
-          "zIndex": 8,
+          "zIndex": 7,
           "widthName": 82.93896484375,
           "widthComment": 60,
           "color": "#FF0000"
@@ -1389,7 +1389,7 @@
           "active": false,
           "left": 530.0286,
           "top": 1112.5779,
-          "zIndex": 11,
+          "zIndex": 9,
           "widthName": 60,
           "widthComment": 60,
           "color": "#00FF1C"
