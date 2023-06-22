@@ -1,11 +1,11 @@
-tournament_id,name,date,team_players_number,game_id,staff_id,total_players_number
-1,Cosmic Entertainment,2021-01-22,1,9,1,12
-2,Battlefields of Bonaparte,2021-06-16,1,27,3,30
-3,The Kobolds,2021-09-08,1,33,4,32
-4,Gaming Evening,2021-12-20,1,33,2,32
-5,Hamst&Furious,2022-01-04,1,7,2,37
-6,Indian Camp,2022-07-28,1,5,3,40
-7,Vietgame,2022-10-02,1,36,1,16
-8,Thematic Contest,2023-01-19,2,6,4,36
-9,Spring Tournament,2023-03-25,1,1,1,30
-10,Star Trek Day,2023-06-07,1,19,2,8
+,tournament_id,name,date,game_id,team_players_number,staff_id,total_players_number
+0,1,Cosmic Entertainment,2021-09-11,9,1,1,13
+1,2,Battlefields of Bonaparte,2022-06-11,27,1,1,11
+2,3,The Kobolds,2022-06-28,33,1,1,17
+3,4,Gaming Evening,2022-08-13,33,1,2,22
+4,5,Hamst&Furious,2022-09-07,7,1,4,46
+5,6,Indian Camp,2022-09-24,5,1,1,17
+6,7,Vietgame,2022-09-28,36,1,1,16
+7,8,Thematic Contest,2023-01-03,6,2,4,36
+8,9,Spring Tournament,2023-05-09,1,1,4,49
+9,10,Star Trek Day,2023-07-15,19,1,4,15
