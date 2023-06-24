@@ -1,6 +1,6 @@
 ,staff_id,first_name,last_name,salary,birth_date,start,phone,address_id,email
-0,1,Tomasz,Stroiński,5000,1995-01-01,2021-01-04,923128647,1,t.stroinski@gamestalgia.com
-1,2,Wiktoria,Fimińska,3500,2001-02-02,2021-01-20,756837957,2,w.fiminska@gamestalgia.com
-2,3,Karolina,Wypych,3500,2001-09-03,2021-04-08,567938928,3,k.wypych@gamestalgia.com
-3,4,Julia,Grzegorzewska,3500,2001-09-03,2021-11-26,566552356,4,j.grzegorzewska@gamestalgia.com
-4,5,Mateusz,Stasiak,3500,2001-10-15,2022-02-07,666555827,5,m.stasiak@gamestalgia.com
+0,1,Tomasz,Stroiński,5000,1995-01-01,2021-01-04,923128647,1,t.stroinski@geeksdragons.com
+1,2,Wiktoria,Fimińska,3500,2001-02-02,2021-01-20,756837957,2,w.fiminska@geeksdragons.com
+2,3,Karolina,Wypych,3500,2001-09-03,2021-04-08,567938928,3,k.wypych@geeksdragons.com
+3,4,Julia,Grzegorzewska,3500,2001-09-03,2021-11-26,566552356,4,j.grzegorzewska@geeksdragons.com
+4,5,Mateusz,Stasiak,3500,2001-10-15,2022-02-07,666555827,5,m.stasiak@geeksdragons.com
