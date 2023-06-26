@@ -1,5 +1,8 @@
 import pandas as pd
 
+"""
+Any resemblance to real persons or names is coincidental.
+"""
 
 def generate_staff():
     data = {'staff_id': [1, 2, 3, 4, 5],

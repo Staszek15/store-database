@@ -1,8 +1,8 @@
 import pandas as pd
 import random
 import numpy as np
-#import openpyxl
 from scipy.special import softmax
+
 
 games_buy_prices = {
     '1': 164.5,
@@ -62,7 +62,7 @@ games = pd.read_csv('game/game.csv')
 def exchange_players_to_game_id():
     game_id = []
     probs = [0.2, 0.4, 0, 0.3, 0.1]  # we do not have games for max 3 players
-    n_players = np.random.choice([1, 2, 3, 4, 5], size=500, p=probs) #losujemy ile bd 1, ile 2, ile 3 itd
+    n_players = np.random.choice([1, 2, 3, 4, 5], size=500, p=probs)  #draw random number of 1, 2, 3 etc
     for i in range(1, 6):
         n = (n_players == i).sum()
         if i == 5:
