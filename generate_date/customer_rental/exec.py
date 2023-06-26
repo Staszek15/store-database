@@ -161,15 +161,15 @@ def who_works(days, start_date, end_date, free_days):
     days = generate_dates(start_date, end_date)
     staff_id = {}
     for day in days:
-        if day.weekday() == 6 or day < datetime(2021, 1, 20) or str(day) in free_days:
+        if day.weekday() == 6 or day < date(2021, 1, 20) or str(day) in free_days:
             ids = [1]
-        elif day >= datetime(2022, 2, 7):
+        elif day >= date(2022, 2, 7):
             ids = random.sample([1, 2, 3, 4, 5], random.choice([1, 2, 3]))
-        elif datetime(2022, 2, 7) > day >= datetime(2021, 11, 26):
+        elif date(2022, 2, 7) > day >= date(2021, 11, 26):
             ids = random.sample([1, 2, 3, 4], random.choice([1, 2, 3]))
-        elif datetime(2021, 11, 26) > day >= datetime(2021, 4, 8):
+        elif date(2021, 11, 26) > day >= date(2021, 4, 8):
             ids = random.sample([1, 2, 3], random.choice([1, 2]))
-        elif datetime(2021, 4, 8) > day >= datetime(2021, 1, 20):
+        elif date(2021, 4, 8) > day >= date(2021, 1, 20):
             ids = random.sample([1, 2], random.choice([1, 2]))
         staff_id[day] = ids
     return staff_id
