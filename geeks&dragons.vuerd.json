@@ -3,8 +3,8 @@
     "version": "2.2.11",
     "width": 2000,
     "height": 2000,
-    "scrollTop": -163.20000000000024,
-    "scrollLeft": -16.8,
+    "scrollTop": -442.7333333333323,
+    "scrollLeft": -1398.40625,
     "zoomLevel": 0.9,
     "show": {
       "tableComment": true,
@@ -19,7 +19,7 @@
     },
     "database": "MariaDB",
     "databaseName": "geeks&dragons",
-    "canvasType": "@vuerd/builtin-sql-ddl",
+    "canvasType": "ERD",
     "language": "GraphQL",
     "tableCase": "pascalCase",
     "columnCase": "camelCase",
@@ -93,7 +93,7 @@
             "id": "2b585021-5083-4bbf-a3f6-40b7aacdd03f"
           },
           {
-            "name": "age",
+            "name": "min_age",
             "comment": "",
             "dataType": "INT",
             "default": "",
@@ -162,29 +162,6 @@
             "id": "89f5ccb5-9a1a-4c72-90e1-2ea6dddb191f"
           },
           {
-            "name": "price",
-            "comment": "",
-            "dataType": "FLOAT",
-            "default": "",
-            "option": {
-              "autoIncrement": false,
-              "primaryKey": false,
-              "unique": false,
-              "notNull": true
-            },
-            "ui": {
-              "active": false,
-              "pk": false,
-              "fk": false,
-              "pfk": false,
-              "widthName": 60,
-              "widthComment": 60,
-              "widthDataType": 60,
-              "widthDefault": 60
-            },
-            "id": "c0f12db4-cbd1-48a5-b625-4a32528c8626"
-          },
-          {
             "name": "category",
             "comment": "",
             "dataType": "VARCHAR(50)",
@@ -231,6 +208,29 @@
             "id": "0d4f2346-8c05-447c-969b-c3ea9ae15bf3"
           },
           {
+            "name": "rating",
+            "comment": "",
+            "dataType": "FLOAT",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "e89c5380-2189-45f4-b766-401af794a5e8"
+          },
+          {
             "name": "tournament",
             "comment": "",
             "dataType": "BOOLEAN",
@@ -252,13 +252,59 @@
               "widthDefault": 60
             },
             "id": "0e999fc6-8306-4dad-8d2b-5ba88964fc2e"
+          },
+          {
+            "name": "max_players_in_team",
+            "comment": "",
+            "dataType": "INT",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 129.17529296875,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "abd8978b-3337-4e2c-8dc8-40632faa0cac"
+          },
+          {
+            "name": "min_players_in_team",
+            "comment": "",
+            "dataType": "INT",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 125.5634765625,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "ec96b7d3-6b98-4a54-9a74-4ca9d6de3818"
           }
         ],
         "ui": {
           "active": false,
           "left": 47.2666,
           "top": 0,
-          "zIndex": 4,
+          "zIndex": 45,
           "widthName": 60,
           "widthComment": 60,
           "color": "#FF0000"
@@ -673,29 +719,6 @@
             "id": "74966733-6c77-44b5-8f9e-66bbbd9606f9"
           },
           {
-            "name": "team_players_number",
-            "comment": "",
-            "dataType": "INT",
-            "default": "",
-            "option": {
-              "autoIncrement": false,
-              "primaryKey": false,
-              "unique": false,
-              "notNull": true
-            },
-            "ui": {
-              "active": false,
-              "pk": false,
-              "fk": false,
-              "pfk": false,
-              "widthName": 131.34619140625,
-              "widthComment": 60,
-              "widthDataType": 60,
-              "widthDefault": 60
-            },
-            "id": "90338887-c191-434f-a24a-9e8f5b680c64"
-          },
-          {
             "name": "game_id",
             "comment": "",
             "dataType": "INT",
@@ -717,6 +740,29 @@
               "widthDefault": 60
             },
             "id": "3182f9a3-3247-48ed-9dca-d66f651f7e30"
+          },
+          {
+            "name": "team_players_number",
+            "comment": "",
+            "dataType": "INT",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 131.34619140625,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "90338887-c191-434f-a24a-9e8f5b680c64"
           },
           {
             "name": "staff_id",
@@ -769,7 +815,7 @@
           "active": false,
           "left": 1147.5557,
           "top": 554.61,
-          "zIndex": 7,
+          "zIndex": 50,
           "widthName": 67.76171875,
           "widthComment": 60,
           "color": "#FF00D9"
@@ -1280,7 +1326,7 @@
           "active": false,
           "left": 43.6,
           "top": 295.9779,
-          "zIndex": 6,
+          "zIndex": 49,
           "widthName": 60,
           "widthComment": 60,
           "color": "#00FF2F"
@@ -1692,8 +1738,8 @@
           "columnIds": [
             "955651c6-94c7-4494-af04-56505fb5fa54"
           ],
-          "x": 444.91161953125,
-          "y": 42.25,
+          "x": 498.3906234375,
+          "y": 49.083333333333336,
           "direction": "right"
         },
         "end": {
@@ -1718,8 +1764,8 @@
           "columnIds": [
             "955651c6-94c7-4494-af04-56505fb5fa54"
           ],
-          "x": 444.91161953125,
-          "y": 211.25,
+          "x": 498.3906234375,
+          "y": 245.41666666666669,
           "direction": "right"
         },
         "end": {
@@ -1770,8 +1816,8 @@
           "columnIds": [
             "955651c6-94c7-4494-af04-56505fb5fa54"
           ],
-          "x": 444.91161953125,
-          "y": 126.75,
+          "x": 498.3906234375,
+          "y": 147.25,
           "direction": "right"
         },
         "end": {

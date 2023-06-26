@@ -1,4 +1,4 @@
-game_id,name,min_age,min_players,max_players,category,duration,rating,tournaments,max_players_in_team,min_players_in_team
+game_id,name,min_age,min_players,max_players,category,duration,rating,tournament,max_players_in_team,min_players_in_team
 1,Azul: Stained Glass of Sintra,8,2,4,Family Games,45,7.42437,True,1,1
 2,Coup,13,2,6,Party Games,15,7.00517,True,1,1
 3,Smartphone Inc.,12,1,5,Strategy Games,90,7.75385,True,1,1
