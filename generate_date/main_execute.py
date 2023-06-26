@@ -1,5 +1,5 @@
-from generate_date.staff.staff import *
-from generate_date.inventory_rent.inventory_rent import *
+from staff.staff import *
+from inventory_rent.inventory_rent import *
 
 if __name__ == "__main__":
     #address
