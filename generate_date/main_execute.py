@@ -1,8 +1,9 @@
-from generate_date.staff.staff import *
-from generate_date.inventory_rent.inventory_rent import *
+from staff.staff import *
+from inventory_rent.inventory_rent import *
+from address.address import *
 
 if __name__ == "__main__":
-    #address
+    generate_address().to_csv('address/address.csv')
     generate_staff().to_csv('staff/staff.csv')
     #create_staff_schedule
     #game
