@@ -1,5 +1,6 @@
 from staff.staff import *
 from inventory_rent.inventory_rent import *
+from address.address import *
 
 if __name__ == "__main__":
     generate_address().to_csv('address/address.csv')
