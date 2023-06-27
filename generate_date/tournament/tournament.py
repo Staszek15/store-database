@@ -1,9 +1,6 @@
 import pandas as pd
 import numpy as np
-import datetime
 from datetime import datetime, timedelta
-import matplotlib.pyplot as plt
-
 
 
 def generate_dates():
@@ -18,37 +15,10 @@ def generate_dates():
         
     start = datetime.strptime('2021-04-07', "%Y-%m-%d")
     tournament_date = start + timedelta(days=period)
-    
-    free_days = ['2023-01-01', '2023-01-06', '2023-04-09', '2023-04-10', '2023-05-01', '2023-05-03', '2023-05-28', '2023-06-08',
-            '2022-01-01', '2022-01-06', '2022-04-17', '2022-04-18', '2022-05-01', '2022-05-03', '2022-06-05', '2022-06-16',
-            '2022-08-15', '2022-11-01', '2022-11-11', '2022-12-25', '2022-12-26', '2021-01-06', '2021-04-04', '2021-04-05',
-            '2021-05-01', '2021-05-03', '2021-05-23', '2021-06-03', '2021-08-15', '2021-11-01', '2021-11-11', '2021-12-25',
-            '2021-12-26']
 
-    if tournament_date in free_days:
-        tournament_date = start + timedelta(days=4)
-
-    return(tournament_date.strftime("%Y-%m-%d"))
+    return(tournament_date)
     
     
-    
-def generate_tournament_staff(tournament_date, staff_table):
-    
-    staff_list = []
-    staff_table.start = pd.to_datetime(staff_table.start)
-    tournament_date = pd.to_datetime(tournament_date)
-    
-    for d in tournament_date:
-        available_staff = staff_table.staff_id[staff_table.start < d].values
-        if d.weekday() == 6:
-            staff_list.extend([1])
-        else:
-            staff_list.extend([np.random.choice(available_staff)])
-            
-    return staff_list
-
-
-
 def generate_total_players(table_game,game_id):
     
     inventory_table = pd.read_csv('inventory_rent/inventory_rent.csv')
@@ -86,7 +56,6 @@ def generate_total_players(table_game,game_id):
     return(merged_availability.total_players_number)
 
 
-
 def generate_tournament():
     
     games_csv = pd.read_csv('game/game.csv')
@@ -103,8 +72,8 @@ def generate_tournament():
     total_players_number = generate_total_players(games_csv, game_id)
     
     max_staff = staff_csv.staff_id.max()
-    #staff_id = [np.random.randint(1,max_staff+1) for _ in range(n)]
-    staff_id = generate_tournament_staff(date,staff_csv) 
+    staff_id = [np.random.randint(1,max_staff+1) for _ in range(n)]
+    
     
     tournaments_dict = {'tournament_id' : tournament_id,
                     'name' : name,
@@ -113,10 +82,11 @@ def generate_tournament():
                     'team_players_number' : team_players_number,
                     'staff_id' : staff_id,
                     'total_players_number' : total_players_number
-}
+                    }
     tournaments_df = pd.DataFrame(tournaments_dict)
     tournaments_df.to_csv('tournament/tournament.csv', index = False)
-    return(tournaments_df)
+    
 
 if __name__ == '__main__':
     generate_tournament()
+

@@ -2,6 +2,7 @@ from staff.staff import *
 from inventory_rent.inventory_rent import *
 from address.address import *
 from inventory_buy_purchase.inventory_buy_purchase import *
+from customer_rental.Jula import *
 from const import *
 
 
@@ -23,5 +24,8 @@ if __name__ == "__main__":
                                                pd.read_csv('customer_rental\customer.csv'),
                                                pd.read_csv('create_staff_schedule\staff_schedule.csv', index_col=[0]),
                                                games_buy_prices)[1]
+    
+    generate_rentals(n, start_date, end_date, days_number, games_buy_prices)
+
     #tournament
     #tournament_results

@@ -1,93 +1,29 @@
 import pandas as pd
 import numpy as np
-from datetime import date
-from datetime import datetime
-from datetime import timedelta
+from datetime import date, timedelta
 import random
 from dateutil.relativedelta import relativedelta
 import faker
-import os
 from ast import literal_eval
 
-start_date = date(2021, 1, 4)
-end_date = date(2023, 6, 15)
-days_number = (end_date - start_date).days
-country_probabilities = [0.78, 0.08, 0.04, 0.1]
-email_endings_pl = ["@gmail.com", "@wp.pl", "@o2.pl", "@live.com"]
-email_endings_de = ["@gmail.com", "@web.de", "@gmx.net", "@live.com"]
-email_endings_cs = ["@gmail.com", "@szn.cz", "live.com"]
-email_endings_uk = ["@gmail.com", "@mail.ru", "@live.com"]
-n = 600
-fake = faker.Faker('pl_PL')
 free_days = ['2023-01-01', '2023-01-06', '2023-04-09', '2023-04-10', '2023-05-01', '2023-05-03', '2023-05-28', '2023-06-08',
             '2022-01-01', '2022-01-06', '2022-04-17', '2022-04-18', '2022-05-01', '2022-05-03', '2022-06-05', '2022-06-16',
             '2022-08-15', '2022-11-01', '2022-11-11', '2022-12-25', '2022-12-26', '2021-01-06', '2021-04-04', '2021-04-05',
             '2021-05-01', '2021-05-03', '2021-05-23', '2021-06-03', '2021-08-15', '2021-11-01', '2021-11-11', '2021-12-25',
             '2021-12-26']
 
-games_buy_prices = {
-    '1': 164.5,
-    '2' : 65.00,
-    '3' : 158.70,
-    '4' : 170.32,
-    '5' : 139.90,
-    '6' : 119.19,
-    '7' : 182.55,
-    '8' : 179.90,
-    '9': 409.95,
-    '10' : 269.90,
-    '11' : 59.90,
-    '12' : 169.90,
-    '13' : 479.00,
-    '14' : 169.00,
-    '15' : 42.38,
-    '16' : 100.00,
-    '17' : 39.90,
-    '18' : 62.50,
-    '19' : 199.99,
-    '20' : 112.89,
-    '21': 650.00,
-    '22' : 219.00,
-    "23" : 25.50,
-    '24' : 188.65,
-    '25' : 56.60,
-    '26' : 350.00,
-    '27' : 74.99,
-    '28' : 129.99,
-    '29' : 289.00,
-    '30' : 277.80,
-    '31' : 120.00,
-    '32' : 115.60,
-    '33' : 158.95,
-    '34' : 28.00,
-    '35' : 162.55,
-    '36' : 185.2,
-    '37' : 46.50,
-    '38' : 239.90,
-    '39' : 37.00,
-    '40' : 103.00,
-    '41' : 28.80,
-    '42' : 120.00,
-    '43' : 56.70,
-    '44' : 79.90,
-    '45' : 117.97,
-    '46' : 25.60,
-    '47' : 16.70,
-    '48' : 180.00,
-    '49' : 115.60,
-    '50' : 133.20
-}
-games_rent_prices_dict = {game_id: round(buy_price/15, 2) for game_id, buy_price in games_buy_prices.items()}
-games_rent_prices = pd.DataFrame(games_rent_prices_dict.items(), columns=['game_id', 'rent_price'])
-def get_dates_between():
+
+
+
+def get_dates_between(start_date, days_number):
     return [start_date + timedelta(days = i) for i in range(days_number)]
 
 
-def prawdopodobienstwa_rejestracja():
+def prawdopodobienstwa_rejestracja(days_number):
     n = days_number
 
     series = []
-    for i in range(n - 1):
+    for _ in range(n - 1):
         xi = random.uniform(0, 1)
         series.append(xi)
 
@@ -102,6 +38,14 @@ def prawdopodobienstwa_rejestracja():
 
 
 def generate_customer():
+    fake = faker.Faker('pl_PL')
+
+    country_probabilities = [0.78, 0.08, 0.04, 0.1]
+    email_endings_pl = ["@gmail.com", "@wp.pl", "@o2.pl", "@live.com"]
+    email_endings_de = ["@gmail.com", "@web.de", "@gmx.net", "@live.com"]
+    email_endings_cs = ["@gmail.com", "@szn.cz", "live.com"]
+    email_endings_uk = ["@gmail.com", "@mail.ru", "@live.com"]
+
     countries = ["Poland", "Germany", "Czech Republic", "Ukraine"]
     country = random.choices(countries, weights=country_probabilities)[0]
 
@@ -165,8 +109,8 @@ def generate_email(first_name, last_name):
     return email
 
 
-def days_from_last_rent(return_date):
-    diff_date = (return_date - date(2021, 1, 4)).days
+def days_from_last_rent(return_date, start_date):
+    diff_date = (return_date - start_date).days
     x = 0.6 / (1 + np.e ** (-0.01005 * (diff_date - 300)))
     possible_days = [0, np.random.randint(1, 9), np.random.randint(10, 21), np.random.randint(22, 41),
                      np.random.randint(42, 120)]
@@ -182,10 +126,12 @@ def rent_days():
     return int(np.random.choice(possible_days, p = prob))
 
 
-def generate_rentals():
+def generate_rentals(n, start_date, end_date, days_number, games_buy_prices):
+    fake = faker.Faker('pl_PL')
+
     registration_dates = [start_date] * 15 + [start_date + timedelta(days=1)] * 10 + [
         start_date + timedelta(days=2)] * 5 + [
-                             random.choices(get_dates_between(), weights=prawdopodobienstwa_rejestracja())[0] for _ in
+                             random.choices(get_dates_between(start_date,days_number), weights=prawdopodobienstwa_rejestracja(days_number))[0] for _ in
                              range(n - 30)]
     random.shuffle(registration_dates)
 
@@ -212,21 +158,21 @@ def generate_rentals():
     ###################################################3
     ###############################################3
 
-    inventory_rent = pd.read_csv("../inventory_rent/inventory_rent.csv")
-    games = pd.read_csv('../game/game.csv')
-    staff = pd.read_csv('../staff/staff.csv')
+    inventory_rent = pd.read_csv("inventory_rent/inventory_rent.csv")
+    games = pd.read_csv('game/game.csv')
+
     customers = df_customers
     inventory_id = inventory_rent['inventory_id']
 
     rental = pd.DataFrame(columns=['inventory_id', 'rental_date', 'return_date', 'game_id'])
     for i in inventory_id:
-        return_date = date(2021, 1, 4)
+        return_date = start_date
 
-        while return_date < date(2023, 6, 15):
-            rental_date = return_date + timedelta(days=days_from_last_rent(return_date))
+        while return_date < end_date:
+            rental_date = return_date + timedelta(days=days_from_last_rent(return_date, start_date))
             return_date = rental_date + timedelta(days=rent_days())
-            if rental_date <= date(2023, 6, 15):
-                if return_date > date(2023, 6, 15):
+            if rental_date <= end_date:
+                if return_date > end_date:
                     new_return_date = None
                     new_row = {'inventory_id': i, 'rental_date': rental_date, 'return_date': new_return_date,
                                'game_id': int(
@@ -259,7 +205,7 @@ def generate_rentals():
 
     rental['customer_id'] = cst_id
 
-    staff_id = pd.read_csv('..\create_staff_schedule\staff_schedule.csv', index_col=[0])
+    staff_id = pd.read_csv('create_staff_schedule\staff_schedule.csv', index_col=[0])
     staff_id['staff_ids'].iloc[staff_id[(staff_id['date'] == "2023-06-11")].index[0]]
     staff_id.loc[:, 'staff_ids'] = staff_id.loc[:, 'staff_ids'].apply(lambda x: literal_eval(x))
 
@@ -292,6 +238,9 @@ def generate_rentals():
     ####################
     #######################
 
+    games_rent_prices_dict = {game_id: round(buy_price/15, 2) for game_id, buy_price in games_buy_prices.items()}
+    games_rent_prices = pd.DataFrame(games_rent_prices_dict.items(), columns=['game_id', 'rent_price'])
+
     main_price = []
     for i in range(0, len(rental)):
         if pd.isnull(df_customers.loc[df_customers['customer_id'] == rental.iloc[i]['customer_id'], 'VIP'].values[0]):
@@ -323,9 +272,8 @@ def generate_rentals():
 
     rental['fine'] = fine
 
+    rental.to_csv('rental.csv')
+    df_customers.to_csv("customer.csv", index=False)
+
     return rental, df_customers
-
-
-
-
 
