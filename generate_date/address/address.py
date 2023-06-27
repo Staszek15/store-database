@@ -6,7 +6,7 @@ from bs4 import BeautifulSoup
 import requests
 
 
-def generate_address(N=605):
+def generate_address(df_all=pd.read_csv('generate_date\\address\\postal_codes.csv', encoding='UTF-8', delimiter= ';'), N=605):
     #setting address region
     fake = Faker('pl_PL')
 
@@ -33,8 +33,6 @@ def generate_address(N=605):
     df_dolnoslaskie =  df[df['city'] != 'Wrocław']
     df_wro = df[df['city'] == 'Wrocław']
 
-    # postal codes in Poland
-    df_all = pd.read_csv('address\postal_codes.csv', encoding='UTF-8', delimiter= ';')
     # no dolnoslaskie region 
     df_rest = df_all[['KOD POCZTOWY', 'MIEJSCOWOŚĆ']]
     df_rest[df_rest['KOD POCZTOWY'].str[0] != "5"]
