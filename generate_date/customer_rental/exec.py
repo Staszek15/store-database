@@ -8,15 +8,11 @@ import faker
 import os
 
 
-
-
-
 def get_dates_between(start_date, days_number):
     return [start_date + timedelta(days = i) for i in range(days_number)]
 
 
-
-def prawdopodobienstwa_rejestracja(days_number):
+def registration_probability(days_number):
     series = []
 
     for i in range(days_number - 1):
@@ -31,10 +27,6 @@ def prawdopodobienstwa_rejestracja(days_number):
     series.append(remaining_sum)
 
     return series
-
-
-
-
 
 
 def generate_customer():
@@ -98,7 +90,6 @@ def generate_customer():
             email = generate_email(x, y) + random.choice(email_endings_uk)
             return x, y, email
 
-        
 
 def generate_email(first_name, last_name):
     if " " in first_name:
@@ -109,6 +100,7 @@ def generate_email(first_name, last_name):
 
 #######################################################################################
 #######################################################################################
+
 
 def days_from_last_rent(return_date):
     diff_date = (return_date - date(2021, 1, 4)).days
@@ -125,16 +117,16 @@ def rent_days():
     possible_days = [0, np.random.randint(1,8), np.random.randint(8,14), np.random.randint(15,31),
                      np.random.randint(31, 61), np.random.randint(61, 121), np.random.randint(121, 672)]
     prob = [0.2, 0.5, 0.2, 0.05, 0.03, 0.017, 0.003]
-    return int(np.random.choice(possible_days, p = prob))
+    return int(np.random.choice(possible_days, p=prob))
 
 
 def create_rental(inventory_id, inventory_rent):
-    rental = pd.DataFrame(columns = ['inventory_id', 'rental_date', 'return_date', 'game_id'])
+    rental = pd.DataFrame(columns=['inventory_id', 'rental_date', 'return_date', 'game_id'])
     for i in inventory_id:
         return_date = date(2021, 1, 4)
         
         while return_date < date(2023, 6, 15):
-            rental_date = return_date +  timedelta(days = days_from_last_rent(return_date))
+            rental_date = return_date + timedelta(days = days_from_last_rent(return_date))
             return_date = rental_date + timedelta(days = rent_days())
             if rental_date <= date(2023, 6, 15):
                 if return_date > date(2023, 6, 15):
@@ -144,10 +136,9 @@ def create_rental(inventory_id, inventory_rent):
                     rental.loc[len(rental)] = new_row
                 else:
                     new_row = {'inventory_id' : i, 'rental_date' : rental_date, 'return_date' : return_date,
-                              'game_id' : int(inventory_rent.loc[inventory_rent['inventory_id'] == i, 'game_id'].values)}
+                               'game_id' : int(inventory_rent.loc[inventory_rent['inventory_id'] == i, 'game_id'].values)}
                     rental.loc[len(rental)] = new_row
     return rental
-
 
 
 def generate_dates(start_date, end_date):
@@ -161,15 +152,15 @@ def who_works(days, start_date, end_date, free_days):
     days = generate_dates(start_date, end_date)
     staff_id = {}
     for day in days:
-        if day.weekday() == 6 or day < datetime(2021, 1, 20) or str(day) in free_days:
+        if day.weekday() == 6 or day < date(2021, 1, 20) or str(day) in free_days:
             ids = [1]
-        elif day >= datetime(2022, 2, 7):
+        elif day >= date(2022, 2, 7):
             ids = random.sample([1, 2, 3, 4, 5], random.choice([1, 2, 3]))
-        elif datetime(2022, 2, 7) > day >= datetime(2021, 11, 26):
+        elif date(2022, 2, 7) > day >= date(2021, 11, 26):
             ids = random.sample([1, 2, 3, 4], random.choice([1, 2, 3]))
-        elif datetime(2021, 11, 26) > day >= datetime(2021, 4, 8):
+        elif date(2021, 11, 26) > day >= date(2021, 4, 8):
             ids = random.sample([1, 2, 3], random.choice([1, 2]))
-        elif datetime(2021, 4, 8) > day >= datetime(2021, 1, 20):
+        elif date(2021, 4, 8) > day >= date(2021, 1, 20):
             ids = random.sample([1, 2], random.choice([1, 2]))
         staff_id[day] = ids
     return staff_id
@@ -186,9 +177,8 @@ def generate_customers_and_rentals():
     end_date = date(2023,6,15)
     days_number = (end_date - start_date).days
 
-    registration_dates = [start_date]*15 + [start_date + timedelta(days = 1)]*10 + [start_date + timedelta(days = 2)]*5 + [random.choices(get_dates_between(start_date,days_number), weights=prawdopodobienstwa_rejestracja(days_number))[0] for _ in range(n-30)]
+    registration_dates = [start_date]*15 + [start_date + timedelta(days = 1)]*10 + [start_date + timedelta(days = 2)]*5 + [random.choices(get_dates_between(start_date,days_number), weights=registration_probability(days_number))[0] for _ in range(n - 30)]
     random.shuffle(registration_dates)
-
 
     customers = {
         'first_name': ["a" for _ in range(n)],
@@ -205,7 +195,8 @@ def generate_customers_and_rentals():
     for i in range(n):
         df_customers.at[i,"first_name"], df_customers.at[i,"last_name"], df_customers.at[i,"email"] = generate_customer()
 
-
+    df_customers = df_customers.sort_values(by='registration_date')
+    df_customers['customer_id'] = [_+1 for _ in range(n)]
 
     # zaczynamy generowac tabele rental
     inventory_rent = pd.read_csv("inventory_rent/inventory_rent.csv")
@@ -234,7 +225,6 @@ def generate_customers_and_rentals():
                 continue
 
     rental['customer_id'] = cst_id
-
     
 
     free_days = ['2023-01-01', '2023-01-06', '2023-04-09', '2023-04-10', '2023-05-01', '2023-05-03', '2023-05-28', '2023-06-08',

@@ -4,89 +4,58 @@ import numpy as np
 from scipy.special import softmax
 
 
-games_buy_prices = {
-    '1': 164.5,
-    '2': 65.00,
-    '3': 158.70,
-    '4': 170.32,
-    '5': 139.90,
-    '6': 119.19,
-    '7': 182.55,
-    '8': 179.90,
-    '9': 409.95,
-    '10': 269.90,
-    '11': 59.90,
-    '12': 169.90,
-    '13': 479.00,
-    '14': 169.00,
-    '15': 42.38,
-    '16': 100.00,
-    '17': 39.90,
-    '18': 62.50,
-    '19': 199.99,
-    '20': 112.89,
-    '21': 650.00,
-    '22': 219.00,
-    "23": 25.50,
-    '24': 188.65,
-    '25': 56.60,
-    '26': 350.00,
-    '27': 74.99,
-    '28': 129.99,
-    '29': 289.00,
-    '30': 277.80,
-    '31': 120.00,
-    '32': 115.60,
-    '33': 158.95,
-    '34': 28.00,
-    '35': 162.55,
-    '36': 185.2,
-    '37': 46.50,
-    '38': 239.90,
-    '39': 37.00,
-    '40': 103.00,
-    '41': 28.80,
-    '42': 120.00,
-    '43': 56.70,
-    '44': 79.90,
-    '45': 117.97,
-    '46': 25.60,
-    '47': 16.70,
-    '48': 180.00,
-    '49': 115.60,
-    '50': 133.20
-}
-games_rent_prices = {game_id: round(buy_price/15, 2) for game_id, buy_price in games_buy_prices.items()}
-games = pd.read_csv('game/game.csv')
-
-def exchange_players_to_game_id():
+def generate_game_ids(games):
+    """
+    Generate random games ids with probability based on their maximum players number and rating.
+    """
     game_id = []
-    probs = [0.2, 0.4, 0, 0.3, 0.1]  # we do not have games for max 3 players
-    n_players = np.random.choice([1, 2, 3, 4, 5], size=500, p=probs)  #draw random number of 1, 2, 3 etc
+    probs = [0.2, 0.4, 0, 0.3, 0.1]  #probability of drawing games for max 1, 2, 3, 4 and 5 or more players
+    #we do not have games for max 3 players in our shop
+    n_players = np.random.choice([1, 2, 3, 4, 5], size=500, p=probs)  #draw a random number of 1, 2, 3 etc
     for i in range(1, 6):
-        n = (n_players == i).sum()
+        n = (n_players == i).sum()  #number of all games for consecutive max players number
         if i == 5:
+            #games for max 5 or more players
             prob_r = softmax(games.loc[games['max_players'] >= i, 'rating'].values)
-            simulated_id = list(np.random.choice(games.loc[games['max_players'] >= i, 'game_id'].values, p=prob_r, size=n))
+            #probability of drawing games in certain group of max players based on their ratings
+            simulated_id = list(np.random.choice(games.loc[games['max_players'] >= i, 'game_id'].values, p=prob_r,
+                                                 size=n))
             game_id += simulated_id
         else:
             if len(games.loc[games['max_players'] == i, 'rating'].values) != 0:
+                # cause we do not have games for max 3 players
                 prob_r = softmax(games.loc[games['max_players'] == i, 'rating'].values)
-                simulated_id = list(np.random.choice(games.loc[games['max_players'] == i, 'game_id'].values, p=prob_r, size=n))
+                simulated_id = list(np.random.choice(games.loc[games['max_players'] == i, 'game_id'].values, p=prob_r,
+                                                     size=n))
                 game_id += simulated_id
     return game_id
 
 
-def generate_inventory_rent():
-    game_ids = exchange_players_to_game_id()
+def generate_inventory_rent(prices, games):
+    """
+    Generate data frame for inventory_rent table.
+    :param prices: prices of renting each game
+    :param games: table with information about owned games
+    """
+    game_ids = generate_game_ids(games)
     random.shuffle(game_ids)
-    prices = [games_rent_prices[str(game_id)] for game_id in game_ids]
+    prices = [prices[str(game_id)] for game_id in game_ids]
     data = {'inventory_id': np.arange(1, 501),
-                      'game_id': game_ids,
-                      'price': prices,
-                      }
-    inventory_rent = pd.DataFrame(data)
-    return inventory_rent
+            'game_id': game_ids,
+            'price': prices,
+            }
+    return pd.DataFrame(data)
 
-
-generate_inventory_rent()
+def check_if_rent_available(inv_rent, rental):
+    """
+    Add new column to inventory_rent data frame with information about particular game availability.
+    """
+    available = []
+    for i in range(len(inv_rent)):
+        if pd.isna(rental.loc[rental['inventory_id'] == inv_rent.iloc[i]['inventory_id'], 'return_date'].values[-1]):
+            #check if latest rented game of particular inventory_id has been returned
+            available.append(False)
+        else:
+            available.append(True)
+    inv_rent['available'] = available
+    return pd.DataFrame(inv_rent)
