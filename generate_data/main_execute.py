@@ -9,6 +9,7 @@ from const import *
 from customer_rental.customer_rental import *
 from tournament.tournament import *
 from tournament_results.tournament_results import *
+from inserts import *
 
 
 if __name__ == "__main__":
@@ -37,3 +38,17 @@ if __name__ == "__main__":
     generate_tournament_results(pd.read_csv('tournament/tournaments.csv'),
                                 pd.read_csv('customer_rental/customers.csv'),
                                 games).to_csv('tournament_results/tournament_results.csv', index=False)
+    
+
+    insert(pd.read_csv('game/game.csv'),
+           pd.read_csv('addresses/addresses.csv'),
+           pd.read_csv('customer_rental/customers.csv'),
+           pd.read_csv('inventory_buy/inventory_buy.csv'),
+           pd.read_csv('inventory_rent/inventory_rent.csv'),
+           pd.read_csv('inventory_buy_purchase/purchases.csv'),
+           pd.read_csv('customer_rental/rentals.csv'),
+           pd.read_csv('staff/staff.csv'),
+           pd.read_csv('tournament/tournament.csv'),
+           pd.read_csv('tournament_results/tournament_results.csv'))
+
+    
