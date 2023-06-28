@@ -32,7 +32,7 @@ if __name__ == "__main__":
                                                  games_buy_prices, start_date, end_date)
     inventory_buy.to_csv('inventory_buy_purchase/inventory_buy.csv')
     purchases.to_csv('inventory_buy_purchase/purchases.csv')"""
-    generate_tournament(pd.read_csv('game/game.csv'), pd.read_csv('staff/staff.csv'), inv_rent).to_csv('tournament/tournaments.csv')
+    generate_tournament(pd.read_csv('game/game.csv'), pd.read_csv('staff/staff.csv'), inv_rent, pd.read_csv('create_staff_schedule/staff_schedule.csv')).to_csv('tournament/tournaments.csv')
     generate_tournament_results(pd.read_csv('tournament/tournaments.csv'),
                                 pd.read_csv('customer_rental/customers.csv'),
                                 pd.read_csv('game/game.csv')).to_csv('tournament_results/tournament_results.csv', index=False)
