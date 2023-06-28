@@ -1,7 +1,7 @@
 import numpy as np
 from scipy.special import softmax
 import random
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, date
 import pandas as pd
 from ast import literal_eval
 
@@ -177,7 +177,7 @@ def generate_inventory_buy_purchase(games, customer, staff_id, games_buy_prices,
     tmp2 = (tmp
     .merge(df[['date', 'purchase_id']], 'left', 'purchase_id')
     .merge(customer[['key', 'birthdate', 'customer_id']], on='key')
-    .assign(customer_age = lambda x: ((x['date']-x['birthdate'].astype('datetime64[ns]')).dt.days/365).astype(int))
+    .assign(customer_age = lambda x: ((x['date'].astype('datetime64[ns]')-x['birthdate'].astype('datetime64[ns]')).dt.days/365).astype(int))
     .assign(valid_customer = lambda x: x['customer_age'] > x['min_age'])
     .query('valid_customer')
     .groupby('purchase_id')['customer_id']
@@ -196,4 +196,73 @@ def generate_inventory_buy_purchase(games, customer, staff_id, games_buy_prices,
     purchase_id = purchase_id[['purchase_id', 'inventory_id', 'customer_id', 'date', 'staff_id']]
 
     return df_inventory, purchase_id
+"""
+start_date = date(2021, 1, 4)
+end_date = date(2023, 6, 15)
+days_number = (end_date - start_date).days
 
+free_days = ['2023-01-01', '2023-01-06', '2023-04-09', '2023-04-10', '2023-05-01', '2023-05-03', '2023-05-28',
+             '2023-06-08', '2022-01-01', '2022-01-06', '2022-04-17', '2022-04-18', '2022-05-01', '2022-05-03',
+             '2022-06-05', '2022-06-16', '2022-08-15', '2022-11-01', '2022-11-11', '2022-12-25', '2022-12-26',
+             '2021-01-06', '2021-04-04', '2021-04-05', '2021-05-01', '2021-05-03', '2021-05-23', '2021-06-03',
+             '2021-08-15', '2021-11-01', '2021-11-11', '2021-12-25', '2021-12-26']
+
+
+games_buy_prices = {
+    '1': 164.5,
+    '2': 65.00,
+    '3': 158.70,
+    '4': 170.32,
+    '5': 139.90,
+    '6': 119.19,
+    '7': 182.55,
+    '8': 179.90,
+    '9': 409.95,
+    '10': 269.90,
+    '11': 59.90,
+    '12': 169.90,
+    '13': 479.00,
+    '14': 169.00,
+    '15': 42.38,
+    '16': 100.00,
+    '17': 39.90,
+    '18': 62.50,
+    '19': 199.99,
+    '20': 112.89,
+    '21': 650.00,
+    '22': 219.00,
+    "23": 25.50,
+    '24': 188.65,
+    '25': 56.60,
+    '26': 350.00,
+    '27': 74.99,
+    '28': 129.99,
+    '29': 289.00,
+    '30': 277.80,
+    '31': 120.00,
+    '32': 115.60,
+    '33': 158.95,
+    '34': 28.00,
+    '35': 162.55,
+    '36': 185.2,
+    '37': 46.50,
+    '38': 239.90,
+    '39': 37.00,
+    '40': 103.00,
+    '41': 28.80,
+    '42': 120.00,
+    '43': 56.70,
+    '44': 79.90,
+    '45': 117.97,
+    '46': 25.60,
+    '47': 16.70,
+    '48': 180.00,
+    '49': 115.60,
+    '50': 133.20
+}
+
+
+generate_inventory_buy_purchase(pd.read_csv('../game/game.csv'), pd.read_csv('../customer_rental/customers.csv'),
+                                pd.read_csv('../create_staff_schedule/staff_schedule.csv', index_col=[0]),
+                                games_buy_prices, start_date, end_date)
+"""
