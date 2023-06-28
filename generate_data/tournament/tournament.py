@@ -6,6 +6,7 @@ from datetime import datetime, timedelta
 def generate_dates():
     
     number = np.random.randint(1,105)
+    number = np.random.randint(1,105)
     if number%3 == 2:
         period = number * 7
     elif number%3 == 1:
@@ -84,6 +85,7 @@ def generate_tournament(games, staff, inv_rent, schedule):
     total_players_number = generate_total_players(games, game_id, inv_rent)
     
     staff_id = generate_tournament_staff(date,schedule)
+    staff_id = generate_tournament_staff(date,schedule)
 
     tournaments_dict = {'tournament_id' : tournament_id,
                     'name' : name,
@@ -95,7 +97,5 @@ def generate_tournament(games, staff, inv_rent, schedule):
                     }
     return pd.DataFrame(tournaments_dict)
 
-if __name__ == "__main__":
-    print(generate_tournament)
 
 
