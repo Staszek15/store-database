@@ -37,5 +37,5 @@ def generate_tournament_results(tournaments, customers, games):
             
     tournaments_dictionary = {'tournament_id' : tour_id_list, 'customer_id' : participants_list,
                               'place' : place_list, 'score' : score_list}
-    print("YOU'RE THE BEST")
+
     return pd.DataFrame(tournaments_dictionary)
