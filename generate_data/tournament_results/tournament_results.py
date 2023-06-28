@@ -11,8 +11,8 @@ def generate_tournament_results(tournaments, customers, games):
     
     for i in range(len(tournaments)):
         tour_row = tournaments.iloc[i]
-        games_row = games[games['game_id'] == tour_row.game_id] 
-        
+        games_row = games[games['game_id'] == tour_row.game_id]
+
         tour_id = [tour_row.tournament_id for i in range(int(tour_row.total_players_number))]
         customers_id = random.sample(sorted(customers.customer_id),tour_row.total_players_number)
 
