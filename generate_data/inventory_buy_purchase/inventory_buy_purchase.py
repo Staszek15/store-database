@@ -1,7 +1,7 @@
 import numpy as np
 from scipy.special import softmax
 import random
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, date
 import pandas as pd
 from ast import literal_eval
 
@@ -147,7 +147,7 @@ def generate_inventory_buy_purchase(games, customer, staff_id, games_buy_prices,
             big_lista.remove(big_lista[i])
         inventory_purchase.append(d)
         if not big_lista:
-            break 
+            break
 
     df['inventory_id'] = inventory_purchase
     df['game_id'] = [int(df_inventory_false['game_id'][df_inventory_false['inventory_id'] == inv].values) for inv in df['inventory_id'].values]
@@ -177,7 +177,7 @@ def generate_inventory_buy_purchase(games, customer, staff_id, games_buy_prices,
     tmp2 = (tmp
     .merge(df[['date', 'purchase_id']], 'left', 'purchase_id')
     .merge(customer[['key', 'birthdate', 'customer_id']], on='key')
-    .assign(customer_age = lambda x: ((x['date']-x['birthdate'].astype('datetime64[ns]')).dt.days/365).astype(int))
+    .assign(customer_age = lambda x: ((x['date'].astype('datetime64[ns]')-x['birthdate'].astype('datetime64[ns]')).dt.days/365).astype(int))
     .assign(valid_customer = lambda x: x['customer_age'] > x['min_age'])
     .query('valid_customer')
     .groupby('purchase_id')['customer_id']
@@ -196,4 +196,3 @@ def generate_inventory_buy_purchase(games, customer, staff_id, games_buy_prices,
     purchase_id = purchase_id[['purchase_id', 'inventory_id', 'customer_id', 'date', 'staff_id']]
 
     return df_inventory, purchase_id
-
