@@ -6,7 +6,6 @@ from datetime import datetime, timedelta
 def generate_dates():
     
     number = np.random.randint(1,105)
-    number = np.random.randint(1,105)
     if number%3 == 2:
         period = number * 7
     elif number%3 == 1:
