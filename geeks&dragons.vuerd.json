@@ -3,8 +3,8 @@
     "version": "2.2.11",
     "width": 2000,
     "height": 2000,
-    "scrollTop": -481.60625000000834,
-    "scrollLeft": -101.6062500000006,
+    "scrollTop": -167.0400063720713,
+    "scrollLeft": -274.8862557861336,
     "zoomLevel": 0.9,
     "show": {
       "tableComment": true,
@@ -19,7 +19,7 @@
     },
     "database": "MariaDB",
     "databaseName": "geeks&dragons",
-    "canvasType": "ERD",
+    "canvasType": "@vuerd/builtin-sql-ddl",
     "language": "GraphQL",
     "tableCase": "pascalCase",
     "columnCase": "camelCase",
@@ -1370,9 +1370,9 @@
         ],
         "ui": {
           "active": false,
-          "left": 965.8227,
-          "top": 220.4228,
-          "zIndex": 17,
+          "left": 788.7561,
+          "top": 301.4897,
+          "zIndex": 25,
           "widthName": 61.9599609375,
           "widthComment": 60,
           "color": "#00FF2F"
@@ -1940,8 +1940,8 @@
           "columnIds": [
             "704be6ff-d80c-40c0-a58e-e75f2eb7ef66"
           ],
-          "x": 1069.2123484375002,
-          "y": 473.9228,
+          "x": 892.1457484375,
+          "y": 554.9897000000001,
           "direction": "bottom"
         },
         "end": {
@@ -2001,8 +2001,8 @@
           "columnIds": [
             "b2ade544-6465-49df-8ff9-5000410c3c9f"
           ],
-          "x": 1172.6019968750002,
-          "y": 220.4228,
+          "x": 995.535396875,
+          "y": 301.4897,
           "direction": "top"
         },
         "constraintName": "fk_address_to_customers",
@@ -2044,8 +2044,8 @@
           "columnIds": [
             "704be6ff-d80c-40c0-a58e-e75f2eb7ef66"
           ],
-          "x": 1275.9916453125002,
-          "y": 473.9228,
+          "x": 1098.9250453125,
+          "y": 554.9897000000001,
           "direction": "bottom"
         },
         "end": {
@@ -2096,8 +2096,8 @@
           "columnIds": [
             "704be6ff-d80c-40c0-a58e-e75f2eb7ef66"
           ],
-          "x": 965.8227,
-          "y": 347.1728,
+          "x": 788.7561,
+          "y": 428.2397,
           "direction": "left"
         },
         "end": {

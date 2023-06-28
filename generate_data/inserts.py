@@ -1,5 +1,6 @@
 from sqlalchemy import create_engine, text, URL
 from unidecode import unidecode
+import pandas as pd
 
 def insert(df_games, df_addresses, df_customers, df_inventory_buy, df_inventory_rent, df_purchases, df_rentals, df_staff, df_tournament, df_tournament_results):
 
@@ -39,7 +40,7 @@ def insert(df_games, df_addresses, df_customers, df_inventory_buy, df_inventory_
     df_staff.to_sql("staff", con=engine, if_exists="replace", index=False)
 
     conn.execute(text('TRUNCATE TABLE tournament'))
-    df_tournament.to_sql("rentals", con=engine, if_exists="replace", index=False)
+    df_tournament.to_sql("tournament", con=engine, if_exists="replace", index=False)
 
     conn.execute(text('TRUNCATE TABLE tournament_results'))
     df_tournament_results.to_sql("tournament_results", con=engine, if_exists="replace", index=False)
@@ -51,4 +52,15 @@ def insert(df_games, df_addresses, df_customers, df_inventory_buy, df_inventory_
     conn.close()
 
 if __name__ == "__main__":
-    insert()
+        insert(pd.read_csv('game/game.csv'),
+           pd.read_csv('inventory_rent/inventory_rent.csv'),
+           pd.read_csv('inventory_buy_purchase/inventory_buy.csv'),
+
+           pd.read_csv('address/address.csv'),
+           pd.read_csv('customer_rental/customers.csv'),
+           
+           pd.read_csv('inventory_buy_purchase/purchases.csv'),
+           pd.read_csv('customer_rental/rentals.csv'),
+           pd.read_csv('staff/staff.csv'),
+           pd.read_csv('tournament/tournament.csv'),
+           pd.read_csv('tournament_results/tournament_results.csv'))
