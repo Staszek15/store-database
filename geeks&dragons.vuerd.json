@@ -3,8 +3,8 @@
     "version": "2.2.11",
     "width": 2000,
     "height": 2000,
-    "scrollTop": -12.000000000000002,
-    "scrollLeft": -494.4093750000003,
+    "scrollTop": -464.7999999999995,
+    "scrollLeft": -794.4093749999997,
     "zoomLevel": 0.9,
     "show": {
       "tableComment": true,
@@ -409,7 +409,7 @@
             "id": "1457b052-21ac-4597-996a-b16648b231c7"
           },
           {
-            "name": "birth_date",
+            "name": "birthdate",
             "comment": "",
             "dataType": "DATE",
             "default": "",
@@ -528,7 +528,7 @@
           "active": false,
           "left": 49.8,
           "top": 685.2,
-          "zIndex": 2,
+          "zIndex": 91,
           "widthName": 60,
           "widthComment": 60,
           "color": "#13FF00"
@@ -1031,7 +1031,7 @@
           {
             "name": "game_id",
             "comment": "",
-            "dataType": "",
+            "dataType": "INT",
             "default": "",
             "option": {
               "autoIncrement": false,
@@ -1146,9 +1146,9 @@
         ],
         "ui": {
           "active": false,
-          "left": 1537.1559,
-          "top": 193.6,
-          "zIndex": 65,
+          "left": 1402.9333,
+          "top": 158.0442,
+          "zIndex": 88,
           "widthName": 60,
           "widthComment": 60,
           "color": "#FF0000"
@@ -1897,8 +1897,8 @@
           "columnIds": [
             "cf7a9e57-bc99-4f6b-ae28-942fbb8105ae"
           ],
-          "x": 1537.1559,
-          "y": 404.85,
+          "x": 1402.9333,
+          "y": 369.2942,
           "direction": "left"
         },
         "constraintName": "fk_staff_to_rental",
@@ -1923,8 +1923,8 @@
           "columnIds": [
             "49c5e78c-f0a1-4495-8665-4241b59ff3c6"
           ],
-          "x": 1537.1559,
-          "y": 235.85,
+          "x": 1402.9333,
+          "y": 200.2942,
           "direction": "left"
         },
         "constraintName": "fk_inventory_rent_to_rental",
@@ -1949,8 +1949,8 @@
           "columnIds": [
             "6defe01d-7607-4cd0-aaf5-aa7b8106ca0e"
           ],
-          "x": 1537.1559,
-          "y": 320.35,
+          "x": 1402.9333,
+          "y": 284.7942,
           "direction": "left"
         },
         "constraintName": "fk_customers_to_rental",
