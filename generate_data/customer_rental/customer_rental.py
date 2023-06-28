@@ -8,10 +8,19 @@ from ast import literal_eval
 
 
 def get_dates_between(start_date, days_number):
+    """
+    Generates random date between start_date and date wchich is days_number after the store opening.
+    :param start_date: opening date of our store
+    :param days_number: how many days have passed since the store opening
+    """
     return [start_date + timedelta(days = i) for i in range(days_number)]
 
 
 def registration_probability(days_number):
+    """
+    Generates vector of probabilities which simulates the real development of the store. The vector is a descending series converging to 1.
+    :param days_number: how many days have passed since the store opening
+    """
     n = days_number
 
     series = []
@@ -30,6 +39,9 @@ def registration_probability(days_number):
 
 
 def create_customers():
+    """
+    Generates one customer in the following format: first name, last name, email. Customers can be Polish, German, Czech or Ukrainian with the respective probabilities.
+    """
     country_probabilities = [0.78, 0.08, 0.04, 0.1]
     email_endings_pl = ["@gmail.com", "@wp.pl", "@o2.pl", "@live.com"]
     email_endings_de = ["@gmail.com", "@web.de", "@gmx.net", "@live.com"]
@@ -93,6 +105,11 @@ def create_customers():
 
 
 def generate_email(first_name, last_name):
+    """
+    Generates a random email body (characters before @) for provided first and last name of the customer.
+    :param first_name: customer first name 
+    :param last_name: customer last name 
+    """
     if " " in first_name:
         first_name = first_name.split(" ")[0]
     email = first_name[0: random.randint(2, len(first_name) - 1)] + last_name[0: random.randint(2, len(last_name) - 1)]
@@ -101,6 +118,12 @@ def generate_email(first_name, last_name):
 
 
 def days_from_last_rent(return_date, start_date):
+    """
+    Generates a random number that indicates how many days passed since the last return of rental. 
+    Probabilities in random choice are based on given density function and depend on how many days passed since the opening of the store. The more days, the bigger chance for short break in rentals.
+    :param start_date: opening date of our store
+    :param start_date: opening date of our store
+    """
     diff_date = (return_date - start_date).days
     x = 0.6 / (1 + np.e ** (-0.01005 * (diff_date - 300)))
     possible_days = [0, np.random.randint(1, 9), np.random.randint(10, 21), np.random.randint(22, 41),
@@ -111,7 +134,10 @@ def days_from_last_rent(return_date, start_date):
 
 
 def rent_days():
-    # 0 because someone can rent a game, play in store and return after it
+    """
+    Generates a random number that indicates how many days did the rental last. 
+    Function can return 0 because customer can rent a game, play it in the store and return afterwards.
+    """
     possible_days = [0, np.random.randint(1,8), np.random.randint(8,14), np.random.randint(15,31),
                      np.random.randint(31, 61), np.random.randint(61, 121), np.random.randint(121, 672)]
     prob = [0.2, 0.5, 0.2, 0.05, 0.03, 0.017, 0.003]
@@ -119,6 +145,17 @@ def rent_days():
 
 
 def generate_customers_rentals(n, start_date, end_date, days_number, games_rent_prices, inventory_rent, games, staff_id):
+    """
+    Generates and returns customers and rentals dataframes with all the information.
+    :param n: number of clients
+    :param start_date: opening date of our store
+    :param end_date: last day to include while generating data
+    :param days_number: how many days have passed since the store opening
+    :param games_rent_prices: dictionary with rental prices for every game
+    :param inventory_rent: inventory_rent dataframe
+    :param games: games dataframe
+    :param staff_id: id of a staff member in our store
+    """
     fake = faker.Faker('pl_PL')
 
     registration_dates = [start_date] * 15 + [start_date + timedelta(days=1)] * 10 + [
