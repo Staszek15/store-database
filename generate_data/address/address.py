@@ -60,7 +60,7 @@ def generate_address(df_all, n=605):
     temp['address_id'] = [i for i in range(1, n + 1)]
 
     temp.columns = ['postal_code', 'city', 'address', 'address_id']
-    temp[['address_id', 'address', 'city', 'postal_code']]
+    
 
-    return temp
+    return temp[['address_id', 'address', 'city', 'postal_code']]
 
