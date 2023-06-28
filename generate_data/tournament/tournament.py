@@ -20,7 +20,6 @@ def generate_dates():
     return(tournament_date)
 
 
-
 def first_element_to_integer(list_):
     my_list = list_
     return(my_list[-2])
@@ -31,7 +30,6 @@ def generate_tournament_staff(date,schedule):
     date_str = pd.DataFrame(date_str)
     date_str.columns=['date']
     date_merge_staff = date_str.merge(schedule, on='date', how='left')
-    date_merge_staff
     date_merge_staff['staff_ids'] = date_merge_staff['staff_ids'].apply(first_element_to_integer)
     staff_id = date_merge_staff.staff_ids
     return(staff_id)
@@ -73,7 +71,7 @@ def generate_total_players(table_game,game_id, inventory_rent):
     return(merged_availability.total_players_number)
 
 
-def generate_tournament(games, staff, inv_rent, schedule):
+def generate_tournament(games, inv_rent, schedule):
     name = ['Cosmic Entertainment', 'Battlefields of Bonaparte', 'The Kobolds', 'Gaming Evening', 'Hamst&Furious', 'Indian Camp', 'Vietgame',
              'Thematic Contest', 'Spring Tournament', 'Star Trek Day']
     n = len(name)
@@ -83,17 +81,16 @@ def generate_tournament(games, staff, inv_rent, schedule):
     
     team_players_number = [games.max_players_in_team[games.game_id == i].values[0] for i in game_id]
     total_players_number = generate_total_players(games, game_id, inv_rent)
-    
-    staff_id = generate_tournament_staff(date,schedule)
-    staff_id = generate_tournament_staff(date,schedule)
+
+    staff_id = generate_tournament_staff(date, schedule)
 
     tournaments_dict = {'tournament_id' : tournament_id,
-                    'name' : name,
-                    'date' : date,
-                    'game_id' : game_id,
-                    'team_players_number' : team_players_number,
-                    'staff_id' : staff_id,
-                    'total_players_number' : total_players_number
+                        'name' : name,
+                        'date' : date,
+                        'game_id' : game_id,
+                        'team_players_number' : team_players_number,
+                        'staff_id' : staff_id,
+                        'total_players_number' : total_players_number
                     }
     return pd.DataFrame(tournaments_dict)
 

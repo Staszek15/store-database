@@ -20,18 +20,19 @@ if __name__ == "__main__":
     generate_game().to_csv('game/game.csv', index=False)
     games = pd.read_csv('game/game.csv')
     generate_inventory_rent(games_rent_prices_dict, games).to_csv('inventory_rent/inventory_rent.csv')
-    inv_rent = pd.read_csv('inventory_rent/inventory_rent.csv', index_col=[0])
     """rentals, customers = generate_customers_rentals(n, start_date, end_date, days_number, games_rent_prices,
-                                                    inv_rent, games, staff_schedule)
+                                                    pd.read_csv('inventory_rent/inventory_rent.csv', index_col=[0]),
+                                                    games, staff_schedule)
     rentals.to_csv('customer_rental/rentals.csv')
     rental = pd.read_csv('customer_rental/rentals.csv')
     customers.to_csv('customer_rental/customers.csv', index=False)
-    check_if_rent_available(inv_rent, rental).to_csv('inventory_rent/inventory_rent.csv')"""
-    inventory_buy, purchases = generate_inventory_buy_purchase(games, pd.read_csv('customer_rental/customers.csv'),
-                                                               staff_schedule, games_buy_prices, start_date, end_date)
-    inventory_buy.to_csv('inventory_buy_purchase/inventory_buy.csv')
-    purchases.to_csv('inventory_buy_purchase/purchases.csv')
-    generate_tournament(games, pd.read_csv('staff/staff.csv'), inv_rent,
+    check_if_rent_available(pd.read_csv('inventory_rent/inventory_rent.csv', index_col=[0]),
+                            rental).to_csv('inventory_rent/inventory_rent.csv')"""
+    #inventory_buy, purchases = generate_inventory_buy_purchase(games, pd.read_csv('customer_rental/customers.csv'),
+     #                                                          staff_schedule, games_buy_prices, start_date, end_date)
+    #inventory_buy.to_csv('inventory_buy_purchase/inventory_buy.csv')
+    #purchases.to_csv('inventory_buy_purchase/purchases.csv')
+    generate_tournament(games, pd.read_csv('inventory_rent/inventory_rent.csv', index_col=[0]),
                         staff_schedule).to_csv('tournament/tournaments.csv')
     generate_tournament_results(pd.read_csv('tournament/tournaments.csv'),
                                 pd.read_csv('customer_rental/customers.csv'),
