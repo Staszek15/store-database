@@ -155,7 +155,7 @@ def generate_inventory_buy_purchase(games, customer, staff_id, games_buy_prices,
     # getting staff_ids in each day
     staff_id['staff_ids'].iloc[staff_id[(staff_id['date'] == "2023-06-11")].index[0]]
 
-    staff_id.loc[:,'staff_ids'] = staff_id.loc[:,'staff_ids'].apply(lambda x: literal_eval(x))
+    #staff_id.loc[:,'staff_ids'] = staff_id.loc[:,'staff_ids'].apply(lambda x: literal_eval(x))
     staff_id_ = []
     # choosing randomly who will sell the item
     for date in df['date']:

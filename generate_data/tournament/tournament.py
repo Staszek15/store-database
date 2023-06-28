@@ -22,7 +22,9 @@ def generate_dates():
 
 def first_element_to_integer(list_):
     my_list = list_
-    return(my_list[-2])
+    print('type of list',type(my_list),'list content',my_list,'len list',len(my_list))
+
+    return(my_list[-1])
 
 
 def generate_tournament_staff(date,schedule):
