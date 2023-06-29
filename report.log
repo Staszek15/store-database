@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.6.29)  29 JUN 2023 22:03
+=======
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2021.3.28)  29 JUN 2023 20:55
+>>>>>>> 965d58a18387c3c74de0a2c6b2fe1a20650a57e2
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -497,6 +501,7 @@ Underfull \hbox (badness 3965) in paragraph at lines 112--115
  []
 
 
+<<<<<<< HEAD
 LaTeX Warning: Reference `tab:tab2' on page 2 undefined on input line 120.
 
 [2 <./report_files/figure-latex/unnamed-chunk-4-1.pdf>]
@@ -506,17 +511,42 @@ File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 Overfull \hbox (6051.0342pt too wide) in paragraph at lines 127--127
 []\T1/lmtt/m/n/12 ## 'query2 = connection.execute(text(\'\'\'SELECT g.name AS game, CONCAT(c.first_name, \' \', c.last_name) AS player, score\nFROM (\n  SELECT t.game_id, customer_id, SUM(score) AS score,\n        ROW_NUMBER() OVER (PARTITION BY game_id ORDER BY SUM(score) DESC) AS row_num\n        FROM tournament_results AS results\n        LEFT JOIN tournament AS t USING(tournament_id)\n        GROUP BY game_id, customer_id\n) AS subquery\nLEFT JOIN customers AS c USING(customer_id)\nLEFT JOIN games AS g USING(game_id)\nWHERE row_num IN (1,2,3,4,5,6,7,8,9,10)\nORDER BY game_id, score DESC\'\'\'))\ndf2 = pd.DataFrame(query2.fetchall(), columns = query2.keys())\n\nlatex_table = tabulate(df2, headers=\'keys\', tablefmt=\'latex\')\ncaption = \'Ranking top 10 zawodników dla ka»dej gry turniejowej.\'\nlabel = \'tab:tab2\'\nlatex_table_with_caption_and_label = f"\\begin{{table}}[h]\n\\centering\n\\caption{{{caption}}}\\label{{{label}}}\n{latex_table}\\end{{table}}"\n\nwith open(\'df2.tex\', \'w\') as f:\n    f.write(latex_table_with_caption_and_label)\nf.close()'[] 
+=======
+LaTeX Warning: Reference `tab:tab2' on page 2 undefined on input line 118.
+
+[2 <./report_files/figure-latex/unnamed-chunk-4-1.pdf>]
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 123.
+(c:/texlive/2020/texmf-dist/tex/latex/lm/t1lmtt.fd
+File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for TS1+lmtt on input line 125.
+(c:/texlive/2020/texmf-dist/tex/latex/lm/ts1lmtt.fd
+File: ts1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+Overfull \hbox (6051.0342pt too wide) in paragraph at lines 125--125
+[]\T1/lmtt/m/n/12 ## \TS1/lmtt/m/n/12 '\T1/lmtt/m/n/12 query2 = connection.execute(text(\\TS1/lmtt/m/n/12 '\T1/lmtt/m/n/12 \\TS1/lmtt/m/n/12 '\T1/lmtt/m/n/12 \\TS1/lmtt/m/n/12 '\T1/lmtt/m/n/12 SELECT g.name AS game, CONCAT(c.first_name, \\TS1/lmtt/m/n/12 ' \T1/lmtt/m/n/12 \\TS1/lmtt/m/n/12 '\T1/lmtt/m/n/12 , c.last_name) AS player, score\nFROM (\n  SELECT t.game_id, customer_id, SUM(score) AS score,\n        ROW_NUMBER() OVER (PARTITION BY game_id ORDER BY SUM(score) DESC) AS row_num\n        FROM tournament_results AS results\n        LEFT JOIN tournament AS t USING(tournament_id)\n        GROUP BY game_id, customer_id\n) AS subquery\nLEFT JOIN customers AS c USING(customer_id)\nLEFT JOIN games AS g USING(game_id)\nWHERE row_num IN (1,2,3,4,5,6,7,8,9,10)\nORDER BY game_id, score DESC\\TS1/lmtt/m/n/12 '\T1/lmtt/m/n/12 \\TS1/lmtt/m/n/12 '\T1/lmtt/m/n/12 \\TS1/lmtt/m/n/12 '\T1/lmtt/m/n/12 ))\ndf2 = pd.DataFrame(query2.fetchall(), columns = query2.keys())\n\nlatex_table = tabulate(df2, headers=\\TS1/lmtt/m/n/12 '\T1/lmtt/m/n/12 keys\\TS1/lmtt/m/n/12 '\T1/lmtt/m/n/12 , tablefmt=\\TS1/lmtt/m/n/12 '\T1/lmtt/m/n/12 latex\\TS1/lmtt/m/n/12 '\T1/lmtt/m/n/12 )\ncaption = \\TS1/lmtt/m/n/12 '\T1/lmtt/m/n/12 Ranking top 10 zawodników dla ka»dej gry turniejowej.\\TS1/lmtt/m/n/12 '\T1/lmtt/m/n/12 \nlabel = \\TS1/lmtt/m/n/12 '\T1/lmtt/m/n/12 tab:tab2\\TS1/lmtt/m/n/12 '\T1/lmtt/m/n/12 \nlatex_table_with_caption_and_label = f"\\begin{{table}}[h]\n\\centering\n\\caption{{{caption}}}\\label{{{label}}}\n{latex_table}\\end{{table}}"\n\nwith open(\\TS1/lmtt/m/n/12 '\T1/lmtt/m/n/12 df2.tex\\TS1/lmtt/m/n/12 '\T1/lmtt/m/n/12 , \\TS1/lmtt/m/n/12 '\T1/lmtt/m/n/12 w\\TS1/lmtt/m/n/12 '\T1/lmtt/m/n/12 ) as f:\n    f.write(latex_table_with_caption_and_label)\nf.close()\TS1/lmtt/m/n/12 '[] 
+>>>>>>> 965d58a18387c3c74de0a2c6b2fe1a20650a57e2
  []
 
 (./df3.tex
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
+<<<<<<< HEAD
 ) [3] [4] (./report.aux)
  ***********
 LaTeX2e <2023-06-01> patch level 1
 L3 programming layer <2023-06-16>
  ***********
+=======
+)
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 141.
+[3] [4]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 141.
+(./report.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 141.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 141.
+>>>>>>> 965d58a18387c3c74de0a2c6b2fe1a20650a57e2
 
 LaTeX Warning: There were undefined references.
 
@@ -524,6 +554,7 @@ Package rerunfilecheck Info: File `report.out' has not changed.
 (rerunfilecheck)             Checksum: FC6EBA394E3947214F378344BFE60A85;672.
  ) 
 Here is how much of TeX's memory you used:
+<<<<<<< HEAD
  13100 strings out of 477648
  209434 string characters out of 5828515
  1866763 words of memory out of 5000000
@@ -533,6 +564,17 @@ Here is how much of TeX's memory you used:
  75i,8n,79p,1071b,475s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/Users/mateu/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx12.pfb><c:/Users/mateu/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr12.pfb><c:/Users/mateu/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr17.pfb><c:/Users/mateu/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtt12.pfb>
 Output written on report.pdf (4 pages, 138928 bytes).
+=======
+ 14972 strings out of 480608
+ 224283 string characters out of 5907536
+ 525737 words of memory out of 5000000
+ 30585 multiletter control sequences out of 15000+600000
+ 576653 words of font info for 76 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 41i,8n,42p,1071b,355s stack positions out of 5000i,500n,10000p,200000b,80000s
+{c:/texlive/2020/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}{c:/texlive/2020/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}<c:/texlive/2020/texmf-dist/fonts/type1/public/lm/lmbx12.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/lm/lmr12.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/lm/lmr17.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/lm/lmtt12.pfb>
+Output written on report.pdf (4 pages, 133721 bytes).
+>>>>>>> 965d58a18387c3c74de0a2c6b2fe1a20650a57e2
 PDF statistics:
  129 PDF objects out of 1000 (max. 8388607)
  70 compressed objects within 1 object stream
