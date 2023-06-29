@@ -48,7 +48,12 @@ FROM (
 ) AS subquery
 LEFT JOIN customers AS c USING(customer_id)
 LEFT JOIN games AS g USING(game_id)
-WHERE row_num IN (1,2,3,4,5,6,7,8,9,10)
+WHERE row_num IN (1,2,3,4,5,6,7,8,9,10) 
+AND game_id IN (
+    SELECT game_id FROM (
+      SELECT game_id FROM tournament ORDER BY RAND() LIMIT 3
+    ) AS random_games
+  )
 ORDER BY game_id, score DESC;
 
 
@@ -113,10 +118,17 @@ THEN  'reszta'
 END AS region
 FROM customers as c
 LEFT JOIN addresses AS a USING(address_id))
-
+  /*
 SELECT region, COUNT(*)
 FROM tab
-GROUP BY region;
+GROUP BY region;*/
+
+SELECT *
+FROM tab WHERE region IS NULL;
+
+SELECT *
+FROM customers
+WHERE customer_id = 433;
 
 
 /* Klienci, którzy wydali najmniej i najwięcej hajsu łącznie w sklepie
