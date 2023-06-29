@@ -15,6 +15,9 @@ def connect():
     df_tournament = pd.read_csv('tournament/tournament.csv'),
     df_tournament_results = pd.read_csv('tournament_results/tournament_results.csv')
 
+
+
+
     url_object = URL.create(
         "mysql+pymysql",
         username="team21",
@@ -27,6 +30,19 @@ def connect():
     conn = engine.connect()
     #conn.execute(text("SET FOREIGN_KEY_CHECKS=0"))
     
+
+    fd = open('create_tables.sql', 'r')
+    sqlFile = fd.read()
+    fd.close()
+    sqlCode = sqlFile.split(';')
+
+    print("creating tables")
+
+    for command in sqlCode:
+        conn.execute(text(command))
+        print("one done")
+            
+    print("tables created")        
 
 
     #conn.execute(text('TRUNCATE TABLE games'))
@@ -63,20 +79,9 @@ def connect():
     #conn.execute(text("SET FOREIGN_KEY_CHECKS=1"))
 
 
-
-
     conn.close()
 
-if __name__ == "__main__":
-        insert(pd.read_csv('game/game.csv'),
-           pd.read_csv('inventory_rent/inventory_rent.csv'),
-           pd.read_csv('inventory_buy_purchase/inventory_buy.csv'),
 
-           pd.read_csv('address/address.csv'),
-           pd.read_csv('customer_rental/customers.csv'),
-           
-           pd.read_csv('inventory_buy_purchase/purchases.csv'),
-           pd.read_csv('customer_rental/rentals.csv'),
-           pd.read_csv('staff/staff.csv'),
-           pd.read_csv('tournament/tournament.csv'),
-           pd.read_csv('tournament_results/tournament_results.csv'))
+
+if __name__ == "__main__":
+        connect()
