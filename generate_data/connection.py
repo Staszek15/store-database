@@ -4,16 +4,17 @@ import pandas as pd
 
 def connect():
 
-    df_games = pd.read_csv('game/game.csv'),
-    df_inventory_rent = pd.read_csv('inventory_rent/inventory_rent.csv'),
-    df_inventory_buy = pd.read_csv('inventory_buy_purchase/inventory_buy.csv'),
+    df_games = pd.read_csv('game/game.csv')
+    df_inventory_rent = pd.read_csv('inventory_rent/inventory_rent.csv')
+    df_inventory_buy = pd.read_csv('inventory_buy_purchase/inventory_buy.csv')
     df_addresses = pd.read_csv('address/address.csv')
-    df_customers = pd.read_csv('customer_rental/customers.csv'),
-    df_purchases = pd.read_csv('inventory_buy_purchase/purchases.csv'),
-    df_rentals = pd.read_csv('customer_rental/rentals.csv'),
-    df_staff = pd.read_csv('staff/staff.csv'),
-    df_tournament = pd.read_csv('tournament/tournament.csv'),
+    df_customers = pd.read_csv('customer_rental/customers.csv')
+    df_purchases = pd.read_csv('inventory_buy_purchase/purchases.csv')
+    df_rentals = pd.read_csv('customer_rental/rentals.csv')
+    df_staff = pd.read_csv('staff/staff.csv')
+    df_tournament = pd.read_csv('tournament/tournament.csv')
     df_tournament_results = pd.read_csv('tournament_results/tournament_results.csv')
+
 
     url_object = URL.create(
         "mysql+pymysql",
@@ -25,8 +26,18 @@ def connect():
 
     engine = create_engine(url_object)
     conn = engine.connect()
-    #conn.execute(text("SET FOREIGN_KEY_CHECKS=0"))
+    conn.execute(text("SET FOREIGN_KEY_CHECKS=0"))
+    conn.execute(text("DROP TABLE IF EXISTS addresses, customers, games, inventory_buy, inventory_rent, purchases, rentals, staff, tournament, tournament_results"))
     
+
+    fd = open('create_tables.sql', 'r')
+    sqlFile = fd.read()
+    fd.close()
+    sqlCode = sqlFile.split(';')[:-1]   # without last one because last query also ends with ';' so last element is empty
+
+
+    for command in sqlCode:
+        conn.execute(text(command))    
 
 
     #conn.execute(text('TRUNCATE TABLE games'))
@@ -60,23 +71,11 @@ def connect():
     df_tournament_results.to_sql("tournament_results", con=engine, if_exists="replace", index=False)
 
     
-    #conn.execute(text("SET FOREIGN_KEY_CHECKS=1"))
 
-
-
-
+    conn.execute(text("SET FOREIGN_KEY_CHECKS=1"))
     conn.close()
 
-if __name__ == "__main__":
-        insert(pd.read_csv('game/game.csv'),
-           pd.read_csv('inventory_rent/inventory_rent.csv'),
-           pd.read_csv('inventory_buy_purchase/inventory_buy.csv'),
 
-           pd.read_csv('address/address.csv'),
-           pd.read_csv('customer_rental/customers.csv'),
-           
-           pd.read_csv('inventory_buy_purchase/purchases.csv'),
-           pd.read_csv('customer_rental/rentals.csv'),
-           pd.read_csv('staff/staff.csv'),
-           pd.read_csv('tournament/tournament.csv'),
-           pd.read_csv('tournament_results/tournament_results.csv'))
+
+if __name__ == "__main__":
+        connect()

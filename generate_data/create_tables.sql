@@ -1,6 +1,6 @@
 
         
-CREATE OD REPLACE TABLE addresses
+CREATE OR REPLACE TABLE addresses
 (
   address_id  INT         NOT NULL,
   address     VARCHAR(50) NOT NULL,
@@ -10,7 +10,7 @@ CREATE OD REPLACE TABLE addresses
   PRIMARY KEY (address_id)
 );
 
-CREATE OD REPLACE TABLE customers
+CREATE OR REPLACE TABLE customers
 (
   customer_id       INT         NOT NULL AUTO_INCREMENT,
   first_name        VARCHAR(50) NOT NULL,
@@ -27,7 +27,7 @@ CREATE OD REPLACE TABLE customers
 ALTER TABLE customers
   ADD CONSTRAINT UQ_customer_id UNIQUE (customer_id);
 
-CREATE OD REPLACE TABLE games
+CREATE OR REPLACE TABLE games
 (
   game_id             INT          NOT NULL AUTO_INCREMENT,
   name                VARCHAR(100) NOT NULL,
@@ -49,7 +49,7 @@ ALTER TABLE games
 ALTER TABLE games
   ADD CONSTRAINT UQ_name UNIQUE (name);
 
-CREATE OD REPLACE TABLE inventory_buy
+CREATE OR REPLACE TABLE inventory_buy
 (
   inventory_id INT     NOT NULL AUTO_INCREMENT,
   game_id      INT     NOT NULL,
@@ -61,7 +61,7 @@ CREATE OD REPLACE TABLE inventory_buy
 ALTER TABLE inventory_buy
   ADD CONSTRAINT UQ_inventory_id UNIQUE (inventory_id);
 
-CREATE OD REPLACE TABLE inventory_rent
+CREATE OR REPLACE TABLE inventory_rent
 (
   inventory_id INT     NOT NULL AUTO_INCREMENT,
   game_id      INT     NOT NULL,
@@ -73,7 +73,7 @@ CREATE OD REPLACE TABLE inventory_rent
 ALTER TABLE inventory_rent
   ADD CONSTRAINT UQ_inventory_id UNIQUE (inventory_id);
 
-CREATE OD REPLACE TABLE purchases
+CREATE OR REPLACE TABLE purchases
 (
   purchase_id  INT  NOT NULL AUTO_INCREMENT,
   inventory_id INT  NOT NULL,
@@ -86,7 +86,7 @@ CREATE OD REPLACE TABLE purchases
 ALTER TABLE purchases
   ADD CONSTRAINT UQ_purchase_id UNIQUE (purchase_id);
 
-CREATE OD REPLACE TABLE rentals
+CREATE OR REPLACE TABLE rentals
 (
   rental_id    INT   NOT NULL AUTO_INCREMENT,
   inventory_id INT   NOT NULL,
@@ -103,7 +103,7 @@ CREATE OD REPLACE TABLE rentals
 ALTER TABLE rentals
   ADD CONSTRAINT UQ_rental_id UNIQUE (rental_id);
 
-CREATE OD REPLACE TABLE staff
+CREATE OR REPLACE TABLE staff
 (
   staff_id   INT         NOT NULL AUTO_INCREMENT,
   first_name VARCHAR(50) NOT NULL,
@@ -120,7 +120,7 @@ CREATE OD REPLACE TABLE staff
 ALTER TABLE staff
   ADD CONSTRAINT UQ_staff_id UNIQUE (staff_id);
 
-CREATE OD REPLACE TABLE tournament
+CREATE OR REPLACE TABLE tournament
 (
   tournament_id        INT          NOT NULL AUTO_INCREMENT,
   name                 VARCHAR(100) NOT NULL,
@@ -138,83 +138,10 @@ ALTER TABLE tournament
 ALTER TABLE tournament
   ADD CONSTRAINT UQ_name UNIQUE (name);
 
-CREATE OD REPLACE TABLE tournament_results
+CREATE OR REPLACE TABLE tournament_results
 (
   tournament_id INT NOT NULL,
   customer_id   INT NOT NULL,
   place         INT NOT NULL,
   score         INT NOT NULL
 );
-
-ALTER TABLE inventory_rent
-  ADD CONSTRAINT FK_games_TO_inventory_rent
-    FOREIGN KEY (game_id)
-    REFERENCES games (game_id);
-
-ALTER TABLE tournament
-  ADD CONSTRAINT FK_games_TO_tournament
-    FOREIGN KEY (game_id)
-    REFERENCES games (game_id);
-
-ALTER TABLE tournament
-  ADD CONSTRAINT FK_staff_TO_tournament
-    FOREIGN KEY (staff_id)
-    REFERENCES staff (staff_id);
-
-ALTER TABLE inventory_buy
-  ADD CONSTRAINT FK_games_TO_inventory_buy
-    FOREIGN KEY (game_id)
-    REFERENCES games (game_id);
-
-ALTER TABLE rentals
-  ADD CONSTRAINT FK_staff_TO_rentals
-    FOREIGN KEY (staff_id)
-    REFERENCES staff (staff_id);
-
-ALTER TABLE rentals
-  ADD CONSTRAINT FK_inventory_rent_TO_rentals
-    FOREIGN KEY (inventory_id)
-    REFERENCES inventory_rent (inventory_id);
-
-ALTER TABLE rentals
-  ADD CONSTRAINT FK_customers_TO_rentals
-    FOREIGN KEY (customer_id)
-    REFERENCES customers (customer_id);
-
-ALTER TABLE staff
-  ADD CONSTRAINT FK_addresses_TO_staff
-    FOREIGN KEY (address_id)
-    REFERENCES addresses (address_id);
-
-ALTER TABLE customers
-  ADD CONSTRAINT FK_addresses_TO_customers
-    FOREIGN KEY (address_id)
-    REFERENCES addresses (address_id);
-
-ALTER TABLE tournament_results
-  ADD CONSTRAINT FK_tournament_TO_tournament_results
-    FOREIGN KEY (tournament_id)
-    REFERENCES tournament (tournament_id);
-
-ALTER TABLE tournament_results
-  ADD CONSTRAINT FK_customers_TO_tournament_results
-    FOREIGN KEY (customer_id)
-    REFERENCES customers (customer_id);
-
-ALTER TABLE purchases
-  ADD CONSTRAINT FK_inventory_buy_TO_purchases
-    FOREIGN KEY (inventory_id)
-    REFERENCES inventory_buy (inventory_id);
-
-ALTER TABLE purchases
-  ADD CONSTRAINT FK_customers_TO_purchases
-    FOREIGN KEY (customer_id)
-    REFERENCES customers (customer_id);
-
-ALTER TABLE purchases
-  ADD CONSTRAINT FK_staff_TO_purchases
-    FOREIGN KEY (staff_id)
-    REFERENCES staff (staff_id);
-
-        
-      
