@@ -3,16 +3,16 @@
 ### Wiktoria Fimińska, Julia Grzegorzewska, Mateusz Stasiak, Karolina Wypych
 
 # Introduction
-These days in the fast changing world we are inundated with big volumes of data. It provokes higher demand for people specialized in processing it. A majority of companies and institutions couldn't work without efficient database systems what makes an ability of creating and maintaining them a valuable skill. To gain it we developed a project during databases course at Wroclaw University of Science and Technology.
+These days in the fast changing world we are inundated with big volumes of data. It provokes higher demand for people specialized in processing it. A vast majority of companies and institutions could not work without efficient databases systems what makes an ability of creating and maintaining them a valuable skill. To gain it we developed a project during databases course at Wroclaw University of Science and Technology.
 
 <p align="center">
   <img src="https://github.com/Staszek15/store-database/blob/main/logo_store.png" width=80%>
 </p>
 
 # Description
-The project is generally consisted of generating a database and a report for the Gamestalgia - a fictional board games rental store. Gamestalgia is an unique place. Not only does it rent games but also sells them and organize tournaments whose participants are rewarded by VIP status and hence extra discounts on rentals and purchases.
+The project generally consists of generating a database and a report for Gamestalgia - a fictional board games rental store. Gamestalgia is a unique place. Not only does it rent games but also sells them and organize tournaments. Moreover, the most active customers are rewarded with a VIP status and hence extra discounts on rentals and purchases.
 
-# Technologies
+# Technologiesare 
 * python
 * mysql
 * rmd
