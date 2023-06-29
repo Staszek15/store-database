@@ -1,10 +1,6 @@
 
-SET foreign_key_checks = 0;
---DROP TABLE IF EXISTS games;
         
-
-        
-CREATE OR REPLACE TABLE addresses
+CREATE OD REPLACE TABLE addresses
 (
   address_id  INT         NOT NULL,
   address     VARCHAR(50) NOT NULL,
@@ -14,7 +10,7 @@ CREATE OR REPLACE TABLE addresses
   PRIMARY KEY (address_id)
 );
 
-CREATE OR REPLACE TABLE customers
+CREATE OD REPLACE TABLE customers
 (
   customer_id       INT         NOT NULL AUTO_INCREMENT,
   first_name        VARCHAR(50) NOT NULL,
@@ -31,7 +27,7 @@ CREATE OR REPLACE TABLE customers
 ALTER TABLE customers
   ADD CONSTRAINT UQ_customer_id UNIQUE (customer_id);
 
-CREATE OR REPLACE TABLE games
+CREATE OD REPLACE TABLE games
 (
   game_id             INT          NOT NULL AUTO_INCREMENT,
   name                VARCHAR(100) NOT NULL,
@@ -53,7 +49,7 @@ ALTER TABLE games
 ALTER TABLE games
   ADD CONSTRAINT UQ_name UNIQUE (name);
 
-CREATE OR REPLACE TABLE inventory_buy
+CREATE OD REPLACE TABLE inventory_buy
 (
   inventory_id INT     NOT NULL AUTO_INCREMENT,
   game_id      INT     NOT NULL,
@@ -65,7 +61,7 @@ CREATE OR REPLACE TABLE inventory_buy
 ALTER TABLE inventory_buy
   ADD CONSTRAINT UQ_inventory_id UNIQUE (inventory_id);
 
-CREATE OR REPLACE TABLE inventory_rent
+CREATE OD REPLACE TABLE inventory_rent
 (
   inventory_id INT     NOT NULL AUTO_INCREMENT,
   game_id      INT     NOT NULL,
@@ -77,7 +73,7 @@ CREATE OR REPLACE TABLE inventory_rent
 ALTER TABLE inventory_rent
   ADD CONSTRAINT UQ_inventory_id UNIQUE (inventory_id);
 
-CREATE OR REPLACE TABLE purchases
+CREATE OD REPLACE TABLE purchases
 (
   purchase_id  INT  NOT NULL AUTO_INCREMENT,
   inventory_id INT  NOT NULL,
@@ -90,7 +86,7 @@ CREATE OR REPLACE TABLE purchases
 ALTER TABLE purchases
   ADD CONSTRAINT UQ_purchase_id UNIQUE (purchase_id);
 
-CREATE OR REPLACE TABLE rentals
+CREATE OD REPLACE TABLE rentals
 (
   rental_id    INT   NOT NULL AUTO_INCREMENT,
   inventory_id INT   NOT NULL,
@@ -107,7 +103,7 @@ CREATE OR REPLACE TABLE rentals
 ALTER TABLE rentals
   ADD CONSTRAINT UQ_rental_id UNIQUE (rental_id);
 
-CREATE OR REPLACE TABLE staff
+CREATE OD REPLACE TABLE staff
 (
   staff_id   INT         NOT NULL AUTO_INCREMENT,
   first_name VARCHAR(50) NOT NULL,
@@ -124,7 +120,7 @@ CREATE OR REPLACE TABLE staff
 ALTER TABLE staff
   ADD CONSTRAINT UQ_staff_id UNIQUE (staff_id);
 
-CREATE OR REPLACE TABLE tournament
+CREATE OD REPLACE TABLE tournament
 (
   tournament_id        INT          NOT NULL AUTO_INCREMENT,
   name                 VARCHAR(100) NOT NULL,
@@ -142,7 +138,7 @@ ALTER TABLE tournament
 ALTER TABLE tournament
   ADD CONSTRAINT UQ_name UNIQUE (name);
 
-CREATE OR REPLACE TABLE tournament_results
+CREATE OD REPLACE TABLE tournament_results
 (
   tournament_id INT NOT NULL,
   customer_id   INT NOT NULL,
@@ -221,8 +217,4 @@ ALTER TABLE purchases
     REFERENCES staff (staff_id);
 
         
-      
-
-SET foreign_key_checks = 1;
-
       
