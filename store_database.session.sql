@@ -16,12 +16,28 @@ ORDER BY date, sales_number DESC;
 /*Sporządź analizę top 10 zawodników turniejowych w zależności
  od gry. */
 
-SELECT t.game_id, results.tournament_id, COUNT()
+SELECT t.game_id, customer_id, SUM(score)
 FROM tournament_results AS results
 LEFT JOIN tournament AS t USING(tournament_id)
-GROUP BY t.game_id, results.customer_id;
+GROUP BY game_id, customer_id
+ORDER BY game_id, score DESC;
 
-SELECT *
-FROM tournament_results;
+SELECT game_id, customer_id, score
+FROM (
+  SELECT t.game_id, customer_id, SUM(score) AS score,
+        ROW_NUMBER() OVER (PARTITION BY game_id ORDER BY SUM(score) DESC) AS row_num
+        FROM tournament_results AS results
+        LEFT JOIN tournament AS t USING(tournament_id)
+        GROUP BY game_id, customer_id
+) AS subquery
+WHERE row_num = 1;
+
+SELECT t.game_id, customer_id, SUM(score) AS score,
+        ROW_NUMBER() OVER (PARTITION BY game_id ORDER BY SUM(score) DESC) AS score
+        FROM tournament_results AS results
+        LEFT JOIN tournament AS t USING(tournament_id)
+        GROUP BY game_id, customer_id;
+
+
 
 

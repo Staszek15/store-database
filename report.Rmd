@@ -1,0 +1,93 @@
+---
+title: "Gamestalgia - raport"
+author: Wiktoria FImińska 262283, Julia Grzegorzewska 262314, Karolina Wypych, Mateusz
+  Stasiak
+date: "`r Sys.Date()`"
+output: 
+    pdf_document:
+    number_sections: true
+    toc: true
+    toc_depth: 3
+toc-title : "Spis treści"
+header-includes:
+  - \usepackage{graphicx}
+  - \usepackage{float}
+  - \usepackage{bbm}
+  - \floatplacement{figure}{H}
+  - \usepackage{titling}
+  - \pretitle{\begin{center}
+    \includegraphics{logo_pwr.png}\LARGE\\}
+  - \posttitle{\end{center}}
+---
+
+\newpage
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE)
+```
+ 
+```{r}
+library('reticulate')
+use_python("C:\\Users\\julek\\AppData\\Local\\Programs\\Python\\Python39")
+```
+
+```{python}
+import numpy as np
+from sqlalchemy import create_engine, inspect, URL, text
+import pandas as pd
+import pymysql
+```
+
+```{python}
+url_object = URL.create(
+  "mysql+pymysql",
+  username = "team21",
+  password = "te@mzi",
+  host = "giniewicz.it",
+  database = "team21"
+)
+
+engine = create_engine(url_object)
+connection = engine.connect()
+```
+
+```{python}
+query1 = connection.execute(text('''SELECT date, s.first_name, s.last_name, sales_number
+FROM (
+  SELECT DATE_FORMAT(date,'%Y-%m') AS date, staff_id, COUNT(purchase_id) AS sales_number,
+         ROW_NUMBER() OVER (PARTITION BY DATE_FORMAT(date,'%Y-%m') ORDER BY COUNT(purchase_id) DESC) AS row_num
+  FROM purchases
+  GROUP BY DATE_FORMAT(date,'%Y-%m'), staff_id
+) AS subquery
+LEFT JOIN staff AS s USING(staff_id)
+WHERE row_num = 1
+ORDER BY date, sales_number DESC'''))
+df1 = pd.DataFrame(query1.fetchall(), columns = query1.keys())
+print(df1)
+```
+```{python}
+query2 = connection.execute(text('''SELECT game_id, c.first_name, c.last_name, score
+FROM (
+  SELECT t.game_id, customer_id, SUM(score) AS score,
+        ROW_NUMBER() OVER (PARTITION BY game_id ORDER BY SUM(score) DESC) AS row_num
+        FROM tournament_results AS results
+        LEFT JOIN tournament AS t USING(tournament_id)
+        GROUP BY game_id, customer_id
+) AS subquery
+LEFT JOIN customers AS c USING(customer_id)
+WHERE row_num = 1'''))
+df2 = pd.DataFrame(query2.fetchall(), columns = query2.keys())
+print(df2)
+```
+```{python}
+query3 = connection.execute(text('''SELECT g.name AS game, ROUND(SUM(r.price + r.fine),2) AS rental_income
+FROM rentals AS r
+LEFT JOIN inventory_rent AS i USING(inventory_id)
+LEFT JOIN games AS g ON i.game_id = g.game_id
+GROUP BY g.name
+ORDER BY rental_income DESC
+LIMIT 3'''))
+df3 = pd.DataFrame(query3.fetchall(), columns = query3.keys())
+print(df3)
+```
