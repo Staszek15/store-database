@@ -2,7 +2,7 @@ from sqlalchemy import create_engine, text, URL
 from unidecode import unidecode
 import pandas as pd
 
-def insert(df_games, df_addresses, df_customers, df_inventory_buy, df_inventory_rent, df_purchases, df_rentals, df_staff, df_tournament, df_tournament_results):
+def insert(df_games, df_inventory_rent, df_inventory_buy, df_addresses, df_customers, df_purchases, df_rentals, df_staff, df_tournament, df_tournament_results):
 
     url_object = URL.create(
         "mysql+pymysql",
@@ -14,7 +14,7 @@ def insert(df_games, df_addresses, df_customers, df_inventory_buy, df_inventory_
 
     engine = create_engine(url_object)
     conn = engine.connect()
-    conn.execute(text("SET FOREIGN_KEY_CHECKS=0"))
+    #conn.execute(text("SET FOREIGN_KEY_CHECKS=0"))
     
 
 
@@ -49,7 +49,7 @@ def insert(df_games, df_addresses, df_customers, df_inventory_buy, df_inventory_
     df_tournament_results.to_sql("tournament_results", con=engine, if_exists="replace", index=False)
 
     
-    conn.execute(text("SET FOREIGN_KEY_CHECKS=1"))
+    #conn.execute(text("SET FOREIGN_KEY_CHECKS=1"))
 
 
 

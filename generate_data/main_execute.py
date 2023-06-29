@@ -43,10 +43,8 @@ if __name__ == "__main__":
     insert(pd.read_csv('game/game.csv'),
            pd.read_csv('inventory_rent/inventory_rent.csv'),
            pd.read_csv('inventory_buy_purchase/inventory_buy.csv'),
-           
            pd.read_csv('address/address.csv'),
            pd.read_csv('customer_rental/customers.csv'),
-           
            pd.read_csv('inventory_buy_purchase/purchases.csv'),
            pd.read_csv('customer_rental/rentals.csv'),
            pd.read_csv('staff/staff.csv'),
