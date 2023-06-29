@@ -1,7 +1,7 @@
 import pandas as pd
 import numpy as np
 from datetime import datetime, timedelta
-
+import random
 
 def generate_dates():
     
@@ -70,28 +70,47 @@ def generate_total_players(table_game,game_id, inventory_rent):
     return(merged_availability.total_players_number)
 
 
-def generate_tournament(games, inv_rent, schedule):
-    name = ['Cosmic Entertainment', 'Battlefields of Bonaparte', 'The Kobolds', 'Gaming Evening', 'Hamst&Furious', 'Indian Camp', 'Vietgame',
+def generate_tournament(games, staff, inv_rent, schedule):
+    n = 30
+    name_base = ['Cosmic Entertainment', 'Battlefields of Bonaparte', 'The Kobolds', 'Gaming Evening', 'Hamst&Furious', 'Indian Camp', 'Vietgame',
              'Thematic Contest', 'Spring Tournament', 'Star Trek Day']
-    n = len(name)
+    game_id_base = [9, 27, 33, 33, 7, 5, 36, 6, 1, 19]
+
+    pairs = list(zip(game_id_base,name_base))
+    tournaments_pairs = random.choices(pairs,k=n)
+    name = list(map(lambda x: x[1], tournaments_pairs))
+    game_id = list(map(lambda x: x[0], tournaments_pairs))
+
     tournament_id = np.arange(1, n+1)
-    game_id = [9, 27, 33, 33, 7, 5, 36, 6, 1, 19]
     date = np.sort([generate_dates() for _ in range(n)])
     
     team_players_number = [games.max_players_in_team[games.game_id == i].values[0] for i in game_id]
-    total_players_number = generate_total_players(games, game_id, inv_rent)
+    total_players_number = generate_total_players(games, game_id, inv_rent)       
+    
+    staff_id = generate_tournament_staff(date,schedule)
 
-    staff_id = generate_tournament_staff(date, schedule)
+    
+    name_dictionary = {}
+    new_names = []
+    
+    for tour_name in name:
+        if tour_name in name_dictionary:
+            name_dictionary[tour_name] += 1
+            new_names.append(f'{tour_name} {name_dictionary[tour_name]}')
+        else:
+            name_dictionary[tour_name] = 1
+            new_names.append(f'{tour_name} {name_dictionary[tour_name]}')
 
     tournaments_dict = {'tournament_id' : tournament_id,
-                        'name' : name,
-                        'date' : date,
-                        'game_id' : game_id,
-                        'team_players_number' : team_players_number,
-                        'staff_id' : staff_id,
-                        'total_players_number' : total_players_number
+                    'name' : new_names,
+                    'date' : date,
+                    'game_id' : game_id,
+                    'team_players_number' : team_players_number,
+                    'staff_id' : staff_id,
+                    'total_players_number' : total_players_number
                     }
+    
+    
     return pd.DataFrame(tournaments_dict)
-
 
 
