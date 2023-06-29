@@ -1,8 +1,6 @@
 ---
 title: "Gamestalgia - raport"
-author: 
-- Wiktoria Fimińska 262283, Julia Grzegorzewska 262314, 
-- Karolina Wypych 262333, Mateusz Stasiak 262339
+author: "Wiktoria Fimińska 262283, Julia Grzegorzewska 262314, Karolina Wypych, Mateusz Stasiak"
 date: "`r Sys.Date()`"
 fontsize: 12pt
 output: 
@@ -10,7 +8,6 @@ output:
     number_sections: true
     toc: true
     fig_caption: true
-toc-title : "Spis treści"
 header-includes:
     - \usepackage{graphicx}
     - \usepackage{amsmath}
@@ -34,11 +31,10 @@ knitr::opts_chunk$set(echo = FALSE, warning = FALSE)
 
 \section{Wprowadzenie}
 Niniejszy raport jest analizą danych zawartych w bazie sklepu "Gamestalgia". 
-\section{Rozkład danych}
 
 ```{r}
 library('reticulate')
-use_python("C:\\Users\\mateu\\AppData\\Local\\Programs\\Python\\Python39")
+use_python("C:\\Users\\julek\\AppData\\Local\\Programs\\Python\\Python39")
 ```
 
 ```{python}
@@ -62,6 +58,38 @@ url_object = URL.create(
 
 engine = create_engine(url_object)
 connection = engine.connect()
+```
+\section{Rozkład danych}
+```{python, echo = FALSE}
+
+def generate_registrations_plot():
+    sns.set(rc={'figure.figsize':(12,7)})
+
+    customers = pd.read_csv('generate_data/customer_rental/customers.csv')
+    registrations = pd.to_datetime(customers['registration_date'], format = '%Y-%m-%d')
+
+    sns.histplot(registrations, stat="count", kde=True, bins=50)
+    plt.xlabel("date")
+    plt.xticks(rotation=45)
+    plt.ylabel("number of registrations")
+    plt.tight_layout()
+    plt.show()
+
+def generate_rentals_plot():
+    sns.set(rc={'figure.figsize':(12,7)})
+
+    df_rentals = pd.read_csv('generate_data/customer_rental/rentals.csv')
+    dates = pd.to_datetime(df_rentals['rental_date'], format = '%Y-%m-%d')
+
+    sns.histplot(dates, stat="count", kde=True, bins=50)
+    plt.xlabel("date")
+    plt.xticks(rotation=45)
+    plt.ylabel("number of rentals")
+    plt.tight_layout()
+    plt.show()
+
+generate_registrations_plot()
+generate_rentals_plot()
 ```
 
 \section{Pracownik miesiąca}
@@ -89,15 +117,14 @@ with open('df1.tex', 'w') as f:
     f.write(latex_table_with_caption_and_label)
 f.close()
 
-#NIE WIDAC LEGENDY I XTICKS DO POPRAWY, NWM CZY LEPIEJ TABELA CZY WYKRES
-sns.set(rc={'figure.figsize':(12,7)})
+#NIE WIDAC LEGENDY, NWM CZY LEPIEJ TABELA CZY WYKRES
 ax = sns.barplot(x='date', y='sales_number', data=df1, hue='employee', dodge=False)
 #plt.title("football players with 80+ rating")
+#plt.xticks(rotation=90)
 #plt.ylabel("overall rating")
 plt.legend(bbox_to_anchor=(1.05, 1), loc='upper left', borderaxespad=0)
 plt.xticks(rotation=45)
 #plt.bar(df1['date'], df1['sales_number'])
-plt.tight_layout()
 plt.show()
 ```
 
@@ -148,8 +175,13 @@ FROM (
 ) AS subquery
 LEFT JOIN customers AS c USING(customer_id)
 LEFT JOIN games AS g USING(game_id)
-WHERE row_num IN (1,2,3,4,5,6,7,8,9,10)
-ORDER BY game_id, score DESC'''))
+WHERE row_num IN (1,2,3,4,5,6,7,8,9,10) 
+AND game_id IN (
+    SELECT game_id FROM (
+      SELECT game_id FROM tournament ORDER BY RAND() LIMIT 3
+    ) AS random_games
+  )
+ORDER BY game_id, score DESC;'''))
 df2 = pd.DataFrame(query2.fetchall(), columns = query2.keys())
 
 latex_table = tabulate(df2, headers='keys', tablefmt='latex')
@@ -167,34 +199,89 @@ f.close()"""
 <!-- #\end{center} -->
 
 \section{Najbardziej dochodowe gry}
-Trzy najbardziej dochodowe gry z wypożyczeń to gry, dla których łączna suma podstawowych opłat oraz kar naliczanych za opóźnienie w oddaniu jest największa.
+Trzy najbardziej dochodowe gry z wypożyczeń to gry, dla których łączna suma podstawowych opłat oraz kar naliczanych za opóźnienie w oddaniu po odjęciu kosztu zakupu gry przez sklep jest największa. Podobnie w przypadku sprzedaży, jednak w tym przypadku nie występuje kara pieniężna.
 
 ```{python, echo = FALSE, results = 'hide'}
-query3 = connection.execute(text('''SELECT g.name AS game, ROUND(SUM(r.price + r.fine),2) AS rental_income
+rentals = connection.execute(text('''SELECT g.name AS game, ROUND(SUM(r.price + r.fine) - 0.7*r.price*15 ,2) AS rental_income, COUNT(r.rental_id) AS num_of_rentals
                                   FROM rentals AS r
                                   LEFT JOIN inventory_rent AS i USING(inventory_id)
                                   LEFT JOIN games AS g ON i.game_id = g.game_id
                                   GROUP BY g.name
                                   ORDER BY rental_income DESC
                                   LIMIT 3'''))
-                                  
-df3 = pd.DataFrame(query3.fetchall(), columns = query3.keys())
+purchases = connection.execute(text('''SELECT g.name AS game, ROUND(SUM(i.price - 0.7*i.price), 2) AS buy_income, COUNT(p.purchase_id) AS num_of_purchases
+                                      FROM purchases AS p
+                                      LEFT JOIN inventory_buy AS i USING(inventory_id)
+                                      LEFT JOIN games AS g ON i.game_id = g.game_id
+                                      GROUP BY g.name
+                                      ORDER BY buy_income DESC
+                                      LIMIT 3'''))
+                                                                        
+rentals_df = pd.DataFrame(rentals.fetchall(), columns = rentals.keys())
+purchases_df = pd.DataFrame(purchases.fetchall(), columns=purchases.keys())
 
-latex_table = tabulate(df3, headers='keys', tablefmt='latex')
+latex_table = tabulate(rentals_df, headers='keys', tablefmt='latex')
 caption = 'Najbardziej dochodowe gry z wypożyczeń.'
-label = 'tab:tab3'
+label = 'tab:rentals'
 latex_table_with_caption_and_label = f"\\begin{{table}}[h]\n\\centering\n\\caption{{{caption}}}\\label{{{label}}}\n{latex_table}\\end{{table}}"
 
-with open('df3.tex', 'w') as f:
+with open('rentals_df.tex', 'w') as f:
     f.write(latex_table_with_caption_and_label)
 f.close()
 
-first_pl = df3['game'][0]
-sec_pl = df3['game'][1]
-third_pl = df3['game'][2]
+latex_table = tabulate(purchases_df, headers='keys', tablefmt='latex')
+caption = 'Najbardziej dochodowe gry ze sprzedaży.'
+label = 'tab:purchases'
+latex_table_with_caption_and_label = f"\\begin{{table}}[h]\n\\centering\n\\caption{{{caption}}}\\label{{{label}}}\n{latex_table}\\end{{table}}"
+
+with open('purchases_df.tex', 'w') as f:
+    f.write(latex_table_with_caption_and_label)
+f.close()
+
+first_r = rentals_df['game'][0]
+sec_r = rentals_df['game'][1]
+third_r = rentals_df['game'][2]
+
+first_p = purchases_df['game'][0]
+sec_p = purchases_df['game'][1]
+third_p = purchases_df['game'][2]
 ```
-Przez cały okres funkcjonowania sklepu największy zysk z wypożyczeń przyniosły gry `r py$first_pl`, `r py$sec_pl` oraz `r py$third_pl` (tabela \ref{tab:tab3}).
+Przez cały okres funkcjonowania sklepu największy zysk z wypożyczeń przyniosły gry "`r py$first_r`", "`r py$sec_r`" oraz "`r py$third_r`" (tabela \ref{tab:rentals}), natomiast ze sprzedaży gry "`r py$first_p`", "`r py$sec_p`" oraz "`r py$third_p`" (tabela \ref{tab:purchases})
 
 \begin{center}
-\input{df3.tex}
+\input{rentals_df.tex}
 \end{center}
+
+\begin{center}
+\input{purchases_df.tex}
+\end{center}
+
+\section{Miejsce zamieszkania klientów}
+```{python}
+miasta = connection.execute(text('''WITH tab AS (
+                                 SELECT c.customer_id,
+                                        a.city, 
+                                        CASE WHEN a.city = 'Wrocław' THEN 'Wrocław'
+                                             WHEN (a.city <> 'Wrocław') AND
+                                                  (a.postal_code REGEXP '^50|^51|^52|^53|^54|^55|^56|^57|^58|^59|^67-2') THEN 'Dolnośląskie'
+                                             WHEN (a.city <> 'Wrocław') AND
+                                                  (a.postal_code NOT REGEXP '^50|^51|^52|^53|^54|^55|^56|^57|^58|^59|^67-2') THEN  'reszta'
+                                        END AS region
+                                 FROM customers as c
+                                 LEFT JOIN addresses AS a USING(address_id))
+                                
+                                 SELECT region, COUNT(*)/600 * 100 AS cust_num
+                                 FROM tab
+                                 GROUP BY region'''))
+miasta_df = pd.DataFrame(miasta.fetchall(), columns = miasta.keys())
+
+wro = round(float(miasta_df.loc[miasta_df['region'] == 'Wrocław', 'cust_num'].values[0]),2)
+doln =round(float(miasta_df.loc[miasta_df['region'] == 'Dolnośląskie', 'cust_num'].values[0]),2)
+reszta = round(float(miasta_df.loc[miasta_df['region'] == 'reszta', 'cust_num'].values[0]),2)
+```
+
+Wśród zarejestrowanych w sklepie klientów `r py$wro`% z nich mieszka w mieście, w którym zlokalizowany jest sklep, czyli we Wrocławiu, `r py$doln`% w województwie dolnośląskim, ale poza jego stolicą a `r py$reszta`% w innych częściach Polski.
+
+```{python}
+connection.close()
+```

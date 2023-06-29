@@ -172,7 +172,7 @@ def generate_customers_rentals(n, start_date, end_date, days_number, games_rent_
         'birthdate': [fake.date_of_birth(minimum_age=13, maximum_age=80) for _ in range(n)],
         'email': ["s" for _ in range(n)],
         'phone': [random.randint(100000000, 999999999) for _ in range(n)],
-        'address_id': random.sample([i for i in range(n)], n),
+        'address_id': random.sample([i+1 for i in range(n)], n),
         'registration_date': registration_dates
     }
 
