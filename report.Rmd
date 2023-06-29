@@ -1,32 +1,40 @@
 ---
 title: "Gamestalgia - raport"
-author: Wiktoria FImińska 262283, Julia Grzegorzewska 262314, Karolina Wypych, Mateusz
-  Stasiak
+author: "Wiktoria Fimińska 262283, Julia Grzegorzewska 262314, Karolina Wypych, Mateusz Stasiak"
 date: "`r Sys.Date()`"
+fontsize: 12pt
 output: 
-    pdf_document:
+  pdf_document:
     number_sections: true
     toc: true
-    toc_depth: 3
-toc-title : "Spis treści"
+    fig_caption: true
 header-includes:
-  - \usepackage{graphicx}
-  - \usepackage{float}
-  - \usepackage{bbm}
-  - \floatplacement{figure}{H}
-  - \usepackage{titling}
-  - \pretitle{\begin{center}
-    \includegraphics{logo_pwr.png}\LARGE\\}
-  - \posttitle{\end{center}}
+    - \usepackage{polski}
+    - \usepackage[utf8]{inputenc}
+    - \usepackage{graphicx}
+    - \usepackage{amsmath}
+    - \usepackage{multirow}
+    - \usepackage{float}
+    - \usepackage{enumitem}
+    - \usepackage{mathtools}
+    - \usepackage{hyperref}
+    - \usepackage{url}
+    - \mathtoolsset{showonlyrefs}
+    - \usepackage{caption}
+    - \usepackage{geometry}
+    
 ---
-
 \newpage
----
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE, warning = FALSE)
 ```
- 
+
+
+\section{Wprowadzenie}
+Niniejszy raport jest analizą danych zawartych w bazie sklepu "Gamestalgia". 
+\section{Rozkład danych}
+
 ```{r}
 library('reticulate')
 use_python("C:\\Users\\julek\\AppData\\Local\\Programs\\Python\\Python39")
@@ -37,6 +45,7 @@ import numpy as np
 from sqlalchemy import create_engine, inspect, URL, text
 import pandas as pd
 import pymysql
+from tabulate import tabulate
 ```
 
 ```{python}
@@ -52,22 +61,66 @@ engine = create_engine(url_object)
 connection = engine.connect()
 ```
 
-```{python}
-query1 = connection.execute(text('''SELECT date, s.first_name, s.last_name, sales_number
-FROM (
-  SELECT DATE_FORMAT(date,'%Y-%m') AS date, staff_id, COUNT(purchase_id) AS sales_number,
-         ROW_NUMBER() OVER (PARTITION BY DATE_FORMAT(date,'%Y-%m') ORDER BY COUNT(purchase_id) DESC) AS row_num
-  FROM purchases
-  GROUP BY DATE_FORMAT(date,'%Y-%m'), staff_id
-) AS subquery
-LEFT JOIN staff AS s USING(staff_id)
-WHERE row_num = 1
-ORDER BY date, sales_number DESC'''))
+\section{Pracownik miesiąca}
+Dla każdego miesiąca działania sklepu wygenerowano tabele z pracownikiem danego miesiąca, na podstawie liczby sprzedanych przez niego gier (tabela \ref{tab:tab1}).
+
+```{python, echo = FALSE, results = 'hide'}
+query1 = connection.execute(text('''SELECT date, CONCAT(s.first_name, ' ', s.last_name) AS employee, sales_number
+                                FROM (
+                                  SELECT DATE_FORMAT(date,'%Y-%m') AS date, staff_id, COUNT(purchase_id) AS sales_number,
+                                         ROW_NUMBER() OVER (PARTITION BY DATE_FORMAT(date,'%Y-%m') ORDER BY COUNT(purchase_id) DESC) AS row_num
+                                  FROM purchases
+                                  GROUP BY DATE_FORMAT(date,'%Y-%m'), staff_id
+                                ) AS subquery
+                                LEFT JOIN staff AS s USING(staff_id)
+                                WHERE row_num = 1
+                                ORDER BY date, sales_number DESC'''))
 df1 = pd.DataFrame(query1.fetchall(), columns = query1.keys())
-print(df1)
+
+latex_table = tabulate(df1, headers='keys', tablefmt='latex')
+caption = 'Pracownicy miesiąca w okresie działalności sklepu.'
+label = 'tab:tab1'
+latex_table_with_caption_and_label = f"\\begin{{table}}[h]\n\\centering\n\\caption{{{caption}}}\\label{{{label}}}\n{latex_table}\\end{{table}}"
+
+with open('df1.tex', 'w') as f:
+    f.write(latex_table_with_caption_and_label)
+f.close()
 ```
 ```{python}
-query2 = connection.execute(text('''SELECT game_id, c.first_name, c.last_name, score
+query1_1 = connection.execute(text('''WITH tab AS (
+                              SELECT date, CONCAT(s.first_name, ' ', s.last_name) AS employee, sales_number
+                            FROM (
+                              SELECT DATE_FORMAT(date,'%Y-%m') AS date, staff_id, COUNT(purchase_id) AS sales_number,
+                                     ROW_NUMBER() OVER (PARTITION BY DATE_FORMAT(date,'%Y-%m') ORDER BY COUNT(purchase_id) DESC) AS row_num
+                              FROM purchases
+                              GROUP BY DATE_FORMAT(date,'%Y-%m'), staff_id
+                            ) AS subquery
+                            LEFT JOIN staff AS s USING(staff_id)
+                            WHERE row_num = 1
+                            ORDER BY date, sales_number DESC
+                            )
+                            
+                            SELECT employee, COUNT(*) AS how_often
+                            FROM tab
+                            GROUP BY employee
+                            ORDER BY COUNT(*) DESC
+                            LIMIT 1'''))
+df1_1 = pd.DataFrame(query1_1.fetchall(), columns=query1_1.keys())
+best_employee = df1_1['employee'][0]
+how_often = df1_1['how_often'][0]
+```
+
+Pracownikiem, który został w tym okresie najczęściej wyróżniony jest (KTO - best_employee), który tytuł ten otrzymał (ILE - how_often) razy. 
+
+\begin{center}
+\input{df1.tex}
+\end{center}
+
+\section{Top 10 zawodników}
+Ranking zawodników został wyznaczony dla każdej gry turniejowej na podstawie sumy zdobytych przez zawodnika punktów. (tabela \ref{tab:tab2}) Przyznawane one były w zależności od ilości uczestników w danym turnieju według schematu, że pierwsze miejsce otrzymuje liczbę punktów równą liczbie wszystkich uczestników pomniejszoną o jeden, a każde kolejne miejsce o jeden punkt mniej. 
+
+```{python, echo = FALSE}
+"""query2 = connection.execute(text('''SELECT g.name AS game, CONCAT(c.first_name, ' ', c.last_name) AS player, score
 FROM (
   SELECT t.game_id, customer_id, SUM(score) AS score,
         ROW_NUMBER() OVER (PARTITION BY game_id ORDER BY SUM(score) DESC) AS row_num
@@ -76,18 +129,48 @@ FROM (
         GROUP BY game_id, customer_id
 ) AS subquery
 LEFT JOIN customers AS c USING(customer_id)
-WHERE row_num = 1'''))
+LEFT JOIN games AS g USING(game_id)
+WHERE row_num IN (1,2,3,4,5,6,7,8,9,10)
+ORDER BY game_id, score DESC'''))
 df2 = pd.DataFrame(query2.fetchall(), columns = query2.keys())
-print(df2)
+
+latex_table = tabulate(df2, headers='keys', tablefmt='latex')
+caption = 'Ranking top 10 zawodników dla każdej gry turniejowej.'
+label = 'tab:tab2'
+latex_table_with_caption_and_label = f"\\begin{{table}}[h]\n\\centering\n\\caption{{{caption}}}\\label{{{label}}}\n{latex_table}\\end{{table}}"
+
+with open('df2.tex', 'w') as f:
+    f.write(latex_table_with_caption_and_label)
+f.close()"""
 ```
-```{python}
+
+<!-- #\begin{center} -->
+<!-- #\input{df2.tex} -->
+<!-- #\end{center} -->
+
+\section{Najbardziej dochodowe gry}
+Najbardziej dochodowa gra z wypożyczeń (tabela \ref{tab:tab3})
+
+```{python, echo = FALSE}
 query3 = connection.execute(text('''SELECT g.name AS game, ROUND(SUM(r.price + r.fine),2) AS rental_income
-FROM rentals AS r
-LEFT JOIN inventory_rent AS i USING(inventory_id)
-LEFT JOIN games AS g ON i.game_id = g.game_id
-GROUP BY g.name
-ORDER BY rental_income DESC
-LIMIT 3'''))
+                                  FROM rentals AS r
+                                  LEFT JOIN inventory_rent AS i USING(inventory_id)
+                                  LEFT JOIN games AS g ON i.game_id = g.game_id
+                                  GROUP BY g.name
+                                  ORDER BY rental_income DESC
+                                  LIMIT 3'''))
+                                  
 df3 = pd.DataFrame(query3.fetchall(), columns = query3.keys())
-print(df3)
+
+latex_table = tabulate(df3, headers='keys', tablefmt='latex')
+caption = 'Najbardziej dochodowe gry z wypożyczeń.'
+label = 'tab:tab3'
+latex_table_with_caption_and_label = f"\\begin{{table}}[h]\n\\centering\n\\caption{{{caption}}}\\label{{{label}}}\n{latex_table}\\end{{table}}"
+
+with open('df3.tex', 'w') as f:
+    f.write(latex_table_with_caption_and_label)
+f.close()
 ```
+\begin{center}
+\input{df3.tex}
+\end{center}
