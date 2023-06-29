@@ -28,7 +28,7 @@ def connect():
 
     engine = create_engine(url_object)
     conn = engine.connect()
-    #conn.execute(text("SET FOREIGN_KEY_CHECKS=0"))
+    conn.execute(text("SET FOREIGN_KEY_CHECKS=0"))
     
 
     fd = open('create_tables.sql', 'r')
@@ -39,6 +39,7 @@ def connect():
     print("creating tables")
 
     for command in sqlCode:
+        print(text(command))
         conn.execute(text(command))
         print("one done")
             
