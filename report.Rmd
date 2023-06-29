@@ -9,8 +9,6 @@ output:
     toc: true
     fig_caption: true
 header-includes:
-    - \usepackage{polski}
-    - \usepackage[utf8]{inputenc}
     - \usepackage{graphicx}
     - \usepackage{amsmath}
     - \usepackage{multirow}
@@ -46,6 +44,8 @@ from sqlalchemy import create_engine, inspect, URL, text
 import pandas as pd
 import pymysql
 from tabulate import tabulate
+import matplotlib.pyplot as plt
+import seaborn as sns
 ```
 
 ```{python}
@@ -85,7 +85,22 @@ latex_table_with_caption_and_label = f"\\begin{{table}}[h]\n\\centering\n\\capti
 with open('df1.tex', 'w') as f:
     f.write(latex_table_with_caption_and_label)
 f.close()
+
+#NIE WIDAC LEGENDY I XTICKS DO POPRAWY, NWM CZY LEPIEJ TABELA CZY WYKRES
+ax = sns.barplot(x='date', y='sales_number', data=df1, hue='employee', dodge=False)
+#plt.title("football players with 80+ rating")
+#plt.xticks(rotation=90)
+#plt.ylabel("overall rating")
+plt.legend(bbox_to_anchor=(1.05, 1), loc='upper left', borderaxespad=0)
+plt.xticks(rotation=45)
+#plt.bar(df1['date'], df1['sales_number'])
+plt.show()
 ```
+
+\begin{center}
+\input{df1.tex}
+\end{center}
+
 ```{python}
 query1_1 = connection.execute(text('''WITH tab AS (
                               SELECT date, CONCAT(s.first_name, ' ', s.last_name) AS employee, sales_number
@@ -112,9 +127,7 @@ how_often = df1_1['how_often'][0]
 
 Pracownikiem, który został w tym okresie najczęściej wyróżniony jest (KTO - best_employee), który tytuł ten otrzymał (ILE - how_often) razy. 
 
-\begin{center}
-\input{df1.tex}
-\end{center}
+
 
 \section{Top 10 zawodników}
 Ranking zawodników został wyznaczony dla każdej gry turniejowej na podstawie sumy zdobytych przez zawodnika punktów. (tabela \ref{tab:tab2}) Przyznawane one były w zależności od ilości uczestników w danym turnieju według schematu, że pierwsze miejsce otrzymuje liczbę punktów równą liczbie wszystkich uczestników pomniejszoną o jeden, a każde kolejne miejsce o jeden punkt mniej. 
