@@ -2,7 +2,18 @@ from sqlalchemy import create_engine, text, URL
 from unidecode import unidecode
 import pandas as pd
 
-def insert(df_games, df_inventory_rent, df_inventory_buy, df_addresses, df_customers, df_purchases, df_rentals, df_staff, df_tournament, df_tournament_results):
+def connect():
+
+    df_games = pd.read_csv('game/game.csv'),
+    df_inventory_rent = pd.read_csv('inventory_rent/inventory_rent.csv'),
+    df_inventory_buy = pd.read_csv('inventory_buy_purchase/inventory_buy.csv'),
+    df_addresses = pd.read_csv('address/address.csv')
+    df_customers = pd.read_csv('customer_rental/customers.csv'),
+    df_purchases = pd.read_csv('inventory_buy_purchase/purchases.csv'),
+    df_rentals = pd.read_csv('customer_rental/rentals.csv'),
+    df_staff = pd.read_csv('staff/staff.csv'),
+    df_tournament = pd.read_csv('tournament/tournament.csv'),
+    df_tournament_results = pd.read_csv('tournament_results/tournament_results.csv')
 
     url_object = URL.create(
         "mysql+pymysql",
@@ -19,7 +30,7 @@ def insert(df_games, df_inventory_rent, df_inventory_buy, df_addresses, df_custo
 
 
     #conn.execute(text('TRUNCATE TABLE games'))
-    df_games.to_sql("games", con=engine, if_exists="replace", index=False)
+    df_games.to_sql("games", con=engine, if_exists="replace", index=False, )
 
     #conn.execute(text('TRUNCATE TABLE addresses'))
     df_addresses.to_sql("addresses", con=engine, if_exists="replace", index=False)
