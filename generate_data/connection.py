@@ -15,6 +15,9 @@ def connect():
     df_tournament = pd.read_csv('tournament/tournament.csv'),
     df_tournament_results = pd.read_csv('tournament_results/tournament_results.csv')
 
+    print(type(df_games))
+    print(df_games)
+
 
 
 
@@ -29,21 +32,18 @@ def connect():
     engine = create_engine(url_object)
     conn = engine.connect()
     conn.execute(text("SET FOREIGN_KEY_CHECKS=0"))
+    conn.execute(text("DROP TABLE IF EXISTS addresses, customers, games, inventory_buy, inventory_rent, purchases, rentals, staff, tournament, tournament_results"))
     
 
     fd = open('create_tables.sql', 'r')
     sqlFile = fd.read()
     fd.close()
-    sqlCode = sqlFile.split(';')
+    sqlCode = sqlFile.split(';')[:-1]   # without last one because last query also ends with ';' so last element is empty
 
-    print("creating tables")
 
     for command in sqlCode:
         print(text(command))
-        conn.execute(text(command))
-        print("one done")
-            
-    print("tables created")        
+        conn.execute(text(command))            
 
 
     #conn.execute(text('TRUNCATE TABLE games'))
