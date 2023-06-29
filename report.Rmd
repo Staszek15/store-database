@@ -1,8 +1,6 @@
 ---
 title: "Gamestalgia - raport"
-author: 
-- Wiktoria Fimińska 262283, Julia Grzegorzewska 262314, 
-- Karolina Wypych 262333, Mateusz Stasiak 262339
+author: "Wiktoria Fimińska 262283, Julia Grzegorzewska 262314, Karolina Wypych, Mateusz Stasiak"
 date: "`r Sys.Date()`"
 fontsize: 12pt
 output: 
@@ -10,7 +8,6 @@ output:
     number_sections: true
     toc: true
     fig_caption: true
-toc-title : "Spis treści"
 header-includes:
     - \usepackage{graphicx}
     - \usepackage{amsmath}
@@ -37,7 +34,7 @@ Niniejszy raport jest analizą danych zawartych w bazie sklepu "Gamestalgia".
 
 ```{r}
 library('reticulate')
-use_python("C:\\Users\\mateu\\AppData\\Local\\Programs\\Python\\Python39")
+use_python("C:\\Users\\julek\\AppData\\Local\\Programs\\Python\\Python39")
 ```
 
 ```{python}
@@ -120,19 +117,14 @@ with open('df1.tex', 'w') as f:
     f.write(latex_table_with_caption_and_label)
 f.close()
 
-<<<<<<< Updated upstream
-#NIE WIDAC LEGENDY I XTICKS DO POPRAWY, NWM CZY LEPIEJ TABELA CZY WYKRES
-sns.set(rc={'figure.figsize':(12,7)})
-=======
 #NIE WIDAC LEGENDY, NWM CZY LEPIEJ TABELA CZY WYKRES
->>>>>>> Stashed changes
 ax = sns.barplot(x='date', y='sales_number', data=df1, hue='employee', dodge=False)
 #plt.title("football players with 80+ rating")
+#plt.xticks(rotation=90)
 #plt.ylabel("overall rating")
 plt.legend(bbox_to_anchor=(1.05, 1), loc='upper left', borderaxespad=0)
 plt.xticks(rotation=45)
 #plt.bar(df1['date'], df1['sales_number'])
-plt.tight_layout()
 plt.show()
 ```
 
@@ -183,8 +175,13 @@ FROM (
 ) AS subquery
 LEFT JOIN customers AS c USING(customer_id)
 LEFT JOIN games AS g USING(game_id)
-WHERE row_num IN (1,2,3,4,5,6,7,8,9,10)
-ORDER BY game_id, score DESC'''))
+WHERE row_num IN (1,2,3,4,5,6,7,8,9,10) 
+AND game_id IN (
+    SELECT game_id FROM (
+      SELECT game_id FROM tournament ORDER BY RAND() LIMIT 3
+    ) AS random_games
+  )
+ORDER BY game_id, score DESC;'''))
 df2 = pd.DataFrame(query2.fetchall(), columns = query2.keys())
 
 latex_table = tabulate(df2, headers='keys', tablefmt='latex')
