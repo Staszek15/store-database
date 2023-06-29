@@ -102,7 +102,7 @@ plt.show()
 \end{center}
 
 ```{python}
-query1_1 = connection.execute(text('''WITH tab AS (
+query11 = connection.execute(text('''WITH tab AS (
                               SELECT date, CONCAT(s.first_name, ' ', s.last_name) AS employee, sales_number
                             FROM (
                               SELECT DATE_FORMAT(date,'%Y-%m') AS date, staff_id, COUNT(purchase_id) AS sales_number,
@@ -120,12 +120,13 @@ query1_1 = connection.execute(text('''WITH tab AS (
                             GROUP BY employee
                             ORDER BY COUNT(*) DESC
                             LIMIT 1'''))
-df1_1 = pd.DataFrame(query1_1.fetchall(), columns=query1_1.keys())
-best_employee = df1_1['employee'][0]
-how_often = df1_1['how_often'][0]
+df11 = pd.DataFrame(query11.fetchall(), columns=query11.keys())
+best_employee = df11['employee'][0]
+how_often = df11['how_often'][0]
 ```
 
-Pracownikiem, który został w tym okresie najczęściej wyróżniony jest (KTO - best_employee), który tytuł ten otrzymał (ILE - how_often) razy. 
+
+Pracownikiem, który został w tym okresie najczęściej wyróżniony jest `r py$best_employee` , który tytuł ten otrzymał łącznie `r py$how_often` razy. 
 
 
 
@@ -162,9 +163,9 @@ f.close()"""
 <!-- #\end{center} -->
 
 \section{Najbardziej dochodowe gry}
-Najbardziej dochodowa gra z wypożyczeń (tabela \ref{tab:tab3})
+Trzy najbardziej dochodowe gry z wypożyczeń to gry, dla których łączna suma podstawowych opłat oraz kar naliczanych za opóźnienie w oddaniu jest największa.
 
-```{python, echo = FALSE}
+```{python, echo = FALSE, results = 'hide'}
 query3 = connection.execute(text('''SELECT g.name AS game, ROUND(SUM(r.price + r.fine),2) AS rental_income
                                   FROM rentals AS r
                                   LEFT JOIN inventory_rent AS i USING(inventory_id)
@@ -183,7 +184,13 @@ latex_table_with_caption_and_label = f"\\begin{{table}}[h]\n\\centering\n\\capti
 with open('df3.tex', 'w') as f:
     f.write(latex_table_with_caption_and_label)
 f.close()
+
+first_pl = df3['game'][0]
+sec_pl = df3['game'][1]
+third_pl = df3['game'][2]
 ```
+Przez cały okres funkcjonowania sklepu największy zysk z wypożyczeń przyniosły gry `r py$first_pl`, `r py$sec_pl` oraz `r py$third_pl` (tabela \ref{tab:tab3}).
+
 \begin{center}
 \input{df3.tex}
 \end{center}
