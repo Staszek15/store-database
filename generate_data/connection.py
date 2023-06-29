@@ -4,21 +4,16 @@ import pandas as pd
 
 def connect():
 
-    df_games = pd.read_csv('game/game.csv'),
-    df_inventory_rent = pd.read_csv('inventory_rent/inventory_rent.csv'),
-    df_inventory_buy = pd.read_csv('inventory_buy_purchase/inventory_buy.csv'),
+    df_games = pd.read_csv('game/game.csv')
+    df_inventory_rent = pd.read_csv('inventory_rent/inventory_rent.csv')
+    df_inventory_buy = pd.read_csv('inventory_buy_purchase/inventory_buy.csv')
     df_addresses = pd.read_csv('address/address.csv')
-    df_customers = pd.read_csv('customer_rental/customers.csv'),
-    df_purchases = pd.read_csv('inventory_buy_purchase/purchases.csv'),
-    df_rentals = pd.read_csv('customer_rental/rentals.csv'),
-    df_staff = pd.read_csv('staff/staff.csv'),
-    df_tournament = pd.read_csv('tournament/tournament.csv'),
+    df_customers = pd.read_csv('customer_rental/customers.csv')
+    df_purchases = pd.read_csv('inventory_buy_purchase/purchases.csv')
+    df_rentals = pd.read_csv('customer_rental/rentals.csv')
+    df_staff = pd.read_csv('staff/staff.csv')
+    df_tournament = pd.read_csv('tournament/tournament.csv')
     df_tournament_results = pd.read_csv('tournament_results/tournament_results.csv')
-
-    print(type(df_games))
-    print(df_games)
-
-
 
 
     url_object = URL.create(
@@ -42,8 +37,7 @@ def connect():
 
 
     for command in sqlCode:
-        print(text(command))
-        conn.execute(text(command))            
+        conn.execute(text(command))    
 
 
     #conn.execute(text('TRUNCATE TABLE games'))
@@ -77,9 +71,8 @@ def connect():
     df_tournament_results.to_sql("tournament_results", con=engine, if_exists="replace", index=False)
 
     
-    #conn.execute(text("SET FOREIGN_KEY_CHECKS=1"))
 
-
+    conn.execute(text("SET FOREIGN_KEY_CHECKS=1"))
     conn.close()
 
 
