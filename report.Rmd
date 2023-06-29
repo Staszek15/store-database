@@ -1,6 +1,8 @@
 ---
 title: "Gamestalgia - raport"
-author: "Wiktoria Fimińska 262283, Julia Grzegorzewska 262314, Karolina Wypych, Mateusz Stasiak"
+author: 
+- Wiktoria Fimińska 262283, Julia Grzegorzewska 262314,
+- Karolina Wypych 262333, Mateusz Stasiak 262339
 date: "`r Sys.Date()`"
 fontsize: 12pt
 output: 
@@ -8,33 +10,32 @@ output:
     number_sections: true
     toc: true
     fig_caption: true
+toc-title : "Spis treści"
 header-includes:
-    - \usepackage{graphicx}
-    - \usepackage{amsmath}
-    - \usepackage{multirow}
-    - \usepackage{float}
-    - \usepackage{enumitem}
-    - \usepackage{mathtools}
-    - \usepackage{hyperref}
-    - \usepackage{url}
+    - \usepackage{graphicx, amsmath, multirow, float, enumitem, mathtools, hyperref}
+    - \usepackage{url, caption, geometry}
     - \mathtoolsset{showonlyrefs}
-    - \usepackage{caption}
-    - \usepackage{geometry}
-    
+    - \floatplacement{figure}{H}
+    - \usepackage{titling}
+    - \pretitle{\begin{center}
+      \includegraphics{logo_store.png}\Huge\\}
+    - \posttitle{\end{center}}
 ---
+
 \newpage
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE, warning = FALSE)
 ```
 
+\newpage
 
 \section{Wprowadzenie}
 Niniejszy raport jest analizą danych zawartych w bazie sklepu "Gamestalgia". 
 
 ```{r}
 library('reticulate')
-use_python("C:\\Users\\julek\\AppData\\Local\\Programs\\Python\\Python39")
+use_python("C:\\Users\\mateu\\AppData\\Local\\Programs\\Python\\Python39")
 ```
 
 ```{python}
