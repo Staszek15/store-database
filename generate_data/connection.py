@@ -17,6 +17,8 @@ def connect():
     df_tournament = pd.read_csv('tournament/tournaments.csv')
     df_tournament_results = pd.read_csv('tournament_results/tournament_results.csv')
 
+    print("csv loaded")
+
 
     url_object = URL.create(
         "mysql+pymysql",
@@ -28,9 +30,11 @@ def connect():
 
     engine = create_engine(url_object)
     conn = engine.connect()
+    print("connected")
     conn.execute(text("SET FOREIGN_KEY_CHECKS=0"))
     conn.execute(text("DROP TABLE IF EXISTS addresses, customers, games, inventory_buy, inventory_rent, purchases, rentals, staff, tournament, tournament_results"))
     
+    print("tables dropped")
 
     fd = open('create_tables.sql', 'r')
     sqlFile = fd.read()
@@ -75,7 +79,7 @@ def connect():
 
     
 
-    #conn.execute(text("SET FOREIGN_KEY_CHECKS=1"))
+    conn.execute(text("SET FOREIGN_KEY_CHECKS=1"))
     conn.close()
 
 
