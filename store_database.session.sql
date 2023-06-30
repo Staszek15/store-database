@@ -1,3 +1,22 @@
+/*Rozkład - liczba rejestracji w kazdym kolejnym miesiacu*/
+
+SELECT 
+  DATE_FORMAT(registration_date,'%Y-%m') AS registration_month, 
+  COUNT(*) AS num_of_registrations
+FROM customers
+GROUP BY registration_month;
+
+/*Liczba wypożyczeb w kazdym koeljnym miesiacu*/
+SELECT *
+FROM rentals;
+
+SELECT 
+  DATE_FORMAT(rental_date, '%Y-%m') AS rental_month,
+  COUNT(*) AS num_of_rentals
+FROM rentals
+GROUP BY rental_month;
+
+
 /*Wyznacz ranking na pracownika miesiąca dla każdego miesiąca,
  w którym sklep prowadził sprzedaż.*/
 
@@ -15,8 +34,8 @@ WHERE row_num = 1
 ORDER BY date, sales_number DESC;
 
 
-WITH tab AS (
-  SELECT date, CONCAT(s.first_name, ' ', s.last_name) AS employee, sales_number
+SELECT employee, COUNT(*) AS how_often
+FROM (SELECT date, CONCAT(s.first_name, ' ', s.last_name) AS employee, sales_number
 FROM (
   SELECT DATE_FORMAT(date,'%Y-%m') AS date, staff_id, COUNT(purchase_id) AS sales_number,
          ROW_NUMBER() OVER (PARTITION BY DATE_FORMAT(date,'%Y-%m') ORDER BY COUNT(purchase_id) DESC) AS row_num
@@ -25,17 +44,25 @@ FROM (
 ) AS subquery
 LEFT JOIN staff AS s USING(staff_id)
 WHERE row_num = 1
-ORDER BY date, sales_number DESC
-)
-
-SELECT employee, COUNT(*)
-FROM month_employee
+ORDER BY date, sales_number DESC) AS tab
 GROUP BY employee
 ORDER BY COUNT(*) DESC
-LIMIT 1
+LIMIT 1;
 
-SELECT employee, MAX(sales_number) AS max_sales
-FROM tab;
+SELECT *
+FROM games;
+
+SELECT (date), employee, MAX(sales_number) AS max_sales
+FROM (SELECT date, CONCAT(s.first_name, ' ', s.last_name) AS employee, sales_number
+FROM (
+  SELECT DATE_FORMAT(date,'%Y-%m') AS date, staff_id, COUNT(purchase_id) AS sales_number,
+         ROW_NUMBER() OVER (PARTITION BY DATE_FORMAT(date,'%Y-%m') ORDER BY COUNT(purchase_id) DESC) AS row_num
+  FROM purchases
+  GROUP BY DATE_FORMAT(date,'%Y-%m'), staff_id
+) AS subquery
+LEFT JOIN staff AS s USING(staff_id)
+WHERE row_num = 1
+ORDER BY date, sales_number DESC) AS subquery;
 
 
 
@@ -55,12 +82,40 @@ LEFT JOIN games AS g USING(game_id)
 WHERE row_num IN (1,2,3,4,5,6,7,8,9,10) 
 AND game_id IN (
     SELECT game_id FROM (
-      SELECT game_id FROM tournament ORDER BY RAND() LIMIT 3
+      SELECT DISTINCT game_id FROM tournament ORDER BY RAND() LIMIT 3
     ) AS random_games
   )
 ORDER BY game_id, score DESC;
 
+SELECT g.name AS game, CONCAT(c.first_name, ' ', c.last_name) AS player, score
+FROM (
+  SELECT t.game_id, customer_id, SUM(score) AS score
+  FROM tournament_results AS results
+  LEFT JOIN tournament AS t USING(tournament_id)
+  WHERE t.game_id IN (
+    SELECT DISTINCT game_id
+    FROM tournament
+    ORDER BY RAND()
+    LIMIT 3
+  )
+  GROUP BY game_id, customer_id
+) AS subquery
+LEFT JOIN customers AS c USING(customer_id)
+LEFT JOIN games AS g USING(game_id)
+ORDER BY game_id, score DESC;
 
+SELECT game_id FROM (
+      SELECT game_id FROM tournament ORDER BY RAND() LIMIT 3
+    ) AS random_games
+
+
+/*Gracz z największa liczba punktow za wszystkie turnieje*/
+SELECT CONCAT(c.first_name, ' ', c.last_name) AS player, SUM(r.score) AS total_score
+FROM tournament_results AS r
+LEFT JOIN customers AS c USING(customer_id)
+GROUP BY player
+ORDER BY total_score DESC
+LIMIT 1;
 
 /*Ustal, które gry przynoszą największy dochód ze sprzedaży, 
 a które z wypożyczeń.*/
@@ -153,3 +208,50 @@ LEFT JOIN rentals AS r ON c.customer_id = r.customer_id
 LEFT JOIN purchases AS p ON c.customer_id = p.customer_id
 WHERE r.r
 GROUP BY c.customer_id
+
+/*5. Jak często wypożyczane są gry droższe niż średnia cena w sklepie
+ a jak często tańsze. (np. liczba wypożyczen drozszych gier przez liczbe
+  gier drozszych jakie posiada sklep)*/
+
+
+WITH inv_ids AS (
+  SELECT 
+    CASE WHEN inventory_id IN (SELECT inventory_id 
+    FROM inventory_rent
+    WHERE price > (SELECT ROUND(AVG(price),2)
+    FROM inventory_rent)) THEN 'droższe'
+    CASE WHEN inventory_id IN (SELECT inventory_id 
+  FROM inventory_rent
+  WHERE price <= (SELECT ROUND(AVG(price),2)
+  FROM inventory_rent)) THEN 'tańsze'
+  END AS czy_drozsze
+  FROM rentals
+)
+
+SELECT 
+    CASE WHEN inventory_id IN (SELECT inventory_id 
+    FROM inventory_rent
+    WHERE price > (SELECT ROUND(AVG(price),2)
+    FROM inventory_rent)) THEN 'droższe'
+    CASE WHEN inventory_id IN (SELECT inventory_id 
+  FROM inventory_rent
+  WHERE price <= (SELECT ROUND(AVG(price),2)
+  FROM inventory_rent)) THEN 'tańsze'
+  END AS czy_drozsze
+  FROM rentals;
+SELECT COUNT(*)
+FROM inv_ids
+GROUP BY czy_drozsze;
+
+
+-- gry drozsze niz srednia cena
+SELECT inventory_id 
+FROM inventory_rent
+WHERE price > (SELECT ROUND(AVG(price),2)
+FROM inventory_rent);
+
+--gry tansze lub rowne sredniej cenie
+SELECT inventory_id 
+FROM inventory_rent
+WHERE price <= (SELECT ROUND(AVG(price),2)
+FROM inventory_rent);

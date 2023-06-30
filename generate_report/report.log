@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020/W32TeX) (preloaded format=xelatex 2021.3.28)  30 JUN 2023 20:11
+This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020/W32TeX) (preloaded format=xelatex 2021.3.28)  1 JUL 2023 00:01
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -676,8 +676,8 @@ LaTeX Info: Redefining \pageref on input line 83.
 LaTeX Info: Redefining \nameref on input line 83.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
-File: logo_store.png Graphic file (type bmp)
-<logo_store.png>
+File: ../images/logo_store.png Graphic file (type bmp)
+<../images/logo_store.png>
 LaTeX Font Info:    Trying to load font information for OML+lmm on input line 84.
 (c:/texlive/2020/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
@@ -707,19 +707,20 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 84.
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) (c:/texlive/2020/texmf-dist/tex/latex/microtype/mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
-) (./report.toc [1
-
-])
+) (./report.toc)
 \tf@toc=\write3
 \openout3 = `report.toc'.
 
-[2]
+[1
+
+]
 File: report_files/figure-latex/unnamed-chunk-4-1.pdf Graphic file (type pdf)
 <use report_files/figure-latex/unnamed-chunk-4-1.pdf>
-File: report_files/figure-latex/unnamed-chunk-4-2.pdf Graphic file (type pdf)
-<use report_files/figure-latex/unnamed-chunk-4-2.pdf>
-File: report_files/figure-latex/unnamed-chunk-5-5.pdf Graphic file (type pdf)
-<use report_files/figure-latex/unnamed-chunk-5-5.pdf>
+File: report_files/figure-latex/unnamed-chunk-5-3.pdf Graphic file (type pdf)
+<use report_files/figure-latex/unnamed-chunk-5-3.pdf>
+[2]
+File: report_files/figure-latex/unnamed-chunk-6-5.pdf Graphic file (type pdf)
+<use report_files/figure-latex/unnamed-chunk-6-5.pdf>
 Missing character: There is no Р in font [lmroman12-regular]:mapping=tex-text;!
 Missing character: There is no и in font [lmroman12-regular]:mapping=tex-text;!
 Missing character: There is no с in font [lmroman12-regular]:mapping=tex-text;!
@@ -732,7 +733,7 @@ Missing character: There is no с in font [lmroman12-regular]:mapping=tex-text;!
 Missing character: There is no Р in font [lmroman12-regular]:mapping=tex-text;!
 Missing character: There is no и in font [lmroman12-regular]:mapping=tex-text;!
 Missing character: There is no с in font [lmroman12-regular]:mapping=tex-text;!
-[3] (./df1.tex
+[3] (./tex_tables/df1.tex
 Missing character: There is no Т in font [lmroman12-regular]:mapping=tex-text;!
 Missing character: There is no а in font [lmroman12-regular]:mapping=tex-text;!
 Missing character: There is no б in font [lmroman12-regular]:mapping=tex-text;!
@@ -771,16 +772,16 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 )
-Underfull \hbox (badness 1215) in paragraph at lines 122--127
-\TU/lmr/m/n/12 , który/a tytuł ten otrzymał/a łącznie 20 razy. Najwięcej odnotowanych sprzedaży
+Underfull \hbox (badness 2600) in paragraph at lines 126--131
+\TU/lmr/m/n/12 który/a tytuł ten otrzymał/a łącznie 25 razy. Najwięcej odnotowanych sprzedaży
  []
 
 
-Underfull \hbox (badness 1132) in paragraph at lines 130--137
+Underfull \hbox (badness 1132) in paragraph at lines 134--141
 \TU/lmr/m/n/12 Ranking zawodników został wyznaczony dla trzech wybranych gier turniejowych na
  []
 
-(./df2.tex
+(./tex_tables/df2.tex
 Missing character: There is no Т in font [lmroman12-regular]:mapping=tex-text;!
 Missing character: There is no а in font [lmroman12-regular]:mapping=tex-text;!
 Missing character: There is no б in font [lmroman12-regular]:mapping=tex-text;!
@@ -809,103 +810,41 @@ Missing character: There is no л in font [lmroman12-regular]:mapping=tex-text;!
 Missing character: There is no и in font [lmroman12-regular]:mapping=tex-text;!
 Missing character: There is no ц in font [lmroman12-regular]:mapping=tex-text;!
 Missing character: There is no я in font [lmroman12-regular]:mapping=tex-text;!
-Missing character: There is no Т in font [lmroman12-regular]:mapping=tex-text;!
-Missing character: There is no а in font [lmroman12-regular]:mapping=tex-text;!
-Missing character: There is no б in font [lmroman12-regular]:mapping=tex-text;!
-Missing character: There is no л in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no О in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no х in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no р in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no і in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no м in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no С in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no к in font [lmroman12-regular]:mapping=tex-text;!
 Missing character: There is no и in font [lmroman12-regular]:mapping=tex-text;!
-Missing character: There is no ц in font [lmroman12-regular]:mapping=tex-text;!
-Missing character: There is no я in font [lmroman12-regular]:mapping=tex-text;!
-Missing character: There is no Т in font [lmroman12-regular]:mapping=tex-text;!
-Missing character: There is no а in font [lmroman12-regular]:mapping=tex-text;!
 Missing character: There is no б in font [lmroman12-regular]:mapping=tex-text;!
-Missing character: There is no л in font [lmroman12-regular]:mapping=tex-text;!
-Missing character: There is no и in font [lmroman12-regular]:mapping=tex-text;!
-Missing character: There is no ц in font [lmroman12-regular]:mapping=tex-text;!
-Missing character: There is no я in font [lmroman12-regular]:mapping=tex-text;!
-Missing character: There is no Т in font [lmroman12-regular]:mapping=tex-text;!
 Missing character: There is no а in font [lmroman12-regular]:mapping=tex-text;!
-Missing character: There is no б in font [lmroman12-regular]:mapping=tex-text;!
-Missing character: There is no л in font [lmroman12-regular]:mapping=tex-text;!
-Missing character: There is no и in font [lmroman12-regular]:mapping=tex-text;!
-Missing character: There is no ц in font [lmroman12-regular]:mapping=tex-text;!
-Missing character: There is no я in font [lmroman12-regular]:mapping=tex-text;!
-Missing character: There is no Т in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no І in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no г in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no н in font [lmroman12-regular]:mapping=tex-text;!
 Missing character: There is no а in font [lmroman12-regular]:mapping=tex-text;!
-Missing character: There is no б in font [lmroman12-regular]:mapping=tex-text;!
-Missing character: There is no л in font [lmroman12-regular]:mapping=tex-text;!
-Missing character: There is no и in font [lmroman12-regular]:mapping=tex-text;!
-Missing character: There is no ц in font [lmroman12-regular]:mapping=tex-text;!
-Missing character: There is no я in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no т in font [lmroman12-regular]:mapping=tex-text;!
 Missing character: There is no В in font [lmroman12-regular]:mapping=tex-text;!
-Missing character: There is no ʼ in font [lmroman12-regular]:mapping=tex-text;!
-Missing character: There is no я in font [lmroman12-regular]:mapping=tex-text;!
-Missing character: There is no ч in font [lmroman12-regular]:mapping=tex-text;!
 Missing character: There is no е in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no л in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no и in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no ч in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no к in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no о in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no Ф in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no е in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no о in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no ф in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no а in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no н in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no І in font [lmroman12-regular]:mapping=tex-text;!
 Missing character: There is no с in font [lmroman12-regular]:mapping=tex-text;!
-Missing character: There is no л in font [lmroman12-regular]:mapping=tex-text;!
 Missing character: There is no а in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no є in font [lmroman12-regular]:mapping=tex-text;!
 Missing character: There is no в in font [lmroman12-regular]:mapping=tex-text;!
-Missing character: There is no П in font [lmroman12-regular]:mapping=tex-text;!
-Missing character: There is no а in font [lmroman12-regular]:mapping=tex-text;!
-Missing character: There is no в in font [lmroman12-regular]:mapping=tex-text;!
-Missing character: There is no л in font [lmroman12-regular]:mapping=tex-text;!
 Missing character: There is no и in font [lmroman12-regular]:mapping=tex-text;!
 Missing character: There is no ч in font [lmroman12-regular]:mapping=tex-text;!
-Missing character: There is no е in font [lmroman12-regular]:mapping=tex-text;!
-Missing character: There is no н in font [lmroman12-regular]:mapping=tex-text;!
-Missing character: There is no к in font [lmroman12-regular]:mapping=tex-text;!
-Missing character: There is no о in font [lmroman12-regular]:mapping=tex-text;!
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-) (./df22.tex
-Missing character: There is no Т in font [lmroman12-regular]:mapping=tex-text;!
-Missing character: There is no а in font [lmroman12-regular]:mapping=tex-text;!
-Missing character: There is no б in font [lmroman12-regular]:mapping=tex-text;!
-Missing character: There is no л in font [lmroman12-regular]:mapping=tex-text;!
-Missing character: There is no и in font [lmroman12-regular]:mapping=tex-text;!
-Missing character: There is no ц in font [lmroman12-regular]:mapping=tex-text;!
-Missing character: There is no я in font [lmroman12-regular]:mapping=tex-text;!
-Missing character: There is no Т in font [lmroman12-regular]:mapping=tex-text;!
-Missing character: There is no а in font [lmroman12-regular]:mapping=tex-text;!
-Missing character: There is no б in font [lmroman12-regular]:mapping=tex-text;!
-Missing character: There is no л in font [lmroman12-regular]:mapping=tex-text;!
-Missing character: There is no и in font [lmroman12-regular]:mapping=tex-text;!
-Missing character: There is no ц in font [lmroman12-regular]:mapping=tex-text;!
-Missing character: There is no я in font [lmroman12-regular]:mapping=tex-text;!
-Missing character: There is no Т in font [lmroman12-regular]:mapping=tex-text;!
-Missing character: There is no а in font [lmroman12-regular]:mapping=tex-text;!
-Missing character: There is no б in font [lmroman12-regular]:mapping=tex-text;!
-Missing character: There is no л in font [lmroman12-regular]:mapping=tex-text;!
-Missing character: There is no и in font [lmroman12-regular]:mapping=tex-text;!
-Missing character: There is no ц in font [lmroman12-regular]:mapping=tex-text;!
-Missing character: There is no я in font [lmroman12-regular]:mapping=tex-text;!
-Missing character: There is no Т in font [lmroman12-regular]:mapping=tex-text;!
-Missing character: There is no а in font [lmroman12-regular]:mapping=tex-text;!
-Missing character: There is no б in font [lmroman12-regular]:mapping=tex-text;!
-Missing character: There is no л in font [lmroman12-regular]:mapping=tex-text;!
-Missing character: There is no и in font [lmroman12-regular]:mapping=tex-text;!
-Missing character: There is no ц in font [lmroman12-regular]:mapping=tex-text;!
-Missing character: There is no я in font [lmroman12-regular]:mapping=tex-text;!
-Missing character: There is no Е in font [lmroman12-regular]:mapping=tex-text;!
-Missing character: There is no д in font [lmroman12-regular]:mapping=tex-text;!
-Missing character: There is no у in font [lmroman12-regular]:mapping=tex-text;!
-Missing character: There is no а in font [lmroman12-regular]:mapping=tex-text;!
-Missing character: There is no р in font [lmroman12-regular]:mapping=tex-text;!
-Missing character: There is no д in font [lmroman12-regular]:mapping=tex-text;!
-Missing character: There is no Л in font [lmroman12-regular]:mapping=tex-text;!
-Missing character: There is no а in font [lmroman12-regular]:mapping=tex-text;!
-Missing character: There is no в in font [lmroman12-regular]:mapping=tex-text;!
-Missing character: There is no р in font [lmroman12-regular]:mapping=tex-text;!
-Missing character: There is no е in font [lmroman12-regular]:mapping=tex-text;!
-Missing character: There is no н in font [lmroman12-regular]:mapping=tex-text;!
-Missing character: There is no к in font [lmroman12-regular]:mapping=tex-text;!
-Missing character: There is no о in font [lmroman12-regular]:mapping=tex-text;!
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-) [4] (./rentals_df.tex
 Missing character: There is no Т in font [lmroman12-regular]:mapping=tex-text;!
 Missing character: There is no а in font [lmroman12-regular]:mapping=tex-text;!
 Missing character: There is no б in font [lmroman12-regular]:mapping=tex-text;!
@@ -937,7 +876,71 @@ Missing character: There is no я in font [lmroman12-regular]:mapping=tex-text;!
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-) (./purchases_df.tex
+) (./tex_tables/df22.tex
+Missing character: There is no Т in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no а in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no б in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no л in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no и in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no ц in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no я in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no Т in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no а in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no б in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no л in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no и in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no ц in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no я in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no Т in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no а in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no б in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no л in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no и in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no ц in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no я in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no Т in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no а in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no б in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no л in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no и in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no ц in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no я in font [lmroman12-regular]:mapping=tex-text;!
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+) [4] (./tex_tables/rentals_df.tex
+Missing character: There is no Т in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no а in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no б in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no л in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no и in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no ц in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no я in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no Т in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no а in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no б in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no л in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no и in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no ц in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no я in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no Т in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no а in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no б in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no л in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no и in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no ц in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no я in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no Т in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no а in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no б in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no л in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no и in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no ц in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no я in font [lmroman12-regular]:mapping=tex-text;!
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+) (./tex_tables/purchases_df.tex
 Missing character: There is no Т in font [lmroman12-regular]:mapping=tex-text;!
 Missing character: There is no а in font [lmroman12-regular]:mapping=tex-text;!
 Missing character: There is no б in font [lmroman12-regular]:mapping=tex-text;!
@@ -970,23 +973,70 @@ Missing character: There is no я in font [lmroman12-regular]:mapping=tex-text;!
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 )
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 179.
-[5] [6] [7]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 179.
+File: report_files/figure-latex/unnamed-chunk-11-7.pdf Graphic file (type pdf)
+<use report_files/figure-latex/unnamed-chunk-11-7.pdf>
+Missing character: There is no Р in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no и in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no с in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no Р in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no и in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no с in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no Р in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no и in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no с in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no Р in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no и in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no с in font [lmroman12-regular]:mapping=tex-text;!
+[5] (./tex_tables/age_rentdf.tex
+Missing character: There is no Т in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no а in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no б in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no л in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no и in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no ц in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no я in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no Т in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no а in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no б in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no л in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no и in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no ц in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no я in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no Т in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no а in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no б in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no л in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no и in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no ц in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no я in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no Т in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no а in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no б in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no л in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no и in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no ц in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no я in font [lmroman12-regular]:mapping=tex-text;!
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+)
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 217.
+[6] [7] [8] [9]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 217.
 (./report.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 179.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 179.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 217.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 217.
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 21793 strings out of 479418
- 383006 string characters out of 5888105
- 778002 words of memory out of 5000000
- 38978 multiletter control sequences out of 15000+600000
- 547183 words of font info for 66 fonts, out of 8000000 for 9000
+ 21811 strings out of 479418
+ 383641 string characters out of 5888105
+ 779214 words of memory out of 5000000
+ 38991 multiletter control sequences out of 15000+600000
+ 547175 words of font info for 65 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 58i,10n,116p,805b,513s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 58i,10n,116p,805b,422s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on report.pdf (7 pages).
+Output written on report.pdf (9 pages).

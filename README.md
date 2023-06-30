@@ -1,6 +1,6 @@
 # Gamestalgia
 ## Authors
-### Wiktoria Fimińska, Julia Grzegorzewska, Mateusz Stasiak, Karolina Wypych
+### Julia Grzegorzewska, Karolina Wypych, Wiktoria Fimińska, Mateusz Stasiak
   
 ## Table of contents
 * [Introduction](#introduction)
@@ -8,7 +8,9 @@
 * [Technologies](#technologies)
 * [Files](#files)
 * [How to run a program](#running)
+* [EKNF](#eknf)
 * [The greatest challenges](#challenges)
+
 
 # Introduction <a name="introduction"></a>
 These days in the fast changing world we are inundated with big volumes of data. It provokes higher demand for people specialized in processing it. A vast majority of companies and institutions could not work without efficient databases systems what makes an ability of creating and maintaining them a valuable skill. To gain it we developed a project during databases course at Wroclaw University of Science and Technology.
@@ -45,12 +47,11 @@ Every underlined *.csv* file contains a complete dataset that later is used to f
 All underlined *.py* files consist of functions that generate data, process it and return as a dataframe. (e.g. *address.py* provides data for table *address*, *customer_rental.py* for table *customers* and table *rentals*.) 
 * **generate_data:**
     -   connection.py \
-    It connects to the database by SQLAlchemy, read ....sql file and insert data. łączy sie z baza danych, odczytuje plik sql i odpala query ktore sie w nim znajdujatworzy tabele wprowadza dane
+    It connects to the database by SQLAlchemy, reads the create_tables.sql and runs all the queries stored in this file. Then it inserts data from saved csv files.
     -   const.py \
         In this file constants are stored.
     -   create_tables.sql \
         Here sql code responsible for creating tables is stored.
-    -   main_execute.ipynb
     -   main_execute.py \
         Main function of the program. It run programs that generate data then writes results to csv and run programs responsible for linking to the database by SQLAlchemy and inserting data to tables.
     - **address**
@@ -58,10 +59,6 @@ All underlined *.py* files consist of functions that generate data, process it a
       -  ![#ffcccc](https://placehold.co/15x15/ffcccc/ffcccc.png) address.csv
       -   postal_codes.csv \
           Auxiliary csv file which store generated postal codes.
-    - **analysis**
-      -   plots.py
-      -   plot_registrations.png
-      -   plot_rentals.png
            
     - **create_staff_schedule**
        -  ![#cce6ff](https://placehold.co/15x15/cce6ff/cce6ff.png) create_staff_schedule.py
@@ -84,7 +81,6 @@ All underlined *.py* files consist of functions that generate data, process it a
       -   inventory_buy, purchase.ipynb
       -  ![#ffcccc](https://placehold.co/15x15/ffcccc/ffcccc.png) inventory_buy.csv
       -  ![#ffcccc](https://placehold.co/15x15/ffcccc/ffcccc.png) purchases.csv
-      -   purchases.csv
   
     - **inventory_rent**
       -  ![#cce6ff](https://placehold.co/15x15/cce6ff/cce6ff.png) inventory_rent.py
@@ -96,7 +92,6 @@ All underlined *.py* files consist of functions that generate data, process it a
           
     - **tournament**
       -  ![#cce6ff](https://placehold.co/15x15/cce6ff/cce6ff.png) tournament.py
-      -   tournament.ipynb
       -  ![#ffcccc](https://placehold.co/15x15/ffcccc/ffcccc.png) tournaments.csv
            
     - **tournament_rental_consistency**
@@ -105,18 +100,37 @@ All underlined *.py* files consist of functions that generate data, process it a
           
     - **tournament_results**
       -  ![#cce6ff](https://placehold.co/15x15/cce6ff/cce6ff.png) tournament_results.py
-      -   tournament_results.ipynb
       -  ![#ffcccc](https://placehold.co/15x15/ffcccc/ffcccc.png) tournament_results.csv
 
 # How to run a program (on Windows)<a name=running></a>
 1. clone repository
-` git clone https://github.com/Staszek15/store-database.git`
-2. using console move to repository directory on your device and install necessary packages e.g in a virtual environment
- `python -m venv venv` 
- `venv\Scripts\activate.bat` 
- `pip install -r requirements.txt`
-3. run a program
-`python main_execute.py`
+` git clone https://github.com/Staszek15/store-database.git` or download its zip file instead.
+3. Open the console/terminal.
+4. Navigate to generate_data folder.
+5. Run the main_execute.py file to create database
+6. Open report.Rmd (e.g. in RStudio).
+7. Change the user in python path according to the hints provided close to this line of code. 
+8. Knitr the report.
+9. The saved report is located in store-database folder.
+
+
+# EKNF <a name="eknf"></a>
+1NF:
+- every table has its own primary key
+- every cell contains only one number, one date or one string
+- every cell describes only one object
+- order of row does not matter
+
+2NF:
+- database is 1NF
+- all non-key attributes in any table depend on the entire primary key
+
+3NF:
+- databaase is 2NF
+- none non-key attribute depend on another non-key attribute within the same table
+
+EKNF:
+- database is 3NF
 
 # The greatest challenges <a name='challenges'></a>
 This project is complex and combines the knowledge from various areas. That's why encountering some problems was unavoidable. Generally there were easy to solve so there's no point in elaborating on them. But there were some difficulties that consumed a lot of time and involved doing extensive research. 
