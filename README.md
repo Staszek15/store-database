@@ -28,8 +28,73 @@ Making this project involved using following technologies:
 It was applied to generate data for all tables. All dependencies between them were taken into consideration to provide a data integrity. Then Python was used for filling the database with valules generated previously.
 - **MySQL**
 It was used for creating the database schema and analysing data.
-- ** rmd **
+- **knitr**
 This tool was applied to generate a report.
+
+# Files  
+Every <span style="color:pink">pink</span> *.csv* file contains a complete dataset that later is used to fill a table of the same name. 
+All <span style="color:yellow">yellow</span> *.py* files consist of functions that generate data, process it and return as a dataframe. (e.g. *address.py* provides data for table *address*, *customer_rental.py* for table *customers* and table *rentals*.) 
+* **generate_data:**
+    -   connection.py
+    -   const.py
+    -   create_tables.sql
+    -   foreign_keys.sql
+    -   main_execute.ipynb
+    -   main_execute.py
+  
+    - **address**
+      -   <span style="color:yellow">address.py</span>
+      -  <span style="color:pink">address.csv</span>
+      -   postal_codes.csv
+         
+    - **analysis**
+      -   plots.py
+      -   plot_registrations.png
+      -   plot_rentals.png
+           
+    - **create_staff_schedule**
+       -  create_staff_schedule.py
+       -  <span style="color:pink">staff_schedule.csv</span> 
+
+    - **customer_rental**
+      -  <span style="color:yellow">customer_rental.py</span>
+      -  <span style="color:pink">customers.csv</span> 
+      -  <span style="color:pink">rentals.csv</span> 
+ 
+    - **game**
+      -   <span style="color:yellow">game.py</span>
+      -  <span style="color:pink">game.csv</span> 
+      -   all_games.xlsx
+      -   games_dataset.csv
+      -   selected_games.xlsx
+
+    - **inventory_buy_purchase**
+      -   <span style="color:yellow">inventory_buy_purchase.py</span>
+      -   inventory_buy, purchase.ipynb
+      -  <span style="color:pink">inventory_buy.csv</span> 
+      -  <span style="color:pink">purchases.csv</span>
+      -   purchases.csv
+  
+    - **inventory_rent**
+      -  <span style="color:yellow">inventory_rent.py</span>
+      -  <span style="color:pink">inventory_rent.csv</span>
+
+    - **staff**
+      -   <span style="color:yellow">staff.py</span>
+      -  <span style="color:pink">staff.csv</span>
+          
+    - **tournament**
+      -   <span style="color:yellow">tournament.py</span>
+      -   tournament.ipynb
+      -  <span style="color:pink">tournaments.csv</span>
+           
+    - **tournament_rental_consistency**
+      -   tournament_rental_consistency.py
+          
+    - **tournament_results**
+      -   <span style="color:yellow">tournament_results.py</span>
+      -   tournament_results.ipynb
+      -  <span style="color:pink">tournament_results.csv</span>
 
 # How to run a program <a name=running></a>
 **on Windows** 
