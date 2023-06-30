@@ -1,11 +1,6 @@
 # Gamestalgia
 # Authors
 ### Wiktoria Fimińska, Julia Grzegorzewska, Mateusz Stasiak, Karolina Wypych
-
-- ![#ffcccc](https://placehold.co/15x15/ffcccc/ffcccc.png) `#pink`
-- ![#c5f015](https://placehold.co/15x15/c5f015/c5f015.png) `#c5f015`
-- ![#1589F0](https://placehold.co/15x15/1589F0/1589F0.png) `#1589F0`
-
   
 # Table of contents
 * [Introduction](#introduction)
@@ -36,73 +31,75 @@ It was used for creating the database schema and analysing data.
 - **knitr**
 This tool was applied to generate a report.
 
-# Files 
+# Files <a name='files'></a>
 Every underlined *.csv* file contains a complete dataset that later is used to fill a table of a similar name. 
 All underlined *.py* files consist of functions that generate data, process it and return as a dataframe. (e.g. *address.py* provides data for table *address*, *customer_rental.py* for table *customers* and table *rentals*.) 
 * **generate_data:**
-    -   connection.py
-    -   const.py
-    -   create_tables.sql
+    -   connection.py 
+    It connects to the database by SQLAlchemy, read ....sql file and insert data. łączy sie z baza danych, odczytuje plik sql i odpala query ktore sie w nim znajdujatworzy tabele wprowadza dane
+    -   const.py 
+        In this file constants are stored.
+    -   create_tables.sql - stores sql code responsible for creating tables
     -   foreign_keys.sql
     -   main_execute.ipynb
     -   main_execute.py
-  
+        Main function of the program. It run programs that generate data then writes results to csv and run programs responsible for linking to the database by SQLAlchemy and inserting data to tables.
     - **address**
-      -  <ins>address.py</ins>
-      -  <ins>address.csv</ins>
+      -  ![#cce6ff](https://placehold.co/15x15/cce6ff/cce6ff.png) address.py
+      -  ![#ffcccc](https://placehold.co/15x15/ffcccc/ffcccc.png) address.csv
       -   postal_codes.csv
-         
+          Auxiliary csv file which store generated postal codes.
     - **analysis**
       -   plots.py
       -   plot_registrations.png
       -   plot_rentals.png
            
     - **create_staff_schedule**
-       -  <ins>create_staff_schedule.py<ins>
-       -  <ins>staff_schedule.csv</ins> 
+       -  ![#cce6ff](https://placehold.co/15x15/cce6ff/cce6ff.png) create_staff_schedule.py
+       -  ![#ffcccc](https://placehold.co/15x15/ffcccc/ffcccc.png) staff_schedule.csv
 
     - **customer_rental**
-      -  <ins>customer_rental.py</ins>
-      -  <ins>customers.csv</ins> 
-      -  <ins>rentals.csv</ins> 
- 
+      -  ![#cce6ff](https://placehold.co/15x15/cce6ff/cce6ff.png) customer_rental.py
+      -  ![#ffcccc](https://placehold.co/15x15/ffcccc/ffcccc.png) customers.csv 
+      -  ![#ffcccc](https://placehold.co/15x15/ffcccc/ffcccc.png) rentals.csv
     - **game**
-      -   <ins>game.py</ins>
-      -  <ins>game.csv</ins> 
+      -  ![#cce6ff](https://placehold.co/15x15/cce6ff/cce6ff.png) game.py
+      -  ![#ffcccc](https://placehold.co/15x15/ffcccc/ffcccc.png) game.csv
       -   all_games.xlsx
       -   games_dataset.csv
+          Initial dataset that was downloaded from the Internet and modified. Results of the modifications were written to game.csv.
       -   selected_games.xlsx
 
     - **inventory_buy_purchase**
-      -   <ins>inventory_buy_purchase.py</ins>
+      -  ![#cce6ff](https://placehold.co/15x15/cce6ff/cce6ff.png) inventory_buy_purchase.py
       -   inventory_buy, purchase.ipynb
-      -  <ins>inventory_buy.csv</ins> 
-      -  <ins>purchases.csv</ins>
+      -  ![#ffcccc](https://placehold.co/15x15/ffcccc/ffcccc.png) inventory_buy.csv
+      -  ![#ffcccc](https://placehold.co/15x15/ffcccc/ffcccc.png) purchases.csv
       -   purchases.csv
   
     - **inventory_rent**
-      -  <ins>inventory_rent.py</ins>
-      -  <ins>inventory_rent.csv</ins>
+      -  ![#cce6ff](https://placehold.co/15x15/cce6ff/cce6ff.png) inventory_rent.py
+      -  ![#ffcccc](https://placehold.co/15x15/ffcccc/ffcccc.png) inventory_rent.csv
 
     - **staff**
-      -   <ins>staff.py</ins>
-      -  <ins>staff.csv</ins>
+      -  ![#cce6ff](https://placehold.co/15x15/cce6ff/cce6ff.png) satff.py
+      -  ![#ffcccc](https://placehold.co/15x15/ffcccc/ffcccc.png) staff.csv
           
     - **tournament**
-      -   <ins>tournament.py</ins>
+      -  ![#cce6ff](https://placehold.co/15x15/cce6ff/cce6ff.png) tournament.py
       -   tournament.ipynb
-      -  <ins>tournaments.csv</ins>
+      -  ![#ffcccc](https://placehold.co/15x15/ffcccc/ffcccc.png) tournaments.csv
            
     - **tournament_rental_consistency**
       -   tournament_rental_consistency.py
+      It prevents from lack of games during a tournament
           
     - **tournament_results**
-      -   <ins>tournament_results.py</ins>
+      -  ![#cce6ff](https://placehold.co/15x15/cce6ff/cce6ff.png) tournament_results.py
       -   tournament_results.ipynb
-      -  <ins>tournament_results.csv</ins>
+      -  ![#ffcccc](https://placehold.co/15x15/ffcccc/ffcccc.png) tournament_results.csv
 
-# How to run a program <a name=running></a>
-**on Windows** 
+# How to run a program (on Windows)<a name=running></a>
 1. clone repository
 ` git clone https://github.com/Staszek15/store-database.git`
 2. using console move to repository directory on your device and install necessary packages e.g in a virtual environment
