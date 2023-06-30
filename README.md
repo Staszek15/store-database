@@ -9,6 +9,7 @@
 * [Files](#files)
 * [How to run a program](#running)
 * [The greatest challenges](#challenges)
+* [EKNF](#eknf)
 
 # Introduction <a name="introduction"></a>
 These days in the fast changing world we are inundated with big volumes of data. It provokes higher demand for people specialized in processing it. A vast majority of companies and institutions could not work without efficient databases systems what makes an ability of creating and maintaining them a valuable skill. To gain it we developed a project during databases course at Wroclaw University of Science and Technology.
@@ -111,6 +112,16 @@ All underlined *.py* files consist of functions that generate data, process it a
 8. Knitr the report.
 9. The saved report is located in store-database folder.
 
+
+# EKNF <a name="eknf"></a>
+1NF:
+- every table has its own primary key
+- every cell contains only one number, one date or one string
+- every cell describes only one object
+- order of row does not matter
+
+2NF:
+- database is 1NF
 
 # The greatest challenges <a name='challenges'></a>
 This project is complex and combines the knowledge from various areas. That's why encountering some problems was unavoidable. Generally there were easy to solve so there's no point in elaborating on them. But there were some difficulties that consumed a lot of time and involved doing extensive research. 
