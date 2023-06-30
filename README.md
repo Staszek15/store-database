@@ -50,7 +50,6 @@ All underlined *.py* files consist of functions that generate data, process it a
         In this file constants are stored.
     -   create_tables.sql \
         Here sql code responsible for creating tables is stored.
-    -   main_execute.ipynb
     -   main_execute.py \
         Main function of the program. It run programs that generate data then writes results to csv and run programs responsible for linking to the database by SQLAlchemy and inserting data to tables.
     - **address**
@@ -58,10 +57,6 @@ All underlined *.py* files consist of functions that generate data, process it a
       -  ![#ffcccc](https://placehold.co/15x15/ffcccc/ffcccc.png) address.csv
       -   postal_codes.csv \
           Auxiliary csv file which store generated postal codes.
-    - **analysis**
-      -   plots.py
-      -   plot_registrations.png
-      -   plot_rentals.png
            
     - **create_staff_schedule**
        -  ![#cce6ff](https://placehold.co/15x15/cce6ff/cce6ff.png) create_staff_schedule.py
@@ -96,7 +91,6 @@ All underlined *.py* files consist of functions that generate data, process it a
           
     - **tournament**
       -  ![#cce6ff](https://placehold.co/15x15/cce6ff/cce6ff.png) tournament.py
-      -   tournament.ipynb
       -  ![#ffcccc](https://placehold.co/15x15/ffcccc/ffcccc.png) tournaments.csv
            
     - **tournament_rental_consistency**
@@ -105,7 +99,6 @@ All underlined *.py* files consist of functions that generate data, process it a
           
     - **tournament_results**
       -  ![#cce6ff](https://placehold.co/15x15/cce6ff/cce6ff.png) tournament_results.py
-      -   tournament_results.ipynb
       -  ![#ffcccc](https://placehold.co/15x15/ffcccc/ffcccc.png) tournament_results.csv
 
 # How to run a program (on Windows)<a name=running></a>
