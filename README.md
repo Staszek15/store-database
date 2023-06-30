@@ -20,11 +20,11 @@ The project generally consists of generating a database and a report for Gamesta
 
 # Technologies <a name=technnologies></a>
 Making this project involved using following technologies:
-**Python**
+- **Python**
 It was applied to generate data for all tables. All dependencies between them were taken into consideration to provide a data integrity. Then Python was used for filling the database with valules generated previously.
-**MySQL**
+- **MySQL**
 It was used for creating the database schema and analysing data.
-* rmd
+- ** rmd **
 This tool was applied to generate a report.
 
 # How to run a program <a name=running></a>
