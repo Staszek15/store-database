@@ -32,7 +32,7 @@ def connect():
         conn.execute(text(command))    
 
 
-    insert_data(engine=engine)
+    #insert_data(engine=engine, conn=conn)
 
 
     conn.execute(text("SET FOREIGN_KEY_CHECKS=1"))
@@ -40,7 +40,7 @@ def connect():
 
 
 
-def insert_data(engine):
+def insert_data(engine, conn):
      
     df_games = pd.read_csv('game/game.csv')
     df_inventory_rent = pd.read_csv('inventory_rent/inventory_rent.csv')
@@ -55,6 +55,7 @@ def insert_data(engine):
 
 
     #conn.execute(text('TRUNCATE TABLE games'))
+    #conn.execute(text('ALTER TABLE game DROP CONSTRAINT '))
     df_games.to_sql("games", con=engine, if_exists="replace", index=False, )
     print("games done")
 
