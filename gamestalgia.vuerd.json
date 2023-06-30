@@ -3,8 +3,8 @@
     "version": "2.2.11",
     "width": 2000,
     "height": 2000,
-    "scrollTop": -624.0000000000003,
-    "scrollLeft": -28.00937499999997,
+    "scrollTop": -1107.1999999999991,
+    "scrollLeft": -392.80937499999914,
     "zoomLevel": 0.9,
     "show": {
       "tableComment": true,
@@ -750,7 +750,7 @@
               "autoIncrement": false,
               "primaryKey": false,
               "unique": false,
-              "notNull": true
+              "notNull": false
             },
             "ui": {
               "active": false,
@@ -773,7 +773,7 @@
               "autoIncrement": false,
               "primaryKey": false,
               "unique": false,
-              "notNull": true
+              "notNull": false
             },
             "ui": {
               "active": false,
@@ -796,7 +796,7 @@
               "autoIncrement": false,
               "primaryKey": false,
               "unique": false,
-              "notNull": true
+              "notNull": false
             },
             "ui": {
               "active": false,
@@ -815,7 +815,7 @@
           "active": false,
           "left": 321.1557,
           "top": 1242.61,
-          "zIndex": 3,
+          "zIndex": 18,
           "widthName": 67.76171875,
           "widthComment": 60,
           "color": "#FF00D9"
@@ -1372,7 +1372,7 @@
           "active": false,
           "left": 788.7561,
           "top": 301.4897,
-          "zIndex": 11,
+          "zIndex": 10,
           "widthName": 61.9599609375,
           "widthComment": 60,
           "color": "#00FF2F"
@@ -1768,7 +1768,7 @@
           "active": false,
           "left": 92.839,
           "top": 884.9772,
-          "zIndex": 32,
+          "zIndex": 11,
           "widthName": 61.97900390625,
           "widthComment": 60,
           "color": "#F44336"
@@ -1853,7 +1853,7 @@
       {
         "identification": false,
         "relationshipType": "OneN",
-        "startRelationshipType": "Dash",
+        "startRelationshipType": "Ring",
         "start": {
           "tableId": "28a0fc72-c3a0-45e0-aff5-ea89a540406e",
           "columnIds": [
