@@ -1,4 +1,4 @@
-CREATE OR REPLACE TABLE addresses
+CREATE TABLE addresses
 (
   address_id  INT         NOT NULL,
   address     VARCHAR(50) NOT NULL,
@@ -8,7 +8,7 @@ CREATE OR REPLACE TABLE addresses
   PRIMARY KEY (address_id)
 );
 
-CREATE OR REPLACE TABLE customers
+CREATE TABLE customers
 (
   customer_id       INT         NOT NULL AUTO_INCREMENT,
   first_name        VARCHAR(50) NOT NULL,
@@ -19,11 +19,11 @@ CREATE OR REPLACE TABLE customers
   address_id        INT         NOT NULL,
   registration_date DATE        NOT NULL,
   VIP               DATE        NULL    ,
-  PRIMARY KEY (customer_id)
+  PRIMARY KEY (customer_id),
+  FOREIGN KEY (address_id) REFERENCES addresses (address_id)
 );
 
-
-CREATE OR REPLACE TABLE games
+CREATE TABLE games
 (
   game_id             INT          NOT NULL AUTO_INCREMENT,
   name                VARCHAR(100) NOT NULL,
@@ -39,53 +39,27 @@ CREATE OR REPLACE TABLE games
   PRIMARY KEY (game_id)
 );
 
-
-CREATE OR REPLACE TABLE inventory_buy
+CREATE TABLE inventory_buy
 (
   inventory_id INT     NOT NULL AUTO_INCREMENT,
   game_id      INT     NOT NULL,
   price        FLOAT   NOT NULL,
   available    BOOLEAN NOT NULL,
-  PRIMARY KEY (inventory_id)
+  PRIMARY KEY (inventory_id),
+  FOREIGN KEY (game_id) REFERENCES games (game_id)
 );
 
-
-CREATE OR REPLACE TABLE inventory_rent
+CREATE TABLE inventory_rent
 (
   inventory_id INT     NOT NULL AUTO_INCREMENT,
   game_id      INT     NOT NULL,
   price        FLOAT   NOT NULL,
   available    BOOLEAN NOT NULL DEFAULT FALSE,
-  PRIMARY KEY (inventory_id)
+  PRIMARY KEY (inventory_id),
+  FOREIGN KEY (game_id) REFERENCES games (game_id)
 );
 
-
-CREATE OR REPLACE TABLE purchases
-(
-  purchase_id  INT  NOT NULL AUTO_INCREMENT,
-  inventory_id INT  NOT NULL,
-  customer_id  INT  NOT NULL,
-  date         DATE NOT NULL,
-  staff_id     INT  NOT NULL,
-  PRIMARY KEY (purchase_id)
-);
-
-
-CREATE OR REPLACE TABLE rentals
-(
-  rental_id    INT   NOT NULL AUTO_INCREMENT,
-  inventory_id INT   NOT NULL,
-  rental_date  DATE  NOT NULL,
-  return_date  DATE  NULL    ,
-  game_id      INT   NOT NULL,
-  customer_id  INT   NOT NULL,
-  staff_id     INT   NOT NULL,
-  fine         FLOAT NULL    ,
-  price        FLOAT NOT NULL,
-  PRIMARY KEY (rental_id)
-);
-
-CREATE OR REPLACE TABLE staff
+CREATE TABLE staff
 (
   staff_id   INT         NOT NULL AUTO_INCREMENT,
   first_name VARCHAR(50) NOT NULL,
@@ -96,11 +70,42 @@ CREATE OR REPLACE TABLE staff
   phone      VARCHAR(15) NOT NULL,
   address_id INT         NOT NULL,
   email      VARCHAR(50) NOT NULL,
-  PRIMARY KEY (staff_id)
+  PRIMARY KEY (staff_id),
+  FOREIGN KEY (address_id) REFERENCES addresses (address_id)
+);
+
+CREATE TABLE purchases
+(
+  id           INT  NOT NULL AUTO_INCREMENT,
+  purchase_id  INT  NOT NULL,
+  inventory_id INT  NOT NULL,
+  customer_id  INT  NOT NULL,
+  date         DATE NOT NULL,
+  staff_id     INT  NOT NULL,
+  PRIMARY KEY (id)
+);
+
+CREATE TABLE rentals
+(
+  rental_id    INT   NOT NULL AUTO_INCREMENT,
+  inventory_id INT   NOT NULL,
+  rental_date  DATE  NOT NULL,
+  return_date  DATE  NULL    ,
+  game_id      INT   NOT NULL,
+  customer_id  INT   NOT NULL,
+  staff_id     INT   NOT NULL,
+  fine         FLOAT NULL    ,
+  price        FLOAT NOT NULL,
+  PRIMARY KEY (rental_id),
+  FOREIGN KEY (inventory_id) REFERENCES inventory_rent (inventory_id),
+  FOREIGN KEY (game_id) REFERENCES games (game_id),
+  FOREIGN KEY (customer_id) REFERENCES customers (customer_id),
+  FOREIGN KEY (staff_id) REFERENCES staff (staff_id)
 );
 
 
-CREATE OR REPLACE TABLE tournament
+
+CREATE TABLE tournament
 (
   tournament_id        INT          NOT NULL AUTO_INCREMENT,
   name                 VARCHAR(100) NOT NULL,
@@ -109,14 +114,17 @@ CREATE OR REPLACE TABLE tournament
   team_players_number  INT          NOT NULL,
   staff_id             INT          NOT NULL,
   total_players_number INT          NOT NULL,
-  PRIMARY KEY (tournament_id)
+  PRIMARY KEY (tournament_id),
+  FOREIGN KEY (game_id) REFERENCES games (game_id),
+  FOREIGN KEY (staff_id) REFERENCES staff (staff_id)
 );
 
-
-CREATE OR REPLACE TABLE tournament_results
+CREATE TABLE tournament_results
 (
   tournament_id INT NOT NULL,
   customer_id   INT NOT NULL,
   place         INT NOT NULL,
-  score         INT NOT NULL
+  score         INT NOT NULL,
+  FOREIGN KEY (tournament_id) REFERENCES tournament (tournament_id),
+  FOREIGN KEY (customer_id) REFERENCES customers (customer_id)
 );
