@@ -31,21 +31,24 @@ It was used for creating the database schema and analysing data.
 - **knitr**
 This tool was applied to generate a report.
 
-# Files 
+# Files <a name='files'></a>
 Every underlined *.csv* file contains a complete dataset that later is used to fill a table of a similar name. 
 All underlined *.py* files consist of functions that generate data, process it and return as a dataframe. (e.g. *address.py* provides data for table *address*, *customer_rental.py* for table *customers* and table *rentals*.) 
 * **generate_data:**
-    -   connection.py
-    -   const.py
-    -   create_tables.sql
+    -   connection.py 
+    It connects to the database by SQLAlchemy, read ....sql file and insert data. łączy sie z baza danych, odczytuje plik sql i odpala query ktore sie w nim znajdujatworzy tabele wprowadza dane
+    -   const.py 
+        This file stores constants
+    -   create_tables.sql - stores sql code responsible for creating tables
     -   foreign_keys.sql
     -   main_execute.ipynb
     -   main_execute.py
-  
+        Main function of the program. It run programs that generate data then writes results to csv and run programs responsible for linking to the database by SQLAlchemy and inserting data to tables.
     - **address**
       -  ![#cce6ff](https://placehold.co/15x15/cce6ff/cce6ff.png) address.py
       -  ![#ffcccc](https://placehold.co/15x15/ffcccc/ffcccc.png) address.csv
       -   postal_codes.csv
+          Auxiliary csv file which store generated postal codes.
     - **analysis**
       -   plots.py
       -   plot_registrations.png
@@ -56,7 +59,7 @@ All underlined *.py* files consist of functions that generate data, process it a
        -  ![#ffcccc](https://placehold.co/15x15/ffcccc/ffcccc.png) staff_schedule.csv
 
     - **customer_rental**
-      -  -  ![#cce6ff](https://placehold.co/15x15/cce6ff/cce6ff.png) customer_rental.py
+      -  ![#cce6ff](https://placehold.co/15x15/cce6ff/cce6ff.png) customer_rental.py
       -  ![#ffcccc](https://placehold.co/15x15/ffcccc/ffcccc.png) customers.csv 
       -  ![#ffcccc](https://placehold.co/15x15/ffcccc/ffcccc.png) rentals.csv
     - **game**
@@ -64,6 +67,7 @@ All underlined *.py* files consist of functions that generate data, process it a
       -  ![#ffcccc](https://placehold.co/15x15/ffcccc/ffcccc.png) game.csv
       -   all_games.xlsx
       -   games_dataset.csv
+          Initial dataset that was downloaded from the Internet and modified. Results of the modifications were written to game.csv.
       -   selected_games.xlsx
 
     - **inventory_buy_purchase**
@@ -88,14 +92,14 @@ All underlined *.py* files consist of functions that generate data, process it a
            
     - **tournament_rental_consistency**
       -   tournament_rental_consistency.py
+      It prevents from lack of games during a tournament
           
     - **tournament_results**
       -  ![#cce6ff](https://placehold.co/15x15/cce6ff/cce6ff.png) tournament_results.py
       -   tournament_results.ipynb
       -  ![#ffcccc](https://placehold.co/15x15/ffcccc/ffcccc.png) tournament_results.csv
 
-# How to run a program <a name=running></a>
-**on Windows** 
+# How to run a program (on Windows)<a name=running></a>
 1. clone repository
 ` git clone https://github.com/Staszek15/store-database.git`
 2. using console move to repository directory on your device and install necessary packages e.g in a virtual environment
