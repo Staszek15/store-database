@@ -108,10 +108,10 @@ All underlined *.py* files consist of functions that generate data, process it a
 3. Open the console/terminal.
 4. Navigate to generate_data folder.
 5. Run the main_execute.py file to create database
-6. Open report.Rmd (e.g. in RStudio).
+6. Open report.Rmd (e.g. in RStudio) located in store-database/generate_report folder.
 7. Change the user in python path according to the hints provided close to this line of code. 
 8. Knitr the report.
-9. The saved report is located in store-database folder.
+9. The saved report is located in store-database/generate_report folder.
 
 
 # EKNF <a name="eknf"></a>
