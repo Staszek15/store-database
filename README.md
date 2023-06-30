@@ -14,14 +14,14 @@
 These days in the fast changing world we are inundated with big volumes of data. It provokes higher demand for people specialized in processing it. A vast majority of companies and institutions could not work without efficient databases systems what makes an ability of creating and maintaining them a valuable skill. To gain it we developed a project during databases course at Wroclaw University of Science and Technology.
 
 <p align="center">
-  <img src="https://github.com/Staszek15/store-database/blob/main/logo_store.png" width=80%>
+  <img src="https://github.com/Staszek15/store-database/blob/main/images/logo_store.png" width=80%>
 </p>
 
 # Description <a name=description></a>
 The project generally consists of generating a database and a report for Gamestalgia - a fictional board games rental store. Gamestalgia is a unique place. Not only does it rent games but also sells them and organize tournaments. Moreover, the most active customers are rewarded with a VIP status and hence extra discounts on rentals and purchases.
 
 <p align="center">
-  <img src="https://github.com/Staszek15/store-database/blob/main/database_schema.png" width=80%>
+  <img src="https://github.com/Staszek15/store-database/blob/main/images/database_schema.png" width=80%>
 </p>
 
 Above schema presents tables included in Gamestalgia's database and relations between them.     
