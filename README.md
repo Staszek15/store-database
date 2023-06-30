@@ -1,11 +1,6 @@
 # Gamestalgia
 # Authors
 ### Wiktoria Fimińska, Julia Grzegorzewska, Mateusz Stasiak, Karolina Wypych
-
-- ![#ffcccc](https://placehold.co/15x15/ffcccc/ffcccc.png) `#pink`
-- ![#c5f015](https://placehold.co/15x15/c5f015/c5f015.png) `#c5f015`
-- ![#1589F0](https://placehold.co/15x15/1589F0/1589F0.png) `#1589F0`
-
   
 # Table of contents
 * [Introduction](#introduction)
@@ -48,58 +43,56 @@ All underlined *.py* files consist of functions that generate data, process it a
     -   main_execute.py
   
     - **address**
-      -  <ins>address.py</ins>
-      -  <ins>address.csv</ins>
+      -  ![#cce6ff](https://placehold.co/15x15/cce6ff/cce6ff.png) address.py
+      -  ![#ffcccc](https://placehold.co/15x15/ffcccc/ffcccc.png) address.csv
       -   postal_codes.csv
-         
     - **analysis**
       -   plots.py
       -   plot_registrations.png
       -   plot_rentals.png
            
     - **create_staff_schedule**
-       -  <ins>create_staff_schedule.py<ins>
-       -  <ins>staff_schedule.csv</ins> 
+       -  ![#cce6ff](https://placehold.co/15x15/cce6ff/cce6ff.png) create_staff_schedule.py
+       -  ![#ffcccc](https://placehold.co/15x15/ffcccc/ffcccc.png) staff_schedule.csv
 
     - **customer_rental**
-      -  <ins>customer_rental.py</ins>
-      -  <ins>customers.csv</ins> 
-      -  <ins>rentals.csv</ins> 
- 
+      -  -  ![#cce6ff](https://placehold.co/15x15/cce6ff/cce6ff.png) customer_rental.py
+      -  ![#ffcccc](https://placehold.co/15x15/ffcccc/ffcccc.png) customers.csv 
+      -  ![#ffcccc](https://placehold.co/15x15/ffcccc/ffcccc.png) rentals.csv
     - **game**
-      -   <ins>game.py</ins>
-      -  <ins>game.csv</ins> 
+      -  ![#cce6ff](https://placehold.co/15x15/cce6ff/cce6ff.png) game.py
+      -  ![#ffcccc](https://placehold.co/15x15/ffcccc/ffcccc.png) game.csv
       -   all_games.xlsx
       -   games_dataset.csv
       -   selected_games.xlsx
 
     - **inventory_buy_purchase**
-      -   <ins>inventory_buy_purchase.py</ins>
+      -  ![#cce6ff](https://placehold.co/15x15/cce6ff/cce6ff.png) inventory_buy_purchase.py
       -   inventory_buy, purchase.ipynb
-      -  <ins>inventory_buy.csv</ins> 
-      -  <ins>purchases.csv</ins>
+      -  ![#ffcccc](https://placehold.co/15x15/ffcccc/ffcccc.png) inventory_buy.csv
+      -  ![#ffcccc](https://placehold.co/15x15/ffcccc/ffcccc.png) purchases.csv
       -   purchases.csv
   
     - **inventory_rent**
-      -  <ins>inventory_rent.py</ins>
-      -  <ins>inventory_rent.csv</ins>
+      -  ![#cce6ff](https://placehold.co/15x15/cce6ff/cce6ff.png) inventory_rent.py
+      -  ![#ffcccc](https://placehold.co/15x15/ffcccc/ffcccc.png) inventory_rent.csv
 
     - **staff**
-      -   <ins>staff.py</ins>
-      -  <ins>staff.csv</ins>
+      -  ![#cce6ff](https://placehold.co/15x15/cce6ff/cce6ff.png) satff.py
+      -  ![#ffcccc](https://placehold.co/15x15/ffcccc/ffcccc.png) staff.csv
           
     - **tournament**
-      -   <ins>tournament.py</ins>
+      -  ![#cce6ff](https://placehold.co/15x15/cce6ff/cce6ff.png) tournament.py
       -   tournament.ipynb
-      -  <ins>tournaments.csv</ins>
+      -  ![#ffcccc](https://placehold.co/15x15/ffcccc/ffcccc.png) tournaments.csv
            
     - **tournament_rental_consistency**
       -   tournament_rental_consistency.py
           
     - **tournament_results**
-      -   <ins>tournament_results.py</ins>
+      -  ![#cce6ff](https://placehold.co/15x15/cce6ff/cce6ff.png) tournament_results.py
       -   tournament_results.ipynb
-      -  <ins>tournament_results.csv</ins>
+      -  ![#ffcccc](https://placehold.co/15x15/ffcccc/ffcccc.png) tournament_results.csv
 
 # How to run a program <a name=running></a>
 **on Windows** 
