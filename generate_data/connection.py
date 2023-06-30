@@ -37,12 +37,11 @@ def connect():
     print("tables dropped")
 
     fd = open('create_tables.sql', 'r')
-    sqlFile = fd.read()
+    sqlTablesFile = fd.read()
     fd.close()
-    sqlCode = sqlFile.split(';')[:-1]   # without last one because last query also ends with ';' so last element is empty
+    sqlTablesCode = sqlTablesFile.split(';')[:-1]   # without last one because last query also ends with ';' so last element is empty
 
-
-    for command in sqlCode:
+    for command in sqlTablesCode:
         print(text(command))
         conn.execute(text(command))    
 
@@ -76,6 +75,19 @@ def connect():
 
     #conn.execute(text('TRUNCATE TABLE tournament_results'))
     df_tournament_results.to_sql("tournament_results", con=engine, if_exists="replace", index=False)
+
+
+
+    print("tables dropped")
+
+    fm = open('create_tables.sql', 'r')
+    sqlKeysFile = fm.read()
+    fm.close()
+    sqlKeysCode = sqlKeysFile.split(';')[:-1]   # without last one because last query also ends with ';' so last element is empty
+
+    for command in sqlKeysCode:
+        print(text(command))
+        conn.execute(text(command)) 
 
     
 
