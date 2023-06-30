@@ -38,7 +38,7 @@ All underlined *.py* files consist of functions that generate data, process it a
     -   connection.py 
     It connects to the database by SQLAlchemy, read ....sql file and insert data. łączy sie z baza danych, odczytuje plik sql i odpala query ktore sie w nim znajdujatworzy tabele wprowadza dane
     -   const.py 
-        This file stores constants
+        In this file constants are stored.
     -   create_tables.sql - stores sql code responsible for creating tables
     -   foreign_keys.sql
     -   main_execute.ipynb
