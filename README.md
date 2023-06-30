@@ -102,10 +102,10 @@ All underlined *.py* files consist of functions that generate data, process it a
 
 # How to run a program (on Windows)<a name=running></a>
 1. clone repository
-` git clone https://github.com/Staszek15/store-database.git`
-2. Open the console/terminal.
-3. Navigate to generate_data folder.
-4. Run the main_execute.py file.
+` git clone https://github.com/Staszek15/store-database.git` or download its zip file instead.
+3. Open the console/terminal.
+4. Navigate to generate_data folder.
+5. Run the main_execute.py file.
 
 
 # The greatest challenges <a name='challenges'></a>
