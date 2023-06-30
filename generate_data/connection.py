@@ -31,7 +31,7 @@ def connect():
     engine = create_engine(url_object)
     conn = engine.connect()
     print("connected")
-    conn.execute(text("SET FOREIGN_KEY_CHECKS=0"))
+    #conn.execute(text("SET FOREIGN_KEY_CHECKS=0"))
     conn.execute(text("DROP TABLE IF EXISTS addresses, customers, games, inventory_buy, inventory_rent, purchases, rentals, staff, tournament, tournament_results"))
     
     print("tables dropped")
@@ -80,18 +80,18 @@ def connect():
 
     print("tables dropped")
 
-    fm = open('create_tables.sql', 'r')
+    """fm = open('foreign_keys.sql', 'r')
     sqlKeysFile = fm.read()
     fm.close()
     sqlKeysCode = sqlKeysFile.split(';')[:-1]   # without last one because last query also ends with ';' so last element is empty
 
     for command in sqlKeysCode:
         print(text(command))
-        conn.execute(text(command)) 
+        conn.execute(text(command))""" 
 
     
 
-    conn.execute(text("SET FOREIGN_KEY_CHECKS=1"))
+    #conn.execute(text("SET FOREIGN_KEY_CHECKS=1"))
     conn.close()
 
 
