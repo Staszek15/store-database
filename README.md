@@ -114,6 +114,6 @@ All underlined *.py* files consist of functions that generate data, process it a
 
 # The greatest challenges <a name='challenges'></a>
 This project is complex and combines the knowledge from various areas. That's why encountering some problems was unavoidable. Generally there were easy to solve so there's no point in elaborating on them. But there were some difficulties that consumed a lot of time and involved doing extensive research. 
-1. Providing data integrity
+1. Providing data integrity \
 It was a priority to prepare a correct dataset. Taking care of consistency between tables and keeping them realistic enabled discussions and modifying tables not only at the beginning of working but also during further work. Some contradictions in seemingly proper datasets were noticed during generating completely different dataset that  
 
