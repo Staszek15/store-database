@@ -1,31 +1,31 @@
 ,tournament_id,name,date,game_id,team_players_number,staff_id,total_players_number
-0,1,Cosmic Entertainment 1,2021-05-29,9,1,1,9
-1,2,Thematic Contest 1,2021-06-02,6,2,2,12
-2,3,The Kobolds 1,2021-06-23,33,1,3,9
-3,4,Indian Camp 1,2021-07-31,5,1,3,7
-4,5,Cosmic Entertainment 2,2021-09-15,9,1,2,11
-5,6,The Kobolds 2,2021-09-28,33,1,1,32
-6,7,Hamst&Furious 1,2021-10-23,7,1,2,32
-7,8,Thematic Contest 2,2021-10-23,6,2,2,32
-8,9,Cosmic Entertainment 3,2021-11-13,9,1,3,32
-9,10,Vietgame 1,2021-11-17,36,1,2,32
-10,11,Hamst&Furious 2,2021-11-30,7,1,4,32
-11,12,Spring Tournament 1,2021-12-04,1,1,2,20
-12,13,Indian Camp 2,2021-12-25,5,1,3,23
-13,14,Thematic Contest 3,2022-02-26,6,2,3,22
-14,15,Hamst&Furious 3,2022-04-09,7,1,5,17
-15,16,Thematic Contest 4,2022-04-30,6,2,5,14
-16,17,Battlefields of Bonaparte 1,2022-05-17,27,1,5,21
-17,18,Thematic Contest 5,2022-07-06,6,2,1,20
-18,19,Gaming Evening 1,2022-08-17,33,1,4,21
-19,20,Spring Tournament 2,2022-09-03,1,1,5,23
-20,21,Gaming Evening 2,2022-09-03,33,1,5,21
-21,22,Cosmic Entertainment 4,2022-09-20,9,1,5,20
-22,23,Cosmic Entertainment 5,2022-09-24,9,1,4,16
-23,24,Spring Tournament 3,2022-10-19,1,1,1,16
-24,25,Star Trek Day 1,2022-11-09,19,1,5,47
-25,26,Vietgame 2,2023-01-03,36,1,1,52
-26,27,Thematic Contest 6,2023-01-03,6,2,1,48
-27,28,Spring Tournament 4,2023-02-01,1,1,1,45
-28,29,Hamst&Furious 4,2023-02-18,7,1,5,12
-29,30,Hamst&Furious 5,2023-03-11,7,1,4,11
+0,1,The Kobolds 1,2021-05-12,33,1,3,27
+1,2,Indian Camp 1,2021-05-12,5,1,3,29
+2,3,Hamst&Furious 1,2021-06-23,7,1,3,24
+3,4,Spring Tournament 1,2021-06-23,1,1,3,23
+4,5,Battlefields of Bonaparte 1,2021-08-04,27,1,2,24
+5,6,Spring Tournament 2,2021-08-04,1,1,2,21
+6,7,The Kobolds 2,2021-08-17,33,1,1,22
+7,8,The Kobolds 3,2021-09-15,33,1,1,29
+8,9,The Kobolds 4,2021-12-04,33,1,4,24
+9,10,Cosmic Entertainment 1,2021-12-29,9,1,1,20
+10,11,The Kobolds 5,2021-12-29,33,1,1,23
+11,12,Hamst&Furious 2,2022-01-15,7,1,4,18
+12,13,The Kobolds 6,2022-01-15,33,1,4,17
+13,14,Gaming Evening 1,2022-02-05,33,1,4,22
+14,15,The Kobolds 7,2022-02-22,33,1,5,20
+15,16,Hamst&Furious 3,2022-03-02,7,1,4,16
+16,17,Cosmic Entertainment 2,2022-04-09,9,1,3,18
+17,18,The Kobolds 8,2022-04-13,33,1,1,31
+18,19,Battlefields of Bonaparte 2,2022-05-04,27,1,2,33
+19,20,Battlefields of Bonaparte 3,2022-05-17,27,1,4,29
+20,21,Spring Tournament 3,2022-06-07,1,1,2,32
+21,22,Vietgame 1,2022-06-11,36,1,3,11
+22,23,Spring Tournament 4,2022-06-15,1,1,4,13
+23,24,Hamst&Furious 4,2022-07-19,7,1,1,11
+24,25,Thematic Contest 1,2022-07-23,6,2,1,19
+25,26,Vietgame 2,2022-07-23,36,1,1,15
+26,27,Star Trek Day 1,2022-10-11,19,1,3,18
+27,28,Hamst&Furious 5,2022-11-01,7,1,4,18
+28,29,Gaming Evening 2,2023-01-28,33,1,4,28
+29,30,Hamst&Furious 6,2023-02-18,7,1,2,14
