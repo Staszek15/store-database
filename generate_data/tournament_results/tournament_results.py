@@ -8,6 +8,7 @@ def generate_tournament_results(tournaments, customers, games):
     score_list = []
     tour_id_list = []
     place_list = []
+    tournaments = tournaments[tournaments['staff_id'].notnull()]
     
     for i in range(len(tournaments)):
         tour_row = tournaments.iloc[i]
