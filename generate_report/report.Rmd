@@ -39,6 +39,7 @@ Niniejszy raport jest analizą danych zawartych w bazie sklepu "Gamestalgia".
 
 ```{r}
 library('reticulate')
+#CHANGE YOUR PATH TO PYTHON HERE
 use_python("C:\\Users\\julek\\AppData\\Local\\Programs\\Python\\Python39")
 #C:\\Users\\mateu\\AppData\\Local\\Programs\\Python\\Python39
 #C:\\Users\\julek\\AppData\\Local\\Programs\\Python\\Python39
