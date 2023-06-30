@@ -24,7 +24,8 @@ The project generally consists of generating a database and a report for Gamesta
   <img src="https://github.com/Staszek15/store-database/blob/main/database_schema.png" width=80%>
 </p>
 
-Above schema presents tables included in Gamestalgia's database and relations between them.\ Types of relations are symbolized by endings of lines connecting tables with each other:
+Above schema presents tables included in Gamestalgia's database and relations between them. \ 
+Types of relations are symbolized by endings of lines connecting tables with each other:
 * two vertical lines - **one and only one**
 * circle and three branched lines - **zero or many**
 * one vertical and three branched lines - **one or many**
