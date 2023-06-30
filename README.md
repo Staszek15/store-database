@@ -127,14 +127,15 @@ All underlined *.py* files consist of functions that generate data, process it a
 
 3NF:
 - databaase is 2NF
-- none non-key attribute depend on another non-key attribute within the same table
+- none non-key attribute depends on another non-key attribute within the same table
 
 EKNF:
 - database is 3NF
+- there is no relation that is not inconsistent with EKNF definition
 
 # The greatest challenges <a name='challenges'></a>
 This project is complex and combines the knowledge from various areas. That's why encountering some problems was unavoidable. Generally there were easy to solve so there's no point in elaborating on them. But there were some difficulties that consumed a lot of time and involved doing extensive research. 
 1. Providing data integrity \
 It was a priority to prepare a correct dataset. Taking care of consistency between tables and keeping them realistic enabled discussions and modifying tables not only at the beginning of working but also during further work. Some contradictions in seemingly proper datasets were noticed during generating other dependent tables. Sometimes it forced changes in schema of more than one table and modifications of code.
-2. Connecting to server and filling the database in \
+2. Connecting to server and filling the database in.
 
