@@ -32,7 +32,16 @@ def connect():
         conn.execute(text(command))    
 
 
-    
+    insert_data(engine=engine)
+
+
+    conn.execute(text("SET FOREIGN_KEY_CHECKS=1"))
+    conn.close()
+
+
+
+def insert_data(engine):
+     
     df_games = pd.read_csv('game/game.csv')
     df_inventory_rent = pd.read_csv('inventory_rent/inventory_rent.csv')
     df_inventory_buy = pd.read_csv('inventory_buy_purchase/inventory_buy.csv')
@@ -45,8 +54,9 @@ def connect():
     df_tournament_results = pd.read_csv('tournament_results/tournament_results.csv')
 
 
-    """#conn.execute(text('TRUNCATE TABLE games'))
+    #conn.execute(text('TRUNCATE TABLE games'))
     df_games.to_sql("games", con=engine, if_exists="replace", index=False, )
+    print("games done")
 
     #conn.execute(text('TRUNCATE TABLE addresses'))
     df_addresses.to_sql("addresses", con=engine, if_exists="replace", index=False)
@@ -73,12 +83,7 @@ def connect():
     df_tournament.to_sql("tournament", con=engine, if_exists="replace", index=False)
 
     #conn.execute(text('TRUNCATE TABLE tournament_results'))
-    df_tournament_results.to_sql("tournament_results", con=engine, if_exists="replace", index=False)"""
-    
-
-    conn.execute(text("SET FOREIGN_KEY_CHECKS=1"))
-    conn.close()
-
+    df_tournament_results.to_sql("tournament_results", con=engine, if_exists="replace", index=False)
 
 
 if __name__ == "__main__":
