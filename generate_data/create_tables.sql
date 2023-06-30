@@ -1,5 +1,3 @@
-
-        
 CREATE OR REPLACE TABLE addresses
 (
   address_id  INT         NOT NULL,
