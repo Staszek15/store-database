@@ -6,7 +6,9 @@
 * [Introduction](#introduction)
 * [Description](#description)
 * [Technologies](#technologies)
+* [Files](#files)
 * [How to run a program](#running)
+* [The greatest challenges](#challenges)
 
 # Introduction <a name="introduction"></a>
 These days in the fast changing world we are inundated with big volumes of data. It provokes higher demand for people specialized in processing it. A vast majority of companies and institutions could not work without efficient databases systems what makes an ability of creating and maintaining them a valuable skill. To gain it we developed a project during databases course at Wroclaw University of Science and Technology.
@@ -109,4 +111,8 @@ All underlined *.py* files consist of functions that generate data, process it a
 3. run a program
 `python main_execute.py`
 
+# The greatest challenges <a name='challenges'></a>
+This project is complex and combines the knowledge from various areas. That's why encountering some problems was unavoidable. Generally there were easy to solve so there's no point in elaborating on them. But there were some difficulties that consumed a lot of time and involved doing extensive research. 
+1. Providing data integrity
+It was a priority to prepare a correct dataset. Taking care of consistency between tables and keeping them realistic enabled discussions and modifying tables not only at the beginning of working but also during further work. Some contradictions in seemingly proper datasets were noticed during generating completely different dataset that  
 
