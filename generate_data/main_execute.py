@@ -13,7 +13,8 @@ from tournament_rental_consistency.tournament_rental_consistency import *
 from connection import *
 
 
-if __name__ == "__main__":
+def main():
+
     generate_address(pd.read_csv('address/postal_codes.csv', encoding='UTF-8',
                                  delimiter=';')).to_csv('address/address.csv')
     generate_staff().to_csv('staff/staff.csv')
@@ -46,8 +47,14 @@ if __name__ == "__main__":
     inventory_buy.to_csv('inventory_buy_purchase/inventory_buy.csv')
     purchases.to_csv('inventory_buy_purchase/purchases.csv')
 
-    
 
     connect()
+
+
+
+
+
+if __name__ == "__main__":
+    main()
 
     
