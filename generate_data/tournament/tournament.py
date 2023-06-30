@@ -123,6 +123,7 @@ def generate_tournament(games, inv_rent, schedule):
     date_past = np.sort([generate_date('2021-04-07',105) for _ in range(tournaments_past)])
     staff_id_past = generate_tournament_staff(date_past,schedule)
     
+    #staff and number of participants are not stated for next tournaments yet
     total_players_number_future = [None for i in range(tournaments_future)]
     date_future = np.sort([generate_date('2023-07-01',30) for _ in range(tournaments_future)])
     staff_id_future =[None for i in range(tournaments_future)]
@@ -130,7 +131,7 @@ def generate_tournament(games, inv_rent, schedule):
     
     name_dictionary = {}
     new_names = []
-    
+    # adding number to the name of tournament to guarantee uniqueness of names 
     for tour_name in name:
         if tour_name in name_dictionary:
             name_dictionary[tour_name] += 1
@@ -138,7 +139,7 @@ def generate_tournament(games, inv_rent, schedule):
         else:
             name_dictionary[tour_name] = 1
             new_names.append(f'{tour_name} {name_dictionary[tour_name]}')
-
+    #previous tournaments
     tournaments_dict_past = {'tournament_id' : tournament_id[:tournaments_past],
                     'name' : new_names[:tournaments_past],
                     'date' : date_past,
@@ -147,7 +148,7 @@ def generate_tournament(games, inv_rent, schedule):
                     'staff_id' : staff_id_past,
                     'total_players_number' : total_players_number_past
                     }
-    
+    #upcoming tournaments
     tournaments_dict_future = {'tournament_id' : tournament_id[tournaments_past:],
                     'name' : new_names[tournaments_past:],
                     'date' : date_future,

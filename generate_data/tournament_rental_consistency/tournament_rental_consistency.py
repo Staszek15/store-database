@@ -1,7 +1,10 @@
 import pandas as pd
 
 def remove_rentals(tournament_df, rental):
-    
+    """
+    Function that takes into consideration dependencies between tournaments timetable and rentals. 
+    Returns improved rental dataframe.
+    """
     tournament_df['tuple'] = tournament_df.apply(lambda row: (row['game_id'], row['date']), axis=1)
     
     for element in tournament_df.tuple:
