@@ -19,7 +19,7 @@ header-includes:
     - \floatplacement{figure}{H}
     - \usepackage{titling}
     - \pretitle{\begin{center}
-    - \includegraphics{logo_store.png}\Huge\\}
+    - \includegraphics[width=0.5\textwidth]{logo_store.png}\\}
     - \posttitle{\end{center}}
     - \usepackage[utf8]{inputenc}
     - \usepackage[T2A,T1]{fontenc}
@@ -67,36 +67,37 @@ engine = create_engine(url_object)
 connection = engine.connect()
 ```
 \section{Rozkład danych}
-```{python, echo = FALSE}
+Wykonano wykresy słupkowe przedstawiające jak zmieniała się liczba zarejestrowanych klientów w sklepie w danym miesiącu (wykres \ref{fig:liczba_rejestracji}) oraz liczba wypożyczeń (wykres \ref{fig:liczba_wypozyczen}). 
 
-def generate_registrations_plot():
-    sns.set(rc={'figure.figsize':(12,7)})
+```{python, echo=FALSE, results='hide',  fig.cap = "\\label{fig:liczba_rejestracji} Liczba rejestracji w sklepie w kolejnych miesiącach."}
+registr_month = connection.execute(text('''SELECT 
+  DATE_FORMAT(registration_date,'%Y-%m') AS registration_month, 
+  COUNT(*) AS num_of_registrations
+FROM customers
+GROUP BY registration_month'''))
 
-    customers = pd.read_csv('generate_data/customer_rental/customers.csv')
-    registrations = pd.to_datetime(customers['registration_date'], format = '%Y-%m-%d')
+reg_month = pd.DataFrame(registr_month.fetchall(), columns=registr_month.keys())
+sns.set(rc={'figure.figsize':(12,7)})
+ax = sns.barplot(x='registration_month', y='num_of_registrations', data=reg_month, color='steelblue')
+plt.xticks(rotation=45)
+plt.ylabel("Liczba rejestracji w sklepie")
+plt.xlabel("Data")
+plt.show()
+```
+```{python, echo = FALSE, results='hide',  fig.cap = "\\label{fig:liczba_wypozyczen} Liczba wypożyczeń gier w kolejnych miesiącach."}
+rentals = connection.execute(text('''SELECT 
+  DATE_FORMAT(rental_date, '%Y-%m') AS rental_month,
+  COUNT(*) AS num_of_rentals
+FROM rentals
+GROUP BY rental_month'''))
 
-    sns.histplot(registrations, stat="count", kde=True, bins=50)
-    plt.xlabel("date")
-    plt.xticks(rotation=45)
-    plt.ylabel("number of registrations")
-    plt.tight_layout()
-    plt.show()
-
-def generate_rentals_plot():
-    sns.set(rc={'figure.figsize':(12,7)})
-
-    df_rentals = pd.read_csv('generate_data/customer_rental/rentals.csv')
-    dates = pd.to_datetime(df_rentals['rental_date'], format = '%Y-%m-%d')
-
-    sns.histplot(dates, stat="count", kde=True, bins=50)
-    plt.xlabel("date")
-    plt.xticks(rotation=45)
-    plt.ylabel("number of rentals")
-    plt.tight_layout()
-    plt.show()
-
-generate_registrations_plot()
-generate_rentals_plot()
+rentals_df = pd.DataFrame(rentals.fetchall(), columns=rentals.keys())
+sns.set(rc={'figure.figsize':(12,7)})
+ax = sns.barplot(x='rental_month', y='num_of_rentals', data=rentals_df, color='steelblue')
+plt.xticks(rotation=45)
+plt.ylabel("Liczba wypożyczeń gier")
+plt.xlabel("Data")
+plt.show()
 ```
 
 \section{Pracownik miesiąca}
@@ -323,6 +324,35 @@ Przez cały okres funkcjonowania sklepu największy zysk z wypożyczeń przynios
 \input{purchases_df.tex}
 \end{center}
 
+\section{Porównanie przychodu ze sprzedaży i wypożyczeń}
+Dla ostatnich 6 miesięcy działalności sklepu dostępnych w bazie porównano przychód uzyskany ze sprzedaży z przychodem z wypożyczeń. (wykres \ref{fig:sprz_wypo}).
+
+```{python, echo =FALSE, results='hide', fig.cap = "\\label{fig:sprz_wypo} Porównanie przychodu ze sprzedaży i wypożyczeń w ostatnich 6 miesiącach."}
+rent= connection.execute(text('''SELECT DATE_FORMAT(rental_date, '%Y-%m') AS m, ROUND(SUM(r.price + r.fine),2) AS rental_income
+FROM rentals AS r
+GROUP BY m
+ORDER BY m DESC
+LIMIT 6'''))
+
+purch = connection.execute(text('''SELECT DATE_FORMAT(p.date, '%Y-%m') AS m, ROUND(SUM(i.price),2) AS buy_income
+FROM purchases AS p
+LEFT JOIN inventory_buy AS i USING(inventory_id)
+GROUP BY m
+ORDER BY m DESC
+LIMIT 6'''))
+
+first_df = pd.DataFrame(rent.fetchall(), columns=rent.keys())
+sec_df = pd.DataFrame(purch.fetchall(), columns=purch.keys())
+all_df = first_df
+all_df['buy_income'] = sec_df['buy_income']
+all_df
+
+
+ax = all_df.plot.bar(x='m',color=["SkyBlue","IndianRed"], rot=0, title="")
+ax.set_xlabel("Date")
+ax.set_ylabel("Revenue")
+plt.show()
+```
 \section{Miejsce zamieszkania klientów}
 ```{python}
 miasta = connection.execute(text('''WITH tab AS (
@@ -349,6 +379,73 @@ reszta = round(float(miasta_df.loc[miasta_df['region'] == 'reszta', 'cust_num'].
 
 Wśród zarejestrowanych w sklepie klientów `r py$wro`% z nich mieszka w mieście, w którym zlokalizowany jest sklep, czyli we Wrocławiu, `r py$doln`% w województwie dolnośląskim, ale poza jego stolicą a `r py$reszta`% w innych częściach Polski.
 
-```{python}
+\section{Wypożyczenia}
+Sprawdzono jak często wypożyczane są gry, których cena jest większa lub mniejsza/równa od średniej ceny dostępnych do wypożyczenia gier. 
+
+```{python, echo=FALSE, results='hide'}
+rent_price = connection.execute(text('''WITH inv_ids AS (
+  SELECT 
+    CASE WHEN inventory_id IN (SELECT inventory_id 
+    FROM inventory_rent
+    WHERE price > (SELECT ROUND(AVG(price),2)
+    FROM inventory_rent)) THEN 'droższe'
+     WHEN inventory_id IN (SELECT inventory_id 
+  FROM inventory_rent
+  WHERE price <= (SELECT ROUND(AVG(price),2)
+  FROM inventory_rent)) THEN 'tańsze'
+  END AS if_cheaper
+  FROM rentals
+)
+
+SELECT if_cheaper, COUNT(*) AS rent_num
+FROM inv_ids
+GROUP BY if_cheaper'''))
+
+rent_pr = pd.DataFrame(rent_price.fetchall(), columns=rent_price.keys())
+drozsze = rent_pr[rent_pr['if_cheaper'] == 'droższe']['rent_num'][0]
+tansze = int(rent_pr[rent_pr['if_cheaper'] == 'tańsze']['rent_num'][1])
+
+avg_price = connection.execute(text('''SELECT ROUND(AVG(price),2) AS avg_price
+    FROM inventory_rent'''))
+avg_pr = pd.DataFrame(avg_price.fetchall(), columns=avg_price.keys())['avg_price'][0]
+```
+
+Średnia cena za wypożyczenie gier dostępnych w sklepie "Gamestalgia" to `r py$avg_pr`. Gry, których wypożyczenie wiąże się z większymi od średniej kosztami były wypożyczane łącznie `r py$drozsze` razy, a z mniejszymi `r py$tansze`. 
+
+\section{Liczba wypożyczeń względem grupy wiekowej}
+
+```{python, echo = FALSE, results='hide'}
+age_rent = connection.execute(text('''select 
+    CASE 
+        WHEN (2023-YEAR(c.birthdate)) <= 30 THEN '30 lub mniej' 
+        WHEN (2023-YEAR(c.birthdate)) > 30 and (2023-YEAR(c.birthdate)) <= 45 THEN 'od 31 do 45' 
+        WHEN (2023-YEAR(c.birthdate)) > 45 and (2023-YEAR(c.birthdate)) <= 60 THEN 'od 46 do 60' 
+        ELSE 'powyżej 60' END AS years,
+    count(r.rental_id) AS rentals_number
+from rentals AS r
+INNER JOIN customers AS c ON c.customer_id=r.customer_id
+group by 
+    CASE 
+        WHEN (2023-YEAR(c.birthdate)) <= 30 THEN '30 lub mniej' 
+        WHEN (2023-YEAR(c.birthdate)) >  30 and (2023-YEAR(c.birthdate)) <= 45 THEN 'od 31 do 45' 
+        WHEN (2023-YEAR(c.birthdate)) >  45 and (2023-YEAR(c.birthdate)) <= 60 THEN 'od 46 do 60' 
+        ELSE 'powyżej 60' END'''))
+        
+age_rent_df = pd.DataFrame(age_rent.fetchall(), columns=age_rent.keys())
+
+latex_table = tabulate(age_rent_df, headers='keys', tablefmt='latex')
+caption = 'Liczba wypożyczeń względem grupy wiekowej.'
+label = 'tab:age_rent'
+latex_table_with_caption_and_label = f"\\begin{{table}}[h]\n\\centering\n\\caption{{{caption}}}\\label{{{label}}}\n{latex_table}\\end{{table}}"
+
+with open('age_rentdf.tex', 'w') as f:
+    f.write(latex_table_with_caption_and_label)
+f.close()
+```
+
+\begin{center}
+\input{age_rentdf.tex}
+\end{center}
+```{python, echo=FALSE, results='hide'}
 connection.close()
 ```
