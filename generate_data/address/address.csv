@@ -1,606 +1,606 @@
-address_id,address,city,postal_code
-1,Rataja 59/20,Wrocław,53-336
-2,Czereśniowa 27/41,Wrocław,50-304
-3,Koralowa 50,Wrocław,51-140
-4,Powstańców 74/50,Wrocław,54-222
-5,Kochanowskiego 607,Jelenia Góra,58-588
-6,Piaskowa 257,Wrocław,54-432
-7,Królewska 05/70,Wrocław,54-425
-8,Jastrzębia 76/73,Wrocław,54-008
-9,Kopernika 17/25,Wrocław,54-139
-10,Konarskiego 25/78,Borowa,55-091
-11,Urocza 50/79,Wrocław,51-636
-12,Wypoczynkowa 23,Wrocław,50-156
-13,Kościuszki 990,Wrocław,52-112
-14,Warszawska 93,Wrocław,54-622
-15,Kreta 813,Wrocław,52-431
-16,Plater 993,Sosnówka,58-564
-17,Stolarska 47/65,Szczepanów,55-318
-18,Mostowa 84,Kamienna Góra,58-400
-19,Andersa 670,Wrocław,51-180
-20,Wieniawskiego 661,Warszawa,02-954
-21,Kosynierów 69,Mietków,55-081
-22,Modrzewiowa 30/53,Wrocław,53-611
-23,Nadrzeczna 17,Wrocław,51-149
-24,Kopernika 18/39,Wrocław,54-530
-25,Gdańska 367,Wrocław,52-418
-26,Sikorskiego 26,Wrocław,50-117
-27,Kościuszki 48,Lubomierz,59-623
-28,Jaśminowa 10/47,Lubawka,58-420
-29,Zakątek 683,Wrocław,51-173
-30,Tulipanowa 24/06,Wrocław,50-517
-31,Bydgoska 31/38,Wrocław,50-329
-32,Pałacowa 00/15,Wrocław,54-235
-33,Jana Pawła II 69/40,Legnica,59-220
-34,Robotnicza 453,Wrocław,53-535
-35,Wspólna 20/48,Roztoka,58-173
-36,Jabłoniowa 53/14,Wrocław,51-351
-37,Jaskółcza 78,Wrocław,51-113
-38,Gołębia 901,Wrocław,52-333
-39,Tulipanowa 47/64,Wrocław,54-058
-40,Konstytucji 3 Maja 05,Głuszyca,58-340
-41,Jaśminowa 590,Wałbrzych,58-300
-42,Wąska 063,Wrocław,50-560
-43,Kołłątaja 57,Wrocław,51-180
-44,Bema 121,Tyniec Mały,55-041
-45,Korczaka 284,Wrocław,53-625
-46,Prosta 68,Jelenia Góra,58-570
-47,Sadowa 575,Bolków,59-420
-48,Bursztynowa 22,Święta Katarzyna,55-010
-49,Osiedlowa 51/96,Kraków,31-579
-50,Sikorskiego 27/38,Ząbkowice Śląskie,57-200
-51,Makuszyńskiego 465,Wrocław,50-132
-52,Baczynskiego 51,Oława,55-200
-53,Kosynierów 962,Wrocław,51-352
-54,Staszica 376,Cieszków,56-330
-55,Ściegiennego 711,Wrocław,52-213
-56,Parkowa 95,Wrocław,54-032
-57,Nadrzeczna 943,Wądroże Wielkie,59-430
-58,Warszawska 74/52,Wrocław,54-403
-59,Gołębia 95,Poznań,61-402
-60,Słoneczna 04,Wrocław,52-340
-61,Dworcowa 681,Wrocław,54-622
-62,Odrzańska 48,Wrocław,50-302
-63,Sokola 49,Polkowice,59-100
-64,Wiklinowa 29/27,Wrocław,51-502
-65,Tęczowa 42,Wałbrzych,58-316
-66,Klasztorna 65,Wrocław,51-164
-67,Nałkowskiej 274,Białystok,15-237
-68,Klonowa 429,Wrocław,54-425
-69,Harcerska 06/78,Wrocław,52-212
-70,Spokojna 90,Świeradów-Zdrój,59-852
-71,Sybiraków 457,Wrocław,54-079
-72,Waryńskiego 85/89,Wrocław,51-180
-73,Królewska 59/26,Szczecin,71-380
-74,Owocowa 090,Wrocław,51-180
-75,Czereśniowa 64/16,Wrocław,50-246
-76,Sokola 41,Paszowice,59-411
-77,Daszyńskiego 69/76,Wrocław,51-126
-78,Sadowa 964,Kudowa Zdrój,57-350
-79,Ciasna 230,Wrocław,53-437
-80,Poniatowskiego 986,Wrocław,52-225
-81,Drzymały 312,Dzierżoniów,58-202
-82,Mazowiecka 98/10,Lubin,59-339
-83,Pałacowa 52,Wrocław,50-515
-84,Akacjowa 99,Wrocław,51-215
-85,Browarna 18/46,Lubin,59-335
-86,Sienkiewicza 809,Wrocław,53-423
-87,Brzozowa 140,Wrocław,54-151
-88,Parkowa 45,Wrocław,50-046
-89,Harcerska 50,Wrocław,50-559
-90,Diamentowa 88/17,Wrocław,53-010
-91,Wysoka 28/05,Wrocław,51-006
-92,Poniatowskiego 38,Wrocław,53-214
-93,Słowicza 45/14,Stara Kamienica,58-512
-94,Reymonta 050,Jelenia Góra,58-505
-95,Grabowa 303,Wrocław,54-049
-96,Wąska 220,Wrocław,50-253
-97,Lwowska 478,Wrocław,51-647
-98,Orzechowa 09,Wrocław,54-074
-99,Przechodnia 45,Wrocław,51-141
-100,Głogowa 983,Wrocław,50-140
-101,Rubinowa 06/72,Laski,57-251
-102,Kossaka 49/91,Wrocław,54-067
-103,Kamienna 07,Kielce,25-721
-104,Kielecka 47,Wykroty,59-733
-105,Norwida 03,Wrocław,54-115
-106,Gajowa 31/37,Wabienice,56-404
-107,Podmiejska 60,Wałbrzych,58-316
-108,Mickiewicza 52/67,Wykroty,59-733
-109,Piwna 43,Wrocław,52-014
-110,Irysowa 75/61,Wrocław,51-419
-111,Wiosenna 058,Roztoka,58-173
-112,Zakątek 474,Złotoryja,59-501
-113,Niecała 157,Ujazd Górny,55-341
-114,Rajska 75/90,Wrocław,51-531
-115,Solidarnosci 69/39,Poznań,61-240
-116,Wałowa 483,Wrocław,53-433
-117,Stefana Batorego 18/29,Świerzawa,59-540
-118,Piastowska 852,Chojnów,59-225
-119,Sokola 37/18,Wrocław,51-180
-120,Niecała 280,Wrocław,53-153
-121,Zaciszna 24/45,Wrocław,52-019
-122,Kwiatowa 08,Jaworzno,43-600
-123,Konwaliowa 745,Wrocław,54-619
-124,Agrestowa 451,Wrocław,51-315
-125,Swierkowa 061,Wałbrzych,58-303
-126,Listopada 92,Wrocław,51-315
-127,Żabia 87/73,Wrocław,53-609
-128,Górnicza 42,Wrocław,54-703
-129,Sucharskiego 29/32,Wrocław,50-140
-130,Szpitalna 77/22,Łódź,90-632
-131,Warszawska 12,Lwówek Śląski,59-600
-132,Szarych Szeregów 71/53,Wrocław,53-328
-133,Tartaczna 42,Wrocław,50-013
-134,Narutowicza 08,Wrocław,54-144
-135,Klonowa 92/16,Oleśnica,56-400
-136,Tartaczna 56/95,Wrocław,50-572
-137,Partyzantów 751,Wrocław,50-047
-138,Żurawia 65,Wrocław,51-313
-139,Skrajna 65/51,Łódź,91-141
-140,Kopernika 17,Wrocław,53-626
-141,Klonowa 87,Wrocław,50-379
-142,Gołębia 303,Wrocław,53-612
-143,Mazowiecka 645,Wrocław,51-180
-144,Rumiankowa 52/44,Leszno,64-102
-145,Kamienna 247,Wrocław,53-411
-146,Kaszubska 616,Kiełczów,55-093
-147,Lawendowa 500,Jelenia Góra,58-501
-148,Toruńska 74,Wrocław,53-426
-149,Matejki 55,Wrocław,50-372
-150,Jabłoniowa 96,Wrocław,53-621
-151,Jodłowa 37/05,Wrocław,52-216
-152,Witosa 57/02,Wrocław,50-244
-153,Składowa 51,Warszawa,05-075
-154,Śląska 28/21,Wrocław,53-031
-155,Orzechowa 33,Sosnowiec,41-218
-156,Konwaliowa 325,Ząbkowice Śląskie,57-201
-157,Głowackiego 303,Wrocław,54-314
-158,Orla 256,Łódź,91-342
-159,Mazurska 81/75,Jelcz-Laskowice,55-221
-160,Ptasia 48,Wrocław,52-244
-161,Rubinowa 09/13,Wrocław,51-153
-162,Dworcowa 57,Wałbrzych,58-309
-163,Andersa 71/00,Wrocław,50-321
-164,Spółdzielcza 039,Wolibórz,57-431
-165,Waryńskiego 04/11,Wrocław,53-202
-166,Górna 23,Góra,56-200
-167,Makowa 86/69,Wrocław,51-180
-168,Poznańska 679,Wrocław,51-351
-169,Cicha 42/01,Zaręba Górna,59-817
-170,Orkana 39/79,Mysłakowice,58-533
-171,Perłowa 391,Wrocław,53-007
-172,Bankowa 93,Wrocław,53-143
-173,Rumiankowa 48,Legnica,59-209
-174,Tulipanowa 92,Wrocław,50-242
-175,Słowianska 99/25,Wrocław,54-318
-176,Wojciecha 61/81,Wrocław,53-023
-177,Podmiejska 26,Wrocław,53-228
-178,Jana Sobieskiego 92/61,Wrocław,52-212
-179,Rumiankowa 811,Wrocław,54-067
-180,Piekarska 127,Wrocław,50-082
-181,Jana 148,Wrocław,51-659
-182,Robotnicza 89/48,Wrocław,52-422
-183,Źródlana 321,Wrocław,51-253
-184,Fabryczna 203,Wrocław,52-316
-185,Pszenna 21,Wrocław,52-413
-186,Władysława Łokietka 95,Jelcz-Laskowice,55-221
-187,Reymonta 962,Wrocław,54-020
-188,Pogodna 38/25,Świętochłowice,41-600
-189,Górska 17/51,Wrocław,54-067
-190,Olchowa 652,Wrocław,53-023
-191,Lazurowa 38/48,Wrocław,54-020
-192,Bankowa 009,Jordanów Śląski,55-065
-193,Kilińskiego 296,Wrocław,50-320
-194,Jasna 00/58,Polkowice,59-101
-195,Mokra 34,Wrocław,52-117
-196,Truskawkowa 871,Wrocław,54-615
-197,Chopina 857,Lewin Kłodzki,57-343
-198,Wyzwolenia 37/88,Wrocław,50-235
-199,Słowicza 63/01,Wrocław,52-340
-200,Słowicza 781,Brzeg Dolny,56-120
-201,Jeżynowa 47/10,Wrocław,54-034
-202,Fredry 836,Laski,57-251
-203,Nadbrzeżna 62,Katowice,40-061
-204,Poziomkowa 58/49,Wrocław,52-008
-205,Księżycowa 98,Wrocław,51-180
-206,Rynek 62/35,Wrocław,50-375
-207,Jodłowa 15/80,Wrocław,54-515
-208,Sybiraków 66,Lubin,59-338
-209,Kasztanowa 23,Wrocław,50-953
-210,Sienkiewicza 84/08,Wrocław,51-111
-211,Sportowa 973,Wrocław,54-240
-212,Reja 45/22,Wrocław,53-301
-213,Słowackiego 13/29,Wrocław,53-318
-214,Zaciszna 16,Wrocław,51-631
-215,Stycznia 429,Koszalin,75-685
-216,Wypoczynkowa 58,Wrocław,51-003
-217,Szkolna 94/07,Wrocław,53-340
-218,Turkusowa 26/26,Wrocław,50-569
-219,Handlowa 547,Łódź,90-900
-220,Azaliowa 89/19,Wrocław,52-214
-221,Tęczowa 73/03,Radków,57-420
-222,Klasztorna 90/55,Wrocław,53-650
-223,Matejki 40,Świdnica,58-105
-224,Kazimierza Wielkiego 081,Zawonia,55-106
-225,Makowa 430,Wałbrzych,58-300
-226,Klasztorna 33,Wrocław,54-046
-227,Gajowa 904,Lubin,59-303
-228,Tęczowa 09/00,Oława,55-202
-229,Zdrojowa 25/96,Wrocław,54-409
-230,Armii Krajowej 16,Wrocław,51-138
-231,Poznańska 30,Wrocław,53-403
-232,Słowackiego 07,Zebrzydowa,59-731
-233,Wiślana 11/11,Wrocław,50-535
-234,Okrężna 26,Tomaszów Bolesławiecki,59-708
-235,Jagodowa 266,Łódź,91-849
-236,Kościuszki 55,Wrocław,50-017
-237,Sybiraków 95,Wrocław,53-625
-238,Rózana 13,Wrocław,54-310
-239,Jagiellońska 125,Wrocław,52-316
-240,Kowalska 079,Wrocław,54-520
-241,Chełmońskiego 85,Wrocław,54-617
-242,Rolnicza 55/93,Wrocław,50-327
-243,Szczęśliwa 605,Wrocław,50-084
-244,Poziomkowa 57/12,Żarów,58-130
-245,Orzeszkowej 35,Wrocław,50-900
-246,Towarowa 19,Wrocław,54-616
-247,Nadrzeczna 95/83,Kielce,25-713
-248,Wrocławska 91/44,Wrocław,54-515
-249,Sowia 10,Ząbkowice Śląskie,57-201
-250,Olchowa 49/91,Oława,55-201
-251,Floriana 55,Jelenia Góra,58-500
-252,Jeziorna 41/97,Prusice,55-110
-253,Miła 99,Wrocław,51-212
-254,Orla 52,Wrocław,54-062
-255,Dojazdowa 474,Wrocław,50-024
-256,Fiołkowa 587,Wrocław,50-150
-257,Akacjowa 862,Prochowice,59-230
-258,Tuwima 21,Łódź,93-492
-259,Świerczewskiego 80/74,Wrocław,50-257
-260,Zachodnia 635,Miłków,58-535
-261,Srebrna 34/62,Wrocław,53-149
-262,Radosna 70/63,Wrocław,51-009
-263,Diamentowa 31,Węgorzewo,11-600
-264,Wysoka 45,Katowice,40-674
-265,Sokola 42,Zgorzelec,59-902
-266,Powstańców Wielkopolskich 963,Wrocław,51-109
-267,Plater 89/69,Wrocław,54-102
-268,Dworska 559,Wrocław,53-342
-269,Hutnicza 74/33,Wrocław,54-027
-270,Partyzantów 05,Wrocław,50-226
-271,Lipowa 51,Wrocław,51-507
-272,Widokowa 83/65,Kraków,31-587
-273,Jana Sobieskiego 490,Warszawa,04-417
-274,Słowackiego 547,Wałbrzych,58-306
-275,Jaworowa 873,Szczytna,57-330
-276,Poniatowskiego 82,Kraków,31-039
-277,Diamentowa 297,Zaręba Górna,59-817
-278,Kamienna 46,Paszowice,59-411
-279,Targowa 26,Wrocław,54-513
-280,Powstańców Wielkopolskich 81/85,Wrocław,50-119
-281,Witosa 58/01,Wrocław,50-156
-282,Konstytucji 3 Maja 78/72,Miękinia,55-330
-283,Lawendowa 026,Wrocław,50-334
-284,Wypoczynkowa 30/24,Wrocław,51-518
-285,Jagiellońska 80,Dzierżoniów,58-200
-286,Krokusowa 59,Wrocław,50-547
-287,Łabędzia 155,Świeradów-Zdrój,59-851
-288,Boczna 67/53,Zgorzelec,59-901
-289,Akacjowa 515,Wądroże Wielkie,59-430
-290,Kościuszki 97,Wrocław,52-226
-291,Zamkowa 27,Wrocław,50-156
-292,Tulipanowa 40,Wrocław,51-164
-293,Krasickiego 79,Polanica-Zdrój,57-320
-294,Władysława Jagiełły 30/48,Wrocław,53-662
-295,Listopada 923,Rzeszów,35-608
-296,Głogowa 50,Wrocław,54-072
-297,Maczka 371,Wrocław,53-673
-298,Zachodnia 30/16,Ścinawa,59-330
-299,Polna 72,Malczyce,55-320
-300,Wyspiańskiego 13,Warszawa,00-725
-301,Jaśminowa 083,Kuźnica Czeszycka,56-305
-302,Staszica 56/01,Wrocław,54-129
-303,Krucza 87/99,Lubin,59-311
-304,Lipowa 14,Wrocław,50-506
-305,Stolarska 994,Jelenia Góra,58-506
-306,Czarnieckiego 72,Mściwojów,59-407
-307,Sportowa 184,Wrocław,50-950
-308,Żwirowa 854,Wrocław,53-231
-309,Zielona 411,Wrocław,51-180
-310,Kwiatowa 47,Wrocław,54-074
-311,Tartaczna 60/36,Minkowice Oławskie,55-206
-312,Świerczewskiego 86/84,Nowa Ruda,57-402
-313,Łabędzia 00/58,Wrocław,54-003
-314,Poznańska 39/82,Wrocław,54-130
-315,Wojciecha 844,Wrocław,52-212
-316,Orla 78/05,Wrocław,52-212
-317,Szeroka 479,Przesieka,58-563
-318,Orkana 48/51,Wrocław,52-114
-319,Brzozowa 575,Wrocław,53-010
-320,Grabowa 16,Wrocław,50-233
-321,Osiedlowa 53,Wleń,59-610
-322,Składowa 52/66,Wrocław,50-201
-323,Radosna 584,Łódź,90-262
-324,Nadrzeczna 887,Wrocław,53-007
-325,Klonowa 368,Wrocław,52-244
-326,Przemysłowa 80/61,Wrocław,50-033
-327,Moniuszki 75,Wałbrzych,58-309
-328,Hutnicza 74/66,Oleśnica,56-400
-329,Mieszka I 69/51,Wrocław,52-428
-330,Myśliwska 70,Zebrzydowa,59-731
-331,Wiązowa 628,Wrocław,53-344
-332,Bukowa 12,Wrocław,53-241
-333,Warszawska 697,Wrocław,51-180
-334,Poziomkowa 285,Wrocław,50-991
-335,Wypoczynkowa 76/92,Lwówek Śląski,59-600
-336,Rajska 818,Bielany Wrocławskie,55-077
-337,Hallera 65/06,Wrocław,52-214
-338,Asnyka 61,Wrocław,52-206
-339,Lelewela 02/17,Jelenia Góra,58-570
-340,Szafirowa 07/51,Wrocław,50-536
-341,Żytnia 488,Warszawa,00-200
-342,Prusa 95,Wrocław,50-504
-343,Makowa 21/10,Wrocław,53-523
-344,Reymonta 76,Wrocław,51-356
-345,Cedrowa 37,Wrocław,50-010
-346,Młynarska 924,Wrocław,50-049
-347,Sosnowa 419,Wrocław,51-180
-348,Jana Sobieskiego 35/69,Wrocław,51-611
-349,Leśna 44/92,Wrocław,54-032
-350,Miarki 23,Wrocław,52-020
-351,Malinowa 46,Wrocław,51-417
-352,Częstochowska 086,Kamieniec Ząbkowicki,57-230
-353,Zielna 31/92,Polkowice,59-100
-354,Bociania 21,Wrocław,52-401
-355,Krasińskiego 53/90,Wrocław,50-454
-356,Lazurowa 06/55,Wrocław,53-663
-357,Wypoczynkowa 105,Warszawa,02-547
-358,Korczaka 15/36,Wrocław,51-505
-359,Wojciecha 64,Bolesławiec,59-701
-360,Kościelna 51,Wrocław,50-302
-361,Brzozowa 45,Wrocław,50-508
-362,Żurawia 596,Wrocław,51-622
-363,Kaszubska 484,Wrocław,52-209
-364,Jesionowa 43,Wrocław,54-704
-365,Błękitna 942,Lublin,20-081
-366,Żabia 25,Radków,57-420
-367,Cmentarna 49,Legnica,59-217
-368,Turystyczna 130,Wałbrzych,58-302
-369,Klonowa 36,Wrocław,51-622
-370,Kolejowa 11/28,Wrocław,53-339
-371,Jarzębinowa 68/10,Bielsko-Biała,43-300
-372,Jaworowa 01,Wrocław,50-524
-373,Zielona 10/12,Wrocław,54-134
-374,Władysława Łokietka 69,Walim,58-320
-375,Owocowa 56/32,Wrocław,50-341
-376,Rybacka 69/97,Lublin,20-618
-377,Stawowa 017,Wrocław,54-404
-378,Harcerska 029,Wrocław,51-004
-379,Spacerowa 19,Wrocław,50-412
-380,Klasztorna 51/90,Wrocław,50-304
-381,Olchowa 75,Ziębice,57-220
-382,Kaszubska 480,Charzykowy,89-606
-383,Wiązowa 28/67,Wrocław,54-220
-384,Borówkowa 62/78,Wrocław,50-538
-385,Storczykowa 24/19,Wrocław,53-118
-386,Mieszka I 38,Krzelów,56-150
-387,Miodowa 244,Częstochowa,42-218
-388,Borowa 26,Warszawa,03-887
-389,Zachodnia 337,Wrocław,54-057
-390,Jaśminowa 345,Wrocław,54-002
-391,Kościuszki 66,Wrocław,52-020
-392,Kościelna 664,Długołęka,55-090
-393,Jodłowa 88,Zawidów,59-970
-394,Turkusowa 04/27,Strzelin,57-100
-395,Skrajna 44/57,Polkowice,59-100
-396,Pocztowa 79/76,Sulików,59-975
-397,Wałowa 04,Wałbrzych,58-302
-398,Rataja 57,Prochowice,59-230
-399,Słowackiego 96,Wrocław,51-686
-400,Browarna 98/58,Wrocław,51-145
-401,Słowicza 15/34,Wrocław,52-340
-402,Srebrna 300,Racibórz,47-400
-403,Rumiankowa 111,Wrocław,54-107
-404,Łączna 89,Wrocław,50-429
-405,Pałacowa 50/65,Wrocław,53-017
-406,Asnyka 494,Warszawa,04-513
-407,Księżycowa 914,Wrocław,52-416
-408,Wierzbowa 83/22,Bystrzyca Kłodzka,57-500
-409,Sikorskiego 368,Poznań,60-441
-410,Śląska 59,Wrocław,53-435
-411,Kościelna 08/78,Wrocław,50-545
-412,Krótka 853,Brzeg Dolny,56-120
-413,Kolorowa 85,Góra,56-200
-414,Rolna 53,Wrocław,51-672
-415,Truskawkowa 15,Wrocław,53-435
-416,Korfantego 00/04,Wrocław,52-021
-417,Spółdzielcza 26,Wrocław,51-009
-418,Zbożowa 13,Wrocław,51-662
-419,Młyńska 21/10,Wrocław,53-630
-420,Zamkowa 81/96,Dobromierz,58-170
-421,Jana III Sobieskiego 514,Wrocław,54-009
-422,Starowiejska 66,Wrocław,50-961
-423,Chmielna 46/63,Wrocław,50-540
-424,Szpitalna 514,Wrocław,50-514
-425,Modrzewiowa 42/16,Wrocław,50-982
-426,Plater 42/06,Legnica,59-205
-427,Kaliska 56/91,Lubomierz,59-623
-428,Krokusowa 180,Świebodzice,58-160
-429,Zdrojowa 23/43,Prusy,57-150
-430,Jastrzębia 94/79,Wrocław,52-419
-431,Topolowa 979,Wrocław,53-153
-432,Jagiellońska 89,Srebrna Góra,57-215
-433,Świerczewskiego 802,Niemcza,58-230
-434,Młynarska 24/30,Gryfów Śląski,59-620
-435,Lipca 92,Wrocław,53-429
-436,Szkolna 705,Wrocław,54-043
-437,Polna 03,Wrocław,53-238
-438,Kołłątaja 66,Bogatynia,59-920
-439,Jaskółcza 743,Wrocław,51-005
-440,Piwna 500,Wrocław,51-687
-441,Błękitna 28/25,Wrocław,50-027
-442,Źródlana 980,Wrocław,54-404
-443,Jeżynowa 336,Trzebnica,55-100
-444,Częstochowska 05,Wrocław,54-044
-445,Gdańska 16/92,Wrocław,53-427
-446,Kamienna 268,Kudowa Zdrój,57-350
-447,Kwiatowa 731,Świdnica,58-103
-448,Topolowa 44/61,Wrocław,50-329
-449,Powstańców 50/59,Wrocław,50-362
-450,Lwowska 34,Wałbrzych,58-305
-451,Jastrzębia 39/23,Wrocław,54-412
-452,Brzozowa 71,Góra,56-200
-453,Grzybowa 77,Wrocław,51-218
-454,Skośna 726,Kraków,30-688
-455,Opolska 67/13,Warszawa,02-593
-456,Sawickiej 35/94,Wrocław,51-118
-457,Szeroka 78/64,Katowice,40-265
-458,Pomorska 963,Gdańsk,80-299
-459,Szewska 40,Wrocław,54-214
-460,Świerczewskiego 43/98,Mikołów,43-195
-461,Dojazdowa 63/79,Wrocław,50-129
-462,Wilcza 86/88,Międzybórz,56-513
-463,Słowianska 05/11,Pieszyce,58-250
-464,Spokojna 42,Wrocław,50-524
-465,Turkusowa 755,Wrocław,51-220
-466,Nowa 36/81,Wrocław,51-622
-467,Ciasna 82/54,Gromadka,59-706
-468,Jałowcowa 096,Wrocław,50-564
-469,Letnia 582,Domaniów,55-216
-470,Jesienna 017,Świętoszów,59-726
-471,Dobra 48/58,Wrocław,53-627
-472,Turystyczna 85,Wrocław,50-266
-473,Witosa 334,Legnica,59-210
-474,Łanowa 18/92,Wojcieszów,59-550
-475,Skłodowskiej-Curie 05,Wrocław,51-134
-476,Lazurowa 02/27,Wrocław,51-111
-477,Rolna 533,Wrocław,52-230
-478,Krańcowa 18/28,Legnica,59-200
-479,Południowa 657,Żórawina,55-020
-480,Podleśna 998,Wrocław,53-004
-481,Pogodna 43/28,Wrocław,50-973
-482,Krasińskiego 52/06,Wrocław,50-156
-483,Ciasna 79/74,Polanica-Zdrój,57-320
-484,Kolejowa 77,Łozina,55-094
-485,Pałacowa 93/08,Wrocław,54-129
-486,Wróblewskiego 915,Dzierżoniów,58-203
-487,Kusocińskiego 336,Wrocław,53-610
-488,Szafirowa 532,Wrocław,50-266
-489,Widokowa 592,Wrocław,51-122
-490,Jaskółcza 21/91,Wrocław,51-213
-491,Szarych Szeregów 748,Wrocław,50-266
-492,Łąkowa 26/71,Wrocław,53-121
-493,Słowackiego 30,Wrocław,51-222
-494,Mazowiecka 400,Wrocław,54-079
-495,Modrzewiowa 449,Wrocław,53-234
-496,Wiejska 00/58,Łódź,91-226
-497,Batalionów Chłopskich 57,Wrocław,52-326
-498,Zaułek 81,Wrocław,52-340
-499,Azaliowa 44,Gdynia,81-458
-500,Kruczkowskiego 98/07,Wrocław,50-220
-501,Morelowa 89,Kraków,31-802
-502,Dąbrowskiego 38,Wrocław,51-421
-503,Czereśniowa 321,Wrocław,50-359
-504,Kraszewskiego 57/19,Legnica,59-205
-505,Strzelecka 10,Lubawka,58-420
-506,Jodłowa 417,Prusy,57-150
-507,Kusocińskiego 54/12,Lubań,59-800
-508,Rubinowa 76,Wrocław,51-612
-509,Wyspiańskiego 81,Wrocław,53-007
-510,Norwida 76/54,Chojnów,59-225
-511,Konwaliowa 19/79,Wrocław,51-200
-512,Myśliwska 61,Ołdrzychowice Kłodzkie,57-360
-513,Stroma 74,Wrocław,52-208
-514,Strażacka 155,Wrocław,52-019
-515,Zaułek 43/16,Łożnica,72-122
-516,Morska 25/65,Wrocław,54-020
-517,Wiatraczna 24,Świdnica,58-101
-518,Koralowa 86/21,Wrocław,54-043
-519,Prusa 444,Wrocław,53-629
-520,Wierzbowa 65/37,Wrocław,51-111
-521,Piłsudskiego 82/83,Wrocław,52-015
-522,Lipca 32,Wrocław,50-023
-523,Działkowa 95/41,Wrocław,53-617
-524,Cedrowa 241,Wrocław,53-144
-525,Brzozowa 75/68,Wrocław,50-067
-526,Opolska 82/23,Wrocław,51-250
-527,Prosta 223,Lwówek Śląski,59-600
-528,Działkowa 76/48,Legnica,59-207
-529,Księżycowa 67,Jelenia Góra,58-570
-530,Jesienna 24/58,Radwanice,59-160
-531,Czarnieckiego 73/51,Wrocław,52-215
-532,Lisia 92,Jelenia Góra,58-503
-533,Borówkowa 076,Wrocław,52-225
-534,Świerczewskiego 19/72,Wrocław,50-365
-535,Waryńskiego 40/87,Wrocław,52-339
-536,Bolesława Chrobrego 88,Wrocław,52-205
-537,Malinowa 91/98,Wrocław,54-047
-538,Rybacka 60,Wrocław,50-963
-539,Pułaskiego 67/83,Wrocław,50-265
-540,Rolna 35,Wrocław,51-519
-541,Jagiellońska 191,Wrocław,54-511
-542,Boczna 128,Warszawa,01-497
-543,Opolska 16/46,Sobótka,55-051
-544,Browarna 08,Wrocław,53-205
-545,Gajowa 979,Wrocław,50-266
-546,Bociania 675,Wrocław,51-376
-547,Swierkowa 20,Wrocław,54-608
-548,Strumykowa 303,Wrocław,54-150
-549,Północna 25/57,Marcinowice,58-124
-550,Tuwima 96,Wrocław,54-229
-551,Sienkiewicza 55,Jelenia Góra,58-560
-552,Bukowa 32/40,Wrocław,53-651
-553,Daszyńskiego 294,Wrocław,50-301
-554,Traugutta 11,Oława,55-202
-555,Kościelna 70,Wałbrzych,58-307
-556,Dębowa 15/06,Wrocław,53-011
-557,Jabłoniowa 677,Wrocław,52-015
-558,Królewska 299,Krzelów,56-150
-559,Sybiraków 97/71,Legnica,59-203
-560,Sarnia 385,Wałbrzych,58-300
-561,Bursztynowa 166,Wrocław,53-334
-562,Maja 21,Kudowa Zdrój,57-350
-563,Perłowa 756,Wrocław,54-041
-564,Toruńska 330,Koszalin,75-844
-565,Staffa 465,Wrocław,51-127
-566,Chmielna 634,Wrocław,50-319
-567,Kossaka 88/50,Wrocław,51-167
-568,Wieniawskiego 88/55,Wrocław,53-314
-569,Modrzewiowa 762,Wrocław,50-319
-570,Batalionów Chłopskich 274,Karpacz,58-540
-571,Jana Pawła II 12/26,Chojnów,59-225
-572,Mazurska 80/90,Pomocne,59-423
-573,Lipca 84/94,Wrocław,51-121
-574,Strażacka 92,Jelenia Góra,58-500
-575,Powstańców 64,Wrocław,51-151
-576,Azaliowa 988,Wrocław,53-017
-577,Kołłątaja 876,Wrocław,54-060
-578,Jałowcowa 091,Wrocław,54-102
-579,Wieniawskiego 514,Kostomłoty,55-311
-580,Hallera 22,Nowa Ruda,57-402
-581,Strumykowa 23,Karpacz,58-540
-582,Piastowska 21/60,Wiązów,57-120
-583,Promienna 26,Wrocław,50-213
-584,Cisowa 18,Wrocław,52-233
-585,Orzeszkowej 516,Wrocław,53-025
-586,Szeroka 38,Pęgów,55-124
-587,Młynarska 39,Wrocław,54-403
-588,Wrocławska 31/39,Wrocław,54-614
-589,Miłosza 85/30,Miłków,58-535
-590,Spokojna 111,Cieszków,56-330
-591,Cedrowa 23,Lubin,59-311
-592,Skargi 35/01,Wrocław,51-218
-593,Środkowa 50,Wrocław,51-251
-594,Wyszyńskiego 84,Koszalin,75-682
-595,Dolna 681,Wrocław,51-417
-596,Rzeczna 934,Lubin,59-336
-597,Kowalska 83,Nowa Ruda,57-402
-598,Składowa 41,Wrocław,51-622
-599,Wiązowa 175,Wrocław,50-027
-600,Rajska 735,Kielce,25-103
-601,Korfantego 921,Wrocław,50-335
-602,Morelowa 21,Lubin,59-336
-603,Dolna 702,Wrocław,50-426
-604,Reja 89,Mietków,55-081
-605,Irysowa 682,Wrocław,53-671
+address_id,address,country,city,postal_code
+1,Wiklinowa 00,Polska,Wrocław,51-354
+2,Kusocińskiego 16,Polska,Mirsk,59-630
+3,Tartaczna 23/02,Polska,Wrocław,53-607
+4,Reja 793,Polska,Chełmsko Śląskie,58-407
+5,Zapolskiej 30,Polska,Wrocław,51-658
+6,Kasztanowa 77/50,Polska,Wrocław,54-067
+7,Głowackiego 42/62,Polska,Wrocław,51-680
+8,Źródlana 29,Polska,Gryfów Śląski,59-620
+9,Paderewskiego 20,Polska,Wrocław,52-016
+10,Maczka 896,Polska,Marcinowice,58-124
+11,Zielna 59,Polska,Wrocław,52-316
+12,Wybickiego 07,Polska,Olesno,33-210
+13,Ogrodowa 64,Polska,Wrocław,50-572
+14,Jagiellońska 78,Polska,Wrocław,53-113
+15,Paderewskiego 868,Polska,Wrocław,53-329
+16,Willowa 214,Polska,Wrocław,50-263
+17,Dąbrowskiej 753,Polska,Wrocław,51-617
+18,Kamienna 05,Polska,Wrocław,53-625
+19,Miarki 33/49,Polska,Jastrzębie-Zdrój,44-335
+20,Spokojna 28,Polska,Wrocław,51-138
+21,Bursztynowa 65,Polska,Ludwikowice Kłodzkie,57-450
+22,Myśliwska 10,Polska,Wrocław,54-045
+23,Wczasowa 534,Polska,Jelenia Góra,58-500
+24,Lipca 29/01,Polska,Wrocław,51-354
+25,Krakowska 12,Polska,Wrocław,50-514
+26,Swierkowa 90/79,Polska,Wrocław,50-955
+27,Tartaczna 440,Polska,Wrocław,50-525
+28,Żwirki i Wigury 48/90,Polska,Wrocław,54-019
+29,Świerczewskiego 70/35,Polska,Wrocław,50-348
+30,Niepodległości 64/14,Polska,Legnica,59-200
+31,Podwale 21/39,Polska,Wrocław,52-201
+32,Żeromskiego 165,Polska,Przemków,59-171
+33,Dworcowa 95/78,Polska,Wałbrzych,58-303
+34,Glówna 565,Polska,Wrocław,54-516
+35,Chełmońskiego 89/36,Polska,Wrocław,51-180
+36,Kazimierza Wielkiego 15/74,Polska,Wrocław,51-504
+37,Miodowa 95,Polska,Świeradów-Zdrój,59-852
+38,Gdańska 109,Polska,Prochowice,59-230
+39,Wałowa 60,Polska,Złotoryja,59-501
+40,Mazowiecka 81,Polska,Minkowice Oławskie,55-206
+41,Wiklinowa 86/77,Polska,Warszawa,01-979
+42,Borówkowa 83/60,Polska,Wrocław,51-639
+43,Wiślana 84,Polska,Wrocław,52-126
+44,Moniuszki 29/15,Polska,Wrocław,50-413
+45,Niepodległości 705,Polska,Wrocław,53-305
+46,Konwaliowa 495,Polska,Krzelów,56-150
+47,Graniczna 20,Polska,Warszawa/Wesoła,05-077
+48,Ściegiennego 408,Polska,Wrocław,51-610
+49,Grabowa 62,Polska,Legnica,59-213
+50,Kossaka 06,Polska,Wrocław,54-231
+51,Daszyńskiego 23,Polska,Wrocław,51-690
+52,Piłsudskiego 33,Polska,Wrocław,51-681
+53,Toruńska 551,Polska,Wrocław,53-235
+54,Malczewskiego 34,Polska,Świeradów-Zdrój,59-850
+55,Solidarnosci 61/92,Polska,Polkowice,59-101
+56,Strażacka 061,Polska,Lubin,59-302
+57,Owocowa 284,Polska,Wrocław,52-111
+58,Ludowa 34,Polska,Wrocław,54-114
+59,Solidarnosci 58,Polska,Tomaszów Bolesławiecki,59-708
+60,Głogowa 38,Polska,Wrocław,52-015
+61,Broniewskiego 83/41,Polska,Jelcz-Laskowice,55-221
+62,Torowa 92/88,Polska,Będzin,42-500
+63,Armii Krajowej 51,Polska,Mirów Stary,26-503
+64,Ogrodowa 57/14,Polska,Wrocław,51-218
+65,Bałtycka 74,Polska,Wrocław,52-212
+66,Okulickiego 91,Polska,Wrocław,50-085
+67,Truskawkowa 81,Polska,Wrocław,52-311
+68,Prosta 38,Polska,Wrocław,53-674
+69,Piaskowa 55/05,Polska,Wałbrzych,58-309
+70,Staszica 35/99,Polska,Iwiny,59-721
+71,Strażacka 836,Polska,Wrocław,50-345
+72,Dojazdowa 28/12,Polska,Wrocław,50-202
+73,Rzeczna 67/80,Polska,Wrocław,51-124
+74,Makuszyńskiego 736,Polska,Wrocław,52-241
+75,Akacjowa 274,Polska,Jaworzyna Śląska,58-140
+76,Zdrojowa 106,Polska,Legnica,59-208
+77,Maczka 87/11,Polska,Wrocław,50-571
+78,Rzeczna 46,Polska,Legnica,59-217
+79,Sosnowa 208,Polska,Wrocław,51-126
+80,Dębowa 31,Polska,Wrocław,53-421
+81,Browarna 51/16,Polska,Wrocław,54-057
+82,Jałowcowa 654,Polska,Bogatynia,59-916
+83,Browarna 76,Polska,Wrocław,50-334
+84,Kamienna 774,Polska,Wrocław,54-426
+85,Waryńskiego 14,Polska,Wrocław,51-124
+86,Błękitna 961,Polska,Wrocław,53-136
+87,Bukowa 44,Polska,Wrocław,51-253
+88,Srebrna 03/43,Polska,Wrocław,52-203
+89,Jana 82/52,Polska,Wrocław,54-076
+90,Radosna 41/76,Polska,Lesko,38-600
+91,Młynarska 384,Polska,Gorzanów,57-521
+92,Korczaka 035,Polska,Wrocław,51-117
+93,Okrzei 791,Polska,Mietków,55-081
+94,Śląska 767,Polska,Wrocław,50-086
+95,Jabłoniowa 698,Polska,Wrocław,50-032
+96,Strumykowa 04/22,Polska,Chojnów,59-224
+97,Królewska 62,Polska,Warszawa,03-822
+98,Jastrzębia 11/41,Polska,Wrocław,52-130
+99,Rzeczna 52,Polska,Olsztyn,11-041
+100,Reymonta 88/75,Polska,Wrocław,54-130
+101,Makuszyńskiego 914,Polska,Mściwojów,59-407
+102,Polna 49,Polska,Wrocław,52-130
+103,Listopada 25,Polska,Wrocław,52-020
+104,Browarna 88,Polska,Świdnica,58-101
+105,Bociania 70/71,Polska,Świeradów-Zdrój,59-850
+106,Lipowa 07/25,Polska,Wrocław,51-515
+107,Rybacka 701,Polska,Wrocław,53-335
+108,Armii Krajowej 11,Polska,Wrocław,51-501
+109,Solidarnosci 87/53,Polska,Wrocław,50-537
+110,Rubinowa 05,Polska,Wrocław,50-367
+111,Jeżynowa 741,Polska,Świebodzice,58-163
+112,Srebrna 21/15,Polska,Wrocław,50-156
+113,Łabędzia 32/69,Polska,Łódź,91-502
+114,Pogodna 10,Polska,Wrocław,51-141
+115,Liliowa 64,Polska,Wrocław,54-207
+116,Zwycięstwa 270,Polska,Wrocław,53-207
+117,Wałowa 628,Polska,Wrocław,53-009
+118,Zachodnia 287,Polska,Wrocław,53-019
+119,Słoneczna 30/45,Polska,Wrocław,51-117
+120,Traugutta 34/93,Polska,Oława,55-201
+121,Browarna 76/13,Polska,Lubin,59-336
+122,Rybacka 495,Polska,Wrocław,51-504
+123,Szpitalna 364,Polska,Wrocław,50-148
+124,Królewska 740,Polska,Wrocław,51-180
+125,Dolna 03,Polska,Wrocław,50-132
+126,Towarowa 555,Polska,Wrocław,53-617
+127,Niecała 572,Polska,Wałbrzych,58-303
+128,Środkowa 44,Polska,Tłumaczów,57-408
+129,Krucza 16,Polska,Lubiąż,56-110
+130,Morelowa 671,Polska,Koszalin,75-300
+131,Konarskiego 569,Polska,Wrocław,51-686
+132,Traugutta 452,Polska,Wrocław,51-611
+133,Browarna 84,Polska,Wrocław,50-351
+134,Cegielniana 95,Polska,Wrocław,51-141
+135,Tartaczna 85,Polska,Wrocław,53-512
+136,Perłowa 908,Polska,Wrocław,51-147
+137,Kusocińskiego 88/28,Polska,Wrocław,50-237
+138,Kołłątaja 038,Polska,Wrocław,51-675
+139,Chabrowa 896,Polska,Jelenia Góra,58-505
+140,Głogowa 47/91,Polska,Wrocław,54-616
+141,Prosta 864,Polska,Wrocław,51-210
+142,Lipca 082,Polska,Wrocław,50-208
+143,Jana Pawła II 15/00,Polska,Lubomierz,59-623
+144,Piłsudskiego 07,Polska,Srebrna Góra,57-215
+145,Chopina 516,Polska,Wrocław,54-434
+146,Glówna 31/62,Polska,Opole,45-072
+147,Reja 02/32,Polska,Wrocław,53-512
+148,Kosynierów 47,Polska,Wrocław,54-434
+149,Spółdzielcza 87/95,Polska,Wrocław,54-107
+150,Makowa 08,Polska,Ruja,59-243
+151,Tylna 787,Polska,Nowa Ruda,57-403
+152,Porzeczkowa 03,Polska,Wrocław,50-513
+153,Pocztowa 701,Polska,Podgórzyn,58-562
+154,Targowa 864,Polska,Lubin,59-302
+155,Krasickiego 15,Polska,Krzeszów,58-405
+156,Przemysłowa 89,Polska,Sieniawka,59-921
+157,Wiśniowa 52/87,Polska,Wrocław,50-422
+158,Lisia 98/07,Polska,Wrocław,51-180
+159,Żeromskiego 53,Polska,Kudowa Zdrój,57-350
+160,Sarnia 08,Polska,Laski,57-251
+161,Truskawkowa 45,Polska,Polkowice,59-100
+162,Bolesława Krzywoustego 15/67,Polska,Wrocław,54-614
+163,Północna 639,Polska,Wrocław,51-531
+164,Gałczynskiego 803,Polska,Pieszyce,58-250
+165,Rajska 908,Polska,Wrocław,50-419
+166,Słowackiego 026,Polska,Wrocław,50-952
+167,Kołłątaja 10/10,Polska,Krosnowice,57-362
+168,Szewska 583,Polska,Wrocław,50-085
+169,Jadwigi 39/96,Polska,Wrocław,51-180
+170,Mickiewicza 60,Polska,Wrocław,54-405
+171,Orzechowa 37,Polska,Wrocław,54-035
+172,Dojazdowa 016,Polska,Wrocław,54-025
+173,Wyspiańskiego 268,Polska,Wrocław,52-117
+174,Waryńskiego 95/74,Polska,Wrocław,50-422
+175,Agrestowa 298,Polska,Wrocław,50-105
+176,Jasna 87/57,Polska,Legnica,59-206
+177,Wiosenna 719,Polska,Wrocław,54-034
+178,Kościuszki 50/88,Polska,Kiełczów,55-093
+179,Gajowa 064,Polska,Wrocław,51-680
+180,Sokola 79/10,Polska,Wrocław,51-153
+181,Mazurska 07,Polska,Wrocław,53-341
+182,Sucharskiego 31/08,Polska,Nowa Ruda,57-402
+183,Kraszewskiego 28/36,Polska,Lubin,59-338
+184,Jastrzębia 598,Polska,Wrocław,51-152
+185,Narcyzowa 49/45,Polska,Paszowice,59-411
+186,Gdańska 02,Polska,Wrocław,51-205
+187,Rataja 49,Polska,Wrocław,50-407
+188,Ogrodowa 14,Polska,Wrocław,51-141
+189,Długa 743,Polska,Wrocław,53-616
+190,Słowianska 595,Polska,Janowice Wielkie,58-520
+191,Kolejowa 23/53,Polska,Czernica,55-003
+192,Leśna 42,Polska,Wrocław,52-010
+193,Tulipanowa 15,Polska,Jelenia Góra,58-507
+194,Toruńska 40/36,Polska,Oleśnica,56-400
+195,Konstytucji 3 Maja 79/65,Polska,Wrocław,50-352
+196,Modrzewiowa 064,Polska,Piława Górna,58-240
+197,Wiązowa 850,Polska,Wrocław,53-115
+198,Witosa 31/65,Polska,Wrocław,54-046
+199,Powstańców Śląskich 51/94,Polska,Tłumaczów,57-408
+200,Pomorska 45/22,Polska,Wiry,58-111
+201,Górnicza 54,Polska,Warszawa/Wesoła,05-077
+202,Handlowa 10/17,Polska,Wabienice,56-404
+203,Moniuszki 689,Polska,Łódź,92-615
+204,Urocza 840,Polska,Międzylesie,57-530
+205,Hutnicza 21/84,Polska,Wrocław,50-211
+206,Liliowa 62,Polska,Wrocław,50-252
+207,Makowa 51/52,Polska,Wrocław,52-121
+208,Kościuszki 903,Polska,Przeworno,57-130
+209,Widokowa 053,Polska,Legnica,59-203
+210,Popiełuszki 645,Polska,Wrocław,51-418
+211,Gajowa 71/69,Polska,Wrocław,54-072
+212,Perłowa 76,Polska,Wrocław,51-315
+213,Daleka 213,Polska,Wrocław,54-530
+214,Waryńskiego 09,Polska,Wrocław,50-370
+215,Ceglana 52/97,Polska,Wrocław,53-141
+216,Daszyńskiego 67/61,Polska,Wrocław,51-660
+217,Daszyńskiego 03/21,Polska,Wrocław,50-144
+218,Poziomkowa 61/42,Polska,Wrocław,53-339
+219,Południowa 09/54,Polska,Wrocław,51-180
+220,Wieniawskiego 71/42,Polska,Laski,57-251
+221,Ciasna 52,Polska,Wrocław,54-403
+222,Graniczna 39,Polska,Jelenia Góra,58-505
+223,Sportowa 395,Polska,Wałbrzych,58-316
+224,Kamienna 68/87,Polska,Wrocław,50-521
+225,Nowa 12,Polska,Wrocław,53-401
+226,Andersa 02,Polska,Wrocław,50-050
+227,Korczaka 16,Polska,Wrocław,53-035
+228,Czarnieckiego 551,Polska,Wrocław,52-029
+229,Podgórna 51/38,Polska,Wrocław,54-060
+230,Nadrzeczna 49,Polska,Wrocław,51-252
+231,Środkowa 37/01,Polska,Jelenia Góra,58-505
+232,Strumykowa 94,Polska,Wrocław,54-530
+233,Plażowa 70/70,Polska,Wrocław,50-362
+234,Graniczna 42,Polska,Wrocław,52-434
+235,Mickiewicza 06/51,Polska,Dzierżoniów,58-202
+236,Poprzeczna 07,Polska,Wrocław,50-018
+237,Osiedlowa 91/31,Polska,Wrocław,51-513
+238,Pogodna 321,Polska,Wrocław,52-230
+239,Wesoła 90,Polska,Wisznia Mała,55-114
+240,Brzechwy 547,Polska,Wrocław,51-142
+241,Mazowiecka 544,Polska,Lubań,59-801
+242,Baczynskiego 783,Polska,Wrocław,51-222
+243,Staffa 03,Polska,Wrocław,54-530
+244,Gałczynskiego 38/16,Polska,Kiełczów,55-093
+245,Podwale 37,Polska,Wrocław,52-225
+246,Głowackiego 78/03,Polska,Syców,56-500
+247,Gdańska 439,Polska,Wrocław,53-225
+248,Batalionów Chłopskich 59/95,Polska,Wrocław,51-147
+249,Żwirowa 46,Polska,Środa Śląska,55-300
+250,Ciasna 847,Polska,Gdańsk,80-548
+251,Mieszka I 14/89,Polska,Wrocław,50-003
+252,Złota 93,Polska,Wrocław,54-515
+253,Zapolskiej 11,Polska,Pomocne,59-423
+254,Rózana 23,Polska,Wrocław,51-610
+255,Letniskowa 92/40,Polska,Wrocław,50-316
+256,Jaworowa 093,Polska,Wrocław,50-566
+257,Koralowa 08/68,Polska,Wrocław,51-253
+258,Rzemieślnicza 82,Polska,Wrocław,51-050
+259,Piłsudskiego 43/53,Polska,Wrocław,50-417
+260,Długa 56/04,Polska,Szklarska Poręba,58-580
+261,Daszyńskiego 26/05,Polska,Wrocław,53-225
+262,Powstańców 354,Polska,Legnica,59-200
+263,Szkolna 45,Polska,Borek Strzeliński,57-110
+264,Orzechowa 51,Polska,Duszniki-Zdrój,57-340
+265,Krasińskiego 98,Polska,Mysłakowice,58-533
+266,Ciasna 66,Polska,Wrocław,54-060
+267,Rajska 08,Polska,Wrocław,51-606
+268,Solidarnosci 07,Polska,Wrocław,50-527
+269,Robotnicza 11,Polska,Brzeg Dolny,56-120
+270,Orzeszkowej 49,Polska,Wrocław,50-061
+271,Stroma 395,Polska,Wrocław,50-210
+272,Zapolskiej 424,Polska,Pałecznica,32-109
+273,Śląska 187,Polska,Wrocław,50-203
+274,Starowiejska 90/66,Polska,Leśna,59-820
+275,Wiklinowa 67,Polska,Świętoszów,59-726
+276,Jesionowa 63/51,Polska,Wałbrzych,58-309
+277,Górna 922,Polska,Jelenia Góra,58-570
+278,Mokra 12,Polska,Wałbrzych,58-305
+279,Jodłowa 709,Polska,Szczecin,70-887
+280,Wspólna 463,Polska,Wrocław,50-537
+281,Zdrojowa 70,Polska,Szczecin,71-227
+282,Żabia 54,Polska,Wrocław,54-207
+283,Topolowa 55,Polska,Wrocław,53-407
+284,Staffa 55/56,Polska,Wrocław,51-004
+285,Stycznia 18,Polska,Wrocław,52-225
+286,Krokusowa 85,Polska,Wrocław,54-427
+287,Sokola 01/67,Polska,Pieszyce,58-250
+288,Maja 045,Polska,Wrocław,53-224
+289,Krakowska 68/37,Polska,Wrocław,51-349
+290,Skośna 49,Polska,Wrocław,51-639
+291,Łąkowa 68,Polska,Zebrzydowa,59-731
+292,Asnyka 22,Polska,Warszawa,02-298
+293,Morcinka 207,Polska,Kłodzko,57-304
+294,Krzywa 93/38,Polska,Wrocław,50-159
+295,Piekarska 72,Polska,Wrocław,53-138
+296,Urocza 72,Polska,Rudna,59-305
+297,Zdrojowa 31/49,Polska,Wrocław,54-002
+298,Bukowa 30,Polska,Wrocław,53-442
+299,Kopernika 41/21,Polska,Głuszyca,58-340
+300,Brzechwy 28,Polska,Kłodzko,57-303
+301,Słoneczna 357,Polska,Wrocław,51-376
+302,Dąbrowskiego 46,Polska,Wrocław,52-213
+303,Jastrzębia 651,Polska,Wrocław,51-412
+304,Słowicza 16/39,Polska,Wrocław,52-113
+305,Nadbrzeżna 267,Polska,Wrocław,50-024
+306,Norwida 096,Polska,Wrocław,54-139
+307,Olchowa 03/72,Polska,Wrocław,50-503
+308,Stawowa 46,Polska,Radków,57-420
+309,Lelewela 59,Polska,Minkowice Oławskie,55-206
+310,Miłosza 00/93,Polska,Wrocław,51-051
+311,Kwiatowa 78,Polska,Wrocław,52-111
+312,Kreta 56/69,Polska,Jawor,59-401
+313,Jarzębinowa 00,Polska,Wrocław,50-306
+314,Górna 80/98,Polska,Wrocław,51-351
+315,Śląska 98/21,Polska,Wrocław,51-180
+316,Kowalska 53,Polska,Sulików,59-975
+317,Widok 70,Polska,Legnica,59-205
+318,Osiedlowa 29/02,Polska,Legnica,59-200
+319,Starowiejska 100,Polska,Wrocław,53-332
+320,Ludowa 620,Polska,Wrocław,53-503
+321,Bolesława Krzywoustego 46/28,Polska,Wrocław,53-125
+322,Mostowa 56/44,Polska,Wrocław,50-531
+323,Diamentowa 494,Polska,Wrocław,51-659
+324,Zaciszna 37,Polska,Wrocław,50-027
+325,Robotnicza 71/81,Polska,Wrocław,51-213
+326,Ceglana 193,Polska,Wrocław,50-560
+327,Grunwaldzka 554,Polska,Wrocław,50-537
+328,Rynek 90,Polska,Wrocław,51-354
+329,Jaśminowa 991,Polska,Wrocław,52-226
+330,Grottgera 48/13,Polska,Wrocław,50-034
+331,Konstytucji 3 Maja 84/92,Polska,Cieszków,56-330
+332,Solidarnosci 588,Polska,Poznań,61-719
+333,Długa 47/33,Polska,Łódź,93-110
+334,Sokola 817,Polska,Pieńsk,59-930
+335,Ludowa 93,Polska,Legnica,59-213
+336,Wyspiańskiego 94/07,Polska,Wrocław,51-179
+337,Średnia 81/02,Polska,Wrocław,50-140
+338,Strażacka 459,Polska,Wałbrzych,58-302
+339,Zamkowa 51/37,Polska,Olsztyn,10-575
+340,Staffa 392,Polska,Wrocław,54-060
+341,Jesienna 34/79,Polska,Wrocław,54-512
+342,Wolności 807,Polska,Wrocław,53-146
+343,Lazurowa 46/50,Polska,Wrocław,54-622
+344,Bydgoska 15/74,Polska,Wrocław,52-423
+345,Pogodna 194,Polska,Sulików,59-975
+346,Jana Sobieskiego 993,Polska,Częstochowa,42-202
+347,Łąkowa 73/31,Polska,Wrocław,51-127
+348,Kamienna 58/53,Polska,Wrocław,50-314
+349,Turystyczna 885,Polska,Wrocław,50-970
+350,Makowa 47/13,Polska,Wrocław,50-102
+351,Batalionów Chłopskich 85/51,Polska,Świdnica,58-106
+352,Wyszyńskiego 460,Polska,Wrocław,51-204
+353,Skrajna 161,Polska,Piechowice,58-573
+354,Azaliowa 943,Polska,Wrocław,53-307
+355,Czereśniowa 57,Polska,Wrocław,51-420
+356,Harcerska 90/23,Polska,Wrocław,53-434
+357,Bankowa 02/95,Polska,Świdnica,58-101
+358,Rózana 47/08,Polska,Wrocław,51-521
+359,Składowa 56,Polska,Wrocław,50-455
+360,Rumiankowa 60,Polska,Wrocław,50-107
+361,Szmaragdowa 187,Polska,Łódź,91-849
+362,Baczynskiego 74,Polska,Legnica,59-208
+363,Wodna 46,Polska,Wrocław,52-222
+364,Chopina 58/29,Polska,Goszcz,56-417
+365,Wieniawskiego 02,Polska,Wrocław,50-345
+366,Topolowa 53/90,Polska,Mikołów,43-190
+367,Środkowa 206,Polska,Wrocław,51-108
+368,Wesoła 384,Polska,Mściwojów,59-407
+369,Słowicza 909,Polska,Wrocław,54-015
+370,Rataja 40,Polska,Wrocław,53-531
+371,Modrzewiowa 67/34,Polska,Wrocław,50-113
+372,Bema 73/80,Polska,Wrocław,52-428
+373,Jana III Sobieskiego 63,Polska,Wolibórz,57-431
+374,Tuwima 34/12,Polska,Walim,58-320
+375,Piwna 41,Polska,Gdańsk,80-680
+376,Krakowska 476,Polska,Wrocław,50-228
+377,Kossaka 08,Polska,Wrocław,50-966
+378,Jana 97,Polska,Wrocław,53-304
+379,Wrzosowa 445,Polska,Wrocław,51-180
+380,Spółdzielcza 34/33,Polska,Wrocław,51-173
+381,Zamkowa 908,Polska,Wrocław,50-437
+382,Liliowa 32,Polska,Polkowice,59-100
+383,Jaśminowa 16,Polska,Wrocław,51-670
+384,Korczaka 15,Polska,Łódź,92-437
+385,Orzeszkowej 035,Polska,Wrocław,51-423
+386,Tuwima 87/20,Polska,Warszawa,01-353
+387,Zacisze 54/21,Polska,Wrocław,51-512
+388,Olchowa 746,Polska,Wrocław,54-615
+389,Jeżynowa 73/65,Polska,Wrocław,53-306
+390,Bolesława Krzywoustego 398,Polska,Wrocław,50-950
+391,Łabędzia 46,Polska,Wrocław,53-316
+392,Rajska 21,Polska,Wrocław,50-250
+393,Dobra 91/42,Polska,Wrocław,50-072
+394,Harcerska 88,Polska,Kudowa Zdrój,57-351
+395,Batalionów Chłopskich 20,Polska,Wrocław,51-144
+396,Bydgoska 65,Polska,Pomocne,59-423
+397,Jodłowa 50/73,Polska,Wrocław,51-678
+398,Dolna 11,Polska,Nowogrodziec,59-730
+399,Klasztorna 71,Polska,Wrocław,51-658
+400,Głowackiego 77,Polska,Wałbrzych,58-309
+401,Szczęśliwa 12/29,Polska,Legnica,59-208
+402,Hallera 665,Polska,Raszówka,59-307
+403,Podmiejska 22,Polska,Wrocław,54-018
+404,Parkowa 660,Polska,Wrocław,53-434
+405,Zakątek 16/20,Polska,Wrocław,51-007
+406,Myśliwska 06,Polska,Wrocław,53-617
+407,Orzechowa 76,Polska,Ciepłowody,57-211
+408,Daszyńskiego 769,Polska,Szczecin,70-603
+409,Batalionów Chłopskich 76/14,Polska,Wrocław,54-701
+410,Cyprysowa 827,Polska,Gdańsk,80-888
+411,Lazurowa 872,Polska,Środa Śląska,55-300
+412,Podgórna 563,Polska,Wrocław,51-506
+413,Dębowa 98/20,Polska,Łowicz,99-402
+414,Władysława Jagiełły 66/97,Polska,Sulików,59-975
+415,Środkowa 62,Polska,Henryków,57-210
+416,Kochanowskiego 44,Polska,Wrocław,54-034
+417,Miarki 07/67,Polska,Wrocław,51-619
+418,Pocztowa 756,Polska,Świdnica,58-105
+419,Tartaczna 02/86,Polska,Łozina,55-094
+420,Ciasna 13/43,Polska,Wrocław,52-230
+421,Bydgoska 71/89,Polska,Mysłowice,41-400
+422,Krasińskiego 275,Polska,Lądek-Zdrój,57-540
+423,Cedrowa 261,Polska,Wrocław,50-150
+424,Krucza 65,Polska,Wrocław,50-457
+425,Żurawia 81,Polska,Wrocław,50-950
+426,Osiedlowa 64,Polska,Lubin,59-302
+427,Towarowa 06,Polska,Borów,57-160
+428,Powstańców Wielkopolskich 55/78,Polska,Wrocław,50-383
+429,Robotnicza 289,Polska,Wrocław,51-119
+430,Grottgera 65/55,Polska,Warszawa,02-964
+431,Ściegiennego 82/43,Polska,Wałbrzych,58-306
+432,Jana Pawła II 842,Polska,Złotoryja,59-500
+433,Brzechwy 41/01,Polska,Bielawa,58-260
+434,Kusocińskiego 01/84,Polska,Ujazd Górny,55-341
+435,Długa 55,Polska,Wrocław,50-060
+436,Ogrodowa 35,Polska,Wrocław,53-425
+437,Listopada 57/85,Polska,Świebodzice,58-163
+438,Wyzwolenia 64,Polska,Brzeg,49-304
+439,Kościelna 54,Polska,Polkowice,59-100
+440,Kasprowicza 145,Polska,Wrocław,53-656
+441,Rumiankowa 50/22,Polska,Warszawa,04-903
+442,Kolejowa 531,Polska,Stronie Śląskie,57-550
+443,Rzemieślnicza 321,Polska,Wrocław,51-141
+444,Morcinka 38,Polska,Wrocław,52-435
+445,Gałczynskiego 81,Polska,Mietków,55-081
+446,Miłosza 668,Polska,Wrocław,53-413
+447,Urocza 805,Polska,Łozina,55-094
+448,Daszyńskiego 43,Polska,Wrocław,51-124
+449,Kielecka 10/61,Polska,Wałbrzych,58-306
+450,Fredry 30/20,Polska,Polkowice,59-100
+451,Sadowa 819,Polska,Wrocław,53-004
+452,Wesoła 69,Polska,Wrocław,53-007
+453,Wiązowa 465,Polska,Wrocław,51-354
+454,Wybickiego 14/14,Polska,Polkowice,59-100
+455,Wiatraczna 95/04,Polska,Wrocław,51-686
+456,Kruczkowskiego 476,Polska,Wrocław,51-051
+457,Zakole 19/38,Polska,Niechlów,56-215
+458,Strumykowa 72,Polska,Wrocław,50-127
+459,Chabrowa 00/57,Polska,Opole,45-050
+460,Szarych Szeregów 59,Polska,Świdnica,58-103
+461,Królewska 875,Polska,Wrocław,52-124
+462,Zakole 24/21,Polska,Wrocław,54-614
+463,Kasztanowa 86,Polska,Brzeg Dolny,56-121
+464,Spółdzielcza 89/12,Polska,Wrocław,50-966
+465,Długosza 90/99,Polska,Gaworzyce,59-180
+466,Częstochowska 648,Polska,Katowice,40-682
+467,Chopina 64/75,Polska,Wrocław,51-315
+468,Pałacowa 304,Polska,Lubiąż,56-110
+469,Pocztowa 14/35,Polska,Wrocław,52-014
+470,Andersa 291,Polska,Wrocław,52-130
+471,Drzymały 33,Polska,Wrocław,52-210
+472,Żeglarska 85,Polska,Bardo,57-256
+473,Reymonta 21/93,Polska,Szczecin,71-551
+474,Armii Krajowej 35,Polska,Łódź,93-493
+475,Warszawska 168,Polska,Wrocław,50-206
+476,Konwaliowa 76,Polska,Wrocław,54-101
+477,Fabryczna 94,Polska,Ziębice,57-220
+478,Handlowa 36,Polska,Wrocław,50-966
+479,Środkowa 44/21,Polska,Lubin,59-338
+480,Spokojna 04,Polska,Wrocław,50-339
+481,Bydgoska 76,Polska,Wrocław,52-219
+482,Jałowcowa 57/69,Polska,Dzierżoniów,58-203
+483,Niepodległości 12,Polska,Wrocław,54-514
+484,Matejki 824,Polska,Oborniki Śląskie,55-120
+485,Fiołkowa 476,Polska,Piechowice,58-573
+486,Asnyka 947,Polska,Raszówka,59-307
+487,Piwna 38/58,Polska,Kraków,31-024
+488,Fabryczna 78/68,Polska,Katowice,40-751
+489,Grabowa 756,Polska,Wrocław,51-521
+490,Ptasia 978,Polska,Wrocław,54-048
+491,Cmentarna 75/01,Polska,Sosnówka,58-564
+492,Bociania 84/09,Polska,Wrocław,52-017
+493,Dworcowa 498,Polska,Wrocław,54-427
+494,Piwna 41/09,Polska,Mściwojów,59-407
+495,Krasińskiego 419,Polska,Wrocław,50-011
+496,Hutnicza 00,Polska,Warszawa,04-915
+497,Glówna 156,Polska,Wrocław,52-317
+498,Osiedlowa 20,Polska,Wrocław,50-327
+499,Dworska 98/85,Polska,Legnica,59-202
+500,Ciasna 86/64,Polska,Wrocław,53-139
+501,Jaskółcza 59/81,Polska,Poznań,60-712
+502,Myśliwska 85/27,Polska,Lublin,20-515
+503,Lelewela 06/69,Polska,Wrocław,54-066
+504,Zaułek 05,Polska,Lubin,59-338
+505,Myśliwska 023,Polska,Chełmsko Śląskie,58-407
+506,Fabryczna 03/90,Polska,Zagrodno,59-516
+507,Waryńskiego 95/97,Polska,Bolesławiec,59-703
+508,Działkowa 51,Polska,Wrocław,50-440
+509,Nadbrzeżna 84/63,Polska,Wrocław,53-142
+510,Reymonta 33/06,Polska,Wrocław,51-602
+511,Piastowska 85/90,Polska,Wrocław,52-416
+512,Chopina 23/55,Polska,Wrocław,51-180
+513,Skrajna 00/52,Polska,Legnica,59-200
+514,Klasztorna 49/57,Polska,Wrocław,54-048
+515,Partyzantów 90/14,Polska,Wrocław,51-621
+516,Sarnia 957,Polska,Wrocław,51-126
+517,Wyspiańskiego 502,Polska,Złotoryja,59-501
+518,Prusa 25,Polska,Wrocław,53-009
+519,Średnia 816,Polska,Toruń,87-116
+520,Wyszyńskiego 411,Polska,Wrocław,51-313
+521,Wodna 85,Polska,Raszówka,59-307
+522,Kowalska 93,Polska,Wrocław,50-265
+523,Orzeszkowej 934,Polska,Koszalin,75-850
+524,Czarnieckiego 06/58,Polska,Wrocław,50-328
+525,Akacjowa 79/50,Polska,Wrocław,50-966
+526,Borowa 03,Polska,Wrocław,52-402
+527,Batalionów Chłopskich 82,Polska,Lubin,59-339
+528,Kołłątaja 09,Polska,Kąty Wrocławskie,55-080
+529,Boczna 907,Polska,Siechnice,55-011
+530,Kolonia 81/12,Polska,Wrocław,50-539
+531,Willowa 86/29,Polska,Chorzów,41-500
+532,Porzeczkowa 176,Polska,Kowary,58-530
+533,Mazurska 21,Polska,Wrocław,54-310
+534,Głowackiego 62/51,Polska,Nowa Ruda,57-401
+535,Olchowa 40,Polska,Wrocław,50-564
+536,Rózana 09,Polska,Świeradów-Zdrój,59-850
+537,Porzeczkowa 300,Polska,Pomocne,59-423
+538,Sarnia 73,Polska,Wrocław,51-109
+539,Makuszyńskiego 373,Polska,Wrocław,50-249
+540,Dojazdowa 809,Polska,Kowary,58-530
+541,Kowalska 893,Polska,Wrocław,53-236
+542,Narutowicza 94/83,Polska,Świdnica,58-105
+543,Reymonta 26,Polska,Wrocław,50-225
+544,Nowowiejska 08,Polska,Wrocław,54-403
+545,Krokusowa 691,Polska,Wrocław,51-123
+546,Podgórna 62,Polska,Wrocław,54-079
+547,Glówna 45/37,Polska,Wrocław,50-362
+548,Wrocławska 544,Polska,Kamieniec Wrocławski,55-002
+549,Klasztorna 93,Polska,Leśna,59-820
+550,Borówkowa 67/48,Polska,Wrocław,51-428
+551,Bydgoska 462,Polska,Wałbrzych,58-300
+552,Wąska 852,Polska,Świeradów-Zdrój,59-850
+553,Bursztynowa 318,Polska,Kobierzyce,55-040
+554,Kaliska 297,Polska,Poznań,60-604
+555,Zamkowa 50/58,Polska,Wrocław,50-201
+556,Armii Krajowej 75/35,Polska,Lubań,59-801
+557,Miłosza 14/44,Polska,Wrocław,50-524
+558,Krakowska 53/35,Polska,Przemków,59-171
+559,Królewska 67/14,Polska,Kraków,30-298
+560,Sikorskiego 460,Polska,Kamienna Góra,58-402
+561,Korczaka 82,Polska,Warta Bolesławiecka,59-722
+562,Bydgoska 10,Polska,Boguszów-Gorce,58-370
+563,Łabędzia 419,Polska,Wrocław,52-428
+564,Kolejowa 169,Polska,Wrocław,50-086
+565,Szpitalna 66,Polska,Olsztyn,10-531
+566,Jana Sobieskiego 02,Polska,Wrocław,52-130
+567,Górna 65,Polska,Wrocław,53-206
+568,Polna 75,Polska,Wrocław,50-042
+569,Zapolskiej 80,Polska,Wrocław,54-315
+570,Handlowa 371,Polska,Wrocław,51-682
+571,Szmaragdowa 37/92,Polska,Boguszów-Gorce,58-371
+572,Poziomkowa 463,Polska,Wrocław,51-200
+573,Rejtana 73,Polska,Wrocław,53-523
+574,Azaliowa 36/90,Polska,Wrocław,54-314
+575,Solidarnosci 42,Polska,Wrocław,54-701
+576,Sucharskiego 186,Polska,Szczytna,57-330
+577,Powstańców Śląskich 21/19,Polska,Wrocław,50-564
+578,Armii Krajowej 001,Polska,Zgorzelec,59-903
+579,Miłosza 08/93,Polska,Kowary,58-530
+580,Tęczowa 553,Polska,Gdańsk,80-039
+581,Częstochowska 31,Polska,Wrocław,53-029
+582,Maja 25,Polska,Wrocław,51-138
+583,Średnia 23,Polska,Stara Kamienica,58-512
+584,Jagodowa 367,Polska,Wrocław,50-071
+585,Poprzeczna 379,Polska,Bielawa,58-260
+586,Robotnicza 46/20,Polska,Malczyce,55-320
+587,Krańcowa 006,Polska,Wrocław,50-503
+588,Jana Sobieskiego 388,Polska,Wrocław,54-153
+589,Turystyczna 478,Polska,Świdnica,58-100
+590,Grabowa 17,Polska,Duszniki-Zdrój,57-340
+591,Fabryczna 758,Polska,Wrocław,53-310
+592,Zakole 40/78,Polska,Bolesławiec,59-701
+593,Traugutta 99/53,Polska,Wrocław,53-325
+594,Kowalska 36,Polska,Wrocław,51-126
+595,Makuszyńskiego 75,Polska,Wrocław,54-035
+596,Poprzeczna 015,Polska,Wrocław,54-240
+597,Żeromskiego 75,Polska,Piława Górna,58-240
+598,Rubinowa 293,Polska,Ludwikowice Kłodzkie,57-450
+599,Szpitalna 18,Polska,Wrocław,52-128
+600,Zwycięstwa 84/04,Polska,Sułów,56-306
+601,Narutowicza 066,Polska,Jelcz-Laskowice,55-231
+602,Glówna 08/08,Polska,Wrocław,53-304
+603,Maja 027,Polska,Wałbrzych,58-303
+604,Źródlana 192,Polska,Wrocław,54-111
+605,Handlowa 49/00,Polska,Ciepłowody,57-211
