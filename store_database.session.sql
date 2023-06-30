@@ -14,6 +14,7 @@ LEFT JOIN staff AS s USING(staff_id)
 WHERE row_num = 1
 ORDER BY date, sales_number DESC;
 
+
 WITH tab AS (
   SELECT date, CONCAT(s.first_name, ' ', s.last_name) AS employee, sales_number
 FROM (
@@ -28,10 +29,13 @@ ORDER BY date, sales_number DESC
 )
 
 SELECT employee, COUNT(*)
-FROM tab
+FROM month_employee
 GROUP BY employee
 ORDER BY COUNT(*) DESC
-LIMIT 1;
+LIMIT 1
+
+SELECT employee, MAX(sales_number) AS max_sales
+FROM tab;
 
 
 

@@ -18,6 +18,10 @@ These days in the fast changing world we are inundated with big volumes of data.
 # Description <a name=description></a>
 The project generally consists of generating a database and a report for Gamestalgia - a fictional board games rental store. Gamestalgia is a unique place. Not only does it rent games but also sells them and organize tournaments. Moreover, the most active customers are rewarded with a VIP status and hence extra discounts on rentals and purchases.
 
+<p align="center">
+  <img src="https://github.com/Staszek15/store-database/blob/main/database_schema.png" width=80%>
+</p>
+
 # Technologies <a name=technnologies></a>
 Making this project involved using following technologies:
 - **Python**
