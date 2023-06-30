@@ -70,7 +70,7 @@ def generate_total_players(table_game,game_id, inventory_rent):
     return(merged_availability.total_players_number)
 
 
-def generate_tournament(games, staff, inv_rent, schedule):
+def generate_tournament(games, inv_rent, schedule):
     n = 30
     name_base = ['Cosmic Entertainment', 'Battlefields of Bonaparte', 'The Kobolds', 'Gaming Evening', 'Hamst&Furious', 'Indian Camp', 'Vietgame',
              'Thematic Contest', 'Spring Tournament', 'Star Trek Day']
