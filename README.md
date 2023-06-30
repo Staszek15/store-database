@@ -31,6 +31,71 @@ It was used for creating the database schema and analysing data.
 - ** rmd **
 This tool was applied to generate a report.
 
+# Files       
+* **generate_data:**
+    -   connection.py
+    -   const.py
+    -   create_tables.sql
+    -   foreign_keys.sql
+    -   main_execute.ipynb
+    -   main_execute.py
+    -   
+    - **address**
+       -   address.csv
+       -   address.py
+       -   postal_codes.csv
+       -   
+         
+    - **analysis**
+      -   plots.py
+      -   plot_registrations.png
+      -   plot_rentals.png
+           
+    - **create_staff_schedule**
+       -   create_staff_schedule.py
+       -   staff_schedule.csv
+        
+    - **customer_rental**
+      -   customers.csv
+      -   customer_rental.py
+      -   rentals.csv
+          
+    - **game**
+      -   all_games.xlsx
+      -   game.csv
+      -   game.py
+      -   games_dataset.csv
+      -   selected_games.xlsx
+
+    - **inventory_buy_purchase**
+      -   inventory_buy, purchase.ipynb
+      -   inventory_buy.csv
+      -   inventory_buy_purchase.py
+      -   purchase.csv
+      -   purchases.csv
+  
+    - **inventory_rent***
+      -   inventory_rent.csv
+      -   inventory_rent.py
+      -   
+
+    - **staff**
+      -   staff.csv
+      -   staff.py
+          
+    - **tournament**
+      -   tournament.ipynb
+      -   tournament.py
+      -   tournaments.csv
+           
+    - **tournament_rental_consistency**
+      -   tournament_rental_consistency.py
+    -       
+    - **tournament_results**
+      -   tournament_results.csv
+      -   tournament_results.ipynb
+      -   tournament_results.py
+
 # How to run a program <a name=running></a>
 **on Windows** 
 1. clone repository
