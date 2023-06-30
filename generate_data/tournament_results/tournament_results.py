@@ -34,8 +34,6 @@ def generate_tournament_results(tournaments, customers, games):
             
             score_list.extend(score)
             place_list.extend(place)
-
-    print("tour_id_list", len(tour_id_list), "participants_list", len(participants_list), "place_list", len(place_list), "score_list", len(score_list))
             
     tournaments_dictionary = {'tournament_id' : tour_id_list, 'customer_id' : participants_list,
                               'place' : place_list, 'score' : score_list}
