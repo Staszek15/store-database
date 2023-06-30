@@ -111,9 +111,9 @@ CREATE TABLE tournament
   name                 VARCHAR(100) NOT NULL,
   date                 DATE         NOT NULL,
   game_id              INT          NOT NULL,
-  team_players_number  INT          NOT NULL,
-  staff_id             INT          NOT NULL,
-  total_players_number INT          NOT NULL,
+  team_players_number  INT          NULL,
+  staff_id             INT          NULL,
+  total_players_number INT          NULL,
   PRIMARY KEY (tournament_id),
   FOREIGN KEY (game_id) REFERENCES games (game_id),
   FOREIGN KEY (staff_id) REFERENCES staff (staff_id)
