@@ -14,7 +14,7 @@
 These days in the fast changing world we are inundated with big volumes of data. It provokes higher demand for people specialized in processing it. A vast majority of companies and institutions could not work without efficient databases systems what makes an ability of creating and maintaining them a valuable skill. To gain it we developed a project during databases course at Wroclaw University of Science and Technology.
 
 <p align="center">
-  <img src="https://github.com/Staszek15/store-database/blob/main/logo_store.png" width=80%>
+  <img src="https://github.com/Staszek15/store-database/images/blob/main/logo_store.png" width=80%>
 </p>
 
 # Description <a name=description></a>
