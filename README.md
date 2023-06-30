@@ -79,7 +79,6 @@ All underlined *.py* files consist of functions that generate data, process it a
       -   inventory_buy, purchase.ipynb
       -  ![#ffcccc](https://placehold.co/15x15/ffcccc/ffcccc.png) inventory_buy.csv
       -  ![#ffcccc](https://placehold.co/15x15/ffcccc/ffcccc.png) purchases.csv
-      -   purchases.csv
   
     - **inventory_rent**
       -  ![#cce6ff](https://placehold.co/15x15/cce6ff/cce6ff.png) inventory_rent.py
