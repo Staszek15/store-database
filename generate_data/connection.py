@@ -11,7 +11,7 @@ def connect():
         username="team21",
         password="te@mzi", 
         host="giniewicz.it",
-        database="team21",
+        database="team21"
     )
 
     engine = create_engine(url_object)
