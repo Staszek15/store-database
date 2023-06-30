@@ -42,8 +42,8 @@ def generate_total_players(table_game,game_id, inventory_rent):
     
     games_table = table_game[['game_id','min_players','max_players','duration', 'max_players_in_team','min_players_in_team']]
     game_id_df = pd.DataFrame(game_id, columns=['game_id'])
-    merged = game_id_df.merge(games_table, on='game_id', how='inner')
-    merged_availability = merged.merge(availability_df, on='game_id', how='inner')
+    merged = game_id_df.merge(games_table, on='game_id', how='left')
+    merged_availability = merged.merge(availability_df, on='game_id', how='left')
 
     total_num = []
     for i in range(len(merged_availability)):
@@ -70,7 +70,7 @@ def generate_total_players(table_game,game_id, inventory_rent):
     return(merged_availability.total_players_number)
 
 
-def generate_tournament(games, staff, inv_rent, schedule):
+def generate_tournament(games, inv_rent, schedule):
     n = 30
     name_base = ['Cosmic Entertainment', 'Battlefields of Bonaparte', 'The Kobolds', 'Gaming Evening', 'Hamst&Furious', 'Indian Camp', 'Vietgame',
              'Thematic Contest', 'Spring Tournament', 'Star Trek Day']

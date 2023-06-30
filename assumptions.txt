@@ -13,14 +13,18 @@ W dniu turnieju dobieram liczbę graczy tak, żeby zajęli
 przynajmniej o jeden mniej egezmplerzy gier niż ogolnie 
 mamy w sklepie. 
 
-1. 22.01.2021 -> Cosmic Encounter (id 9)                x 2
-2. 16.06.2021 -> Marengo (27)                           x 15
-3. 20.12.2021 -> Koboldbande (id 33)                    x 8                           
-4. 30.12.2021 -> Tank on Tank: East Front (id 32)       x 16
-5. 04.01.2022 -> Hamsterrolle (id 7)                    x 12
-6. 28.02.2022 -> Indian Summer (id 5)                   x 10
-7. 02.10.2022 -> Year of the Rat: Vietnam, 1972 (36)    x 8
-8. 19.10.2023 -> Wings of War: Watch Your Back! (6)     x 9
-9. 25.03.2023 -> Azul: Stained Glass of Sintra          x 8
-10. 07.03.2023 -> Star Trek: The Adventure Game (19)    x 8
 
+############################
+#####       FEATURES      #######
+############################
+
+RELACJE ONE TO ZERO OR MANY (mozemy miec gre w bazie ale nie miec jej w sklepie, klient mogl wygrac zero lub kilka turniejow)
+
+winner_id moze byc NULL (np. turniej odbedzie sie w przyszlosci albo nie wyloniono zwyciezcy)
+
+winner_id to odpowiednie customer_id wiec w turnieju moga brac udzial TYLKO klienci sklepu
+
+wolontariusz -> pensja 0
+byli / przyszli pracownicy -> pensja NULL
+
+phone obowiazkowy dla pracownikow, klienci moga opcjonalnie podac numer

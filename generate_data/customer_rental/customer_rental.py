@@ -294,7 +294,7 @@ def generate_customers_rentals(n, start_date, end_date, days_number, games_rent_
     rental['fine'] = fine
 
     df_customers = df_customers[['customer_id','first_name','last_name','birthdate','email','phone','address_id',
-                                 'registration_date','customer_id','VIP']]
+                                 'registration_date','VIP']]
 
     return rental, df_customers
 

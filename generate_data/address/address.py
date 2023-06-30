@@ -58,9 +58,17 @@ def generate_address(df_all, n=605):
     temp = temp.sort_values('KOD POCZTOWY')
     temp = temp.sample(frac=1).reset_index(drop=True)
     temp['address_id'] = [i for i in range(1, n + 1)]
+    temp['countries'] = ["Polska"]*n
 
-    temp.columns = ['postal_code', 'city', 'address', 'address_id']
+    temp.columns = ['postal_code', 'city', 'address', 'address_id', 'country']
+
+    
     
 
-    return temp[['address_id', 'address', 'city', 'postal_code']]
+    return temp[['address_id', 'address', 'country', 'city', 'postal_code']]
 
+
+
+
+if __name__ == "__main__":
+    generate_address(pd.read_csv('address/postal_codes.csv', encoding='UTF-8', delimiter=';')).to_csv('address/address.csv', index=False)
