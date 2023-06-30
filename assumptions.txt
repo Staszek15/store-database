@@ -28,3 +28,6 @@ wolontariusz -> pensja 0
 byli / przyszli pracownicy -> pensja NULL
 
 phone obowiazkowy dla pracownikow, klienci moga opcjonalnie podac numer
+
+
+I narazie mamy: rozklady, pracownik miesiąca, top 10, dochodowe gry, miejsce zamieszkania, kto najwięcej i najmniej hajsu wydal
