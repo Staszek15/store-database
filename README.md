@@ -105,7 +105,11 @@ All underlined *.py* files consist of functions that generate data, process it a
 ` git clone https://github.com/Staszek15/store-database.git` or download its zip file instead.
 3. Open the console/terminal.
 4. Navigate to generate_data folder.
-5. Run the main_execute.py file.
+5. Run the main_execute.py file to create database
+6. Open report.Rmd (e.g. in RStudio).
+7. Change the user in python path according to the hints provided close to this line of code. 
+8. Knitr the report.
+9. The saved report is located in store-database folder.
 
 
 # The greatest challenges <a name='challenges'></a>
