@@ -35,7 +35,9 @@ Niniejszy raport jest analizą danych zawartych w bazie sklepu "Gamestalgia".
 
 ```{r}
 library('reticulate')
-use_python("C:\\Users\\mateu\\AppData\\Local\\Programs\\Python\\Python39")
+use_python("C:\\Users\\julek\\AppData\\Local\\Programs\\Python\\Python39")
+#C:\\Users\\mateu\\AppData\\Local\\Programs\\Python\\Python39
+#C:\\Users\\julek\\AppData\\Local\\Programs\\Python\\Python39
 ```
 
 ```{python}
@@ -118,14 +120,12 @@ with open('df1.tex', 'w') as f:
     f.write(latex_table_with_caption_and_label)
 f.close()
 
-#NIE WIDAC LEGENDY, NWM CZY LEPIEJ TABELA CZY WYKRES
+#WM CZY LEPIEJ TABELA CZY WYKRES
 ax = sns.barplot(x='date', y='sales_number', data=df1, hue='employee', dodge=False)
-#plt.title("football players with 80+ rating")
-#plt.xticks(rotation=90)
-#plt.ylabel("overall rating")
-plt.legend(bbox_to_anchor=(1.05, 1), loc='upper left', borderaxespad=0)
+plt.legend(loc='upper left')
 plt.xticks(rotation=45)
-#plt.bar(df1['date'], df1['sales_number'])
+plt.ylabel("Liczba sprzedaży")
+plt.xlabel("Data")
 plt.show()
 ```
 
@@ -134,31 +134,43 @@ plt.show()
 \end{center}
 
 ```{python}
-query11 = connection.execute(text('''WITH tab AS (
-                              SELECT date, CONCAT(s.first_name, ' ', s.last_name) AS employee, sales_number
-                            FROM (
-                              SELECT DATE_FORMAT(date,'%Y-%m') AS date, staff_id, COUNT(purchase_id) AS sales_number,
-                                     ROW_NUMBER() OVER (PARTITION BY DATE_FORMAT(date,'%Y-%m') ORDER BY COUNT(purchase_id) DESC) AS row_num
-                              FROM purchases
-                              GROUP BY DATE_FORMAT(date,'%Y-%m'), staff_id
-                            ) AS subquery
-                            LEFT JOIN staff AS s USING(staff_id)
-                            WHERE row_num = 1
-                            ORDER BY date, sales_number DESC
-                            )
-                            
-                            SELECT employee, COUNT(*) AS how_often
-                            FROM tab
-                            GROUP BY employee
-                            ORDER BY COUNT(*) DESC
-                            LIMIT 1'''))
+query11 = connection.execute(text('''SELECT employee, COUNT(*) AS how_often
+                  FROM (SELECT date, CONCAT(s.first_name, ' ', s.last_name) AS employee, sales_number
+                  FROM (
+                    SELECT DATE_FORMAT(date,'%Y-%m') AS date, staff_id, COUNT(purchase_id) AS sales_number,
+                           ROW_NUMBER() OVER (PARTITION BY DATE_FORMAT(date,'%Y-%m') ORDER BY COUNT(purchase_id) DESC) AS row_num
+                    FROM purchases
+                    GROUP BY DATE_FORMAT(date,'%Y-%m'), staff_id
+                  ) AS subquery
+                  LEFT JOIN staff AS s USING(staff_id)
+                  WHERE row_num = 1
+                  ORDER BY date, sales_number DESC) AS subquery
+                  GROUP BY employee
+                  ORDER BY COUNT(*) DESC
+                  LIMIT 1'''))
 df11 = pd.DataFrame(query11.fetchall(), columns=query11.keys())
 best_employee = df11['employee'][0]
 how_often = df11['how_often'][0]
+
+query12 = connection.execute(text('''SELECT date, employee, MAX(sales_number) AS max_sales
+                FROM (SELECT date, CONCAT(s.first_name, ' ', s.last_name) AS employee, sales_number
+                FROM (
+                  SELECT DATE_FORMAT(date,'%Y-%m') AS date, staff_id, COUNT(purchase_id) AS sales_number,
+                         ROW_NUMBER() OVER (PARTITION BY DATE_FORMAT(date,'%Y-%m') ORDER BY COUNT(purchase_id) DESC) AS row_num
+                  FROM purchases
+                  GROUP BY DATE_FORMAT(date,'%Y-%m'), staff_id
+                ) AS subquery
+                LEFT JOIN staff AS s USING(staff_id)
+                WHERE row_num = 1
+                ORDER BY date, sales_number DESC) AS subquery'''))
+df12 = pd.DataFrame(query12.fetchall(), columns=query12.keys())
+max_sales = df12['max_sales'][0]
+employee = df12['employee'][0]
+date = df12['date'][0]
 ```
 
 
-Pracownikiem, który został w tym okresie najczęściej wyróżniony jest `r py$best_employee` , który tytuł ten otrzymał łącznie `r py$how_often` razy. 
+Pracownikiem, który został w tym okresie najczęściej wyróżniony jest `r py$best_employee` , który tytuł ten otrzymał łącznie `r py$how_often` razy. Najwięcej odnotowanych sprzedaży obsłużonych przez jednego pracownika, czyli aż `r py$max_sales` wystąpiło `r py$date`, a pracownikiem tym był `r py$employee`.
 
 
 
