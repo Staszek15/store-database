@@ -1,0 +1,144 @@
+Folder PATH listing
+Volume serial number is 44D8-E20C
+C:.
+|   .gitignore
+|   df1.tex
+|   df2.tex
+|   df22.tex
+|   df3.tex
+|   geeks&dragons.vuerd.json
+|   lista_plikow.txt
+|   purchases_df.tex
+|   README.md
+|   rentals_df.tex
+|   report.log
+|   report.pdf
+|   report.Rmd
+|   store_database.session.sql
+|   tmp_table.tex
+|   Untitled.ipynb
+|   
++---.idea
+|       .gitignore
+|       
++---.ipynb_checkpoints
+|       staff-checkpoint.ipynb
+|       
++---.vscode
+|       settings.json
+|       
++---generate_data
+|   |   connection.py
+|   |   const.py
+|   |   create_tables.sql
+|   |   main_execute.ipynb
+|   |   main_execute.py
+|   |   Untitled.ipynb
+|   |   
+|   +---address
+|   |   |   address.csv
+|   |   |   address.py
+|   |   |   postal_codes.csv
+|   |   |   
+|   |   \---__pycache__
+|   |           address.cpython-311.pyc
+|   |           address.cpython-39.pyc
+|   |           
+|   +---analysis
+|   |       plots.py
+|   |       plot_registrations.png
+|   |       plot_rentals.png
+|   |       
+|   +---create_staff_schedule
+|   |   |   create_staff_schedule.py
+|   |   |   staff_schedule.csv
+|   |   |   
+|   |   \---__pycache__
+|   |           create_staff_schedule.cpython-311.pyc
+|   |           create_staff_schedule.cpython-39.pyc
+|   |           
+|   +---customer_rental
+|   |   |   customers.csv
+|   |   |   customer_rental.py
+|   |   |   rentals.csv
+|   |   |   
+|   |   \---__pycache__
+|   |           customer_rental.cpython-311.pyc
+|   |           customer_rental.cpython-39.pyc
+|   |           
+|   +---game
+|   |   |   all_games.xlsx
+|   |   |   game.csv
+|   |   |   game.py
+|   |   |   games_dataset.csv
+|   |   |   selected_games.xlsx
+|   |   |   
+|   |   \---__pycache__
+|   |           game.cpython-311.pyc
+|   |           game.cpython-39.pyc
+|   |           
+|   +---inventory_buy_purchase
+|   |   |   inventory_buy, purchase.ipynb
+|   |   |   inventory_buy.csv
+|   |   |   inventory_buy_purchase.py
+|   |   |   purchases.csv
+|   |   |   
+|   |   \---__pycache__
+|   |           inventory_buy_purchase.cpython-311.pyc
+|   |           inventory_buy_purchase.cpython-39.pyc
+|   |           
+|   +---inventory_rent
+|   |   |   inventory_rent.csv
+|   |   |   inventory_rent.py
+|   |   |   
+|   |   \---__pycache__
+|   |           inventory_rent.cpython-311.pyc
+|   |           inventory_rent.cpython-39.pyc
+|   |           
+|   +---staff
+|   |   |   staff.csv
+|   |   |   staff.py
+|   |   |   
+|   |   \---__pycache__
+|   |           staff.cpython-311.pyc
+|   |           staff.cpython-39.pyc
+|   |           
+|   +---tournament
+|   |   |   testy.ipynb
+|   |   |   tournament.ipynb
+|   |   |   tournament.py
+|   |   |   tournaments.csv
+|   |   |   
+|   |   \---__pycache__
+|   |           tournament.cpython-311.pyc
+|   |           tournament.cpython-39.pyc
+|   |           
+|   +---tournament_rental_consistency
+|   |   |   tournament_rental_consistency.py
+|   |   |   
+|   |   \---__pycache__
+|   +---tournament_results
+|   |   |   tournament_results.csv
+|   |   |   tournament_results.ipynb
+|   |   |   tournament_results.py
+|   |   |   
+|   |   \---__pycache__
+|   |           tournament_results.cpython-311.pyc
+|   |           tournament_results.cpython-39.pyc
+|   |           
+|   \---__pycache__
+|           connection.cpython-39.pyc
+|           const.cpython-311.pyc
+|           const.cpython-39.pyc
+|           staff.cpython-39.pyc
+|           
++---images
+|       database_schema.png
+|       logo_pwr.png
+|       logo_store.png
+|       
+\---text_files
+        assumptions.txt
+        files_list.txt
+        file_tree.txt
+        
