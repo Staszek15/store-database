@@ -37,8 +37,8 @@ It was used for creating the database schema and analysing data.
 This tool was applied to generate a report.
 
 # Files 
-Every bolded *.csv* file contains a complete dataset that later is used to fill a table of the same name. 
-All <span style="color:yellow">yellow</span> *.py* files consist of functions that generate data, process it and return as a dataframe. (e.g. *address.py* provides data for table *address*, *customer_rental.py* for table *customers* and table *rentals*.) 
+Every underlined *.csv* file contains a complete dataset that later is used to fill a table of a similar name. 
+All underlined *.py* files consist of functions that generate data, process it and return as a dataframe. (e.g. *address.py* provides data for table *address*, *customer_rental.py* for table *customers* and table *rentals*.) 
 * **generate_data:**
     -   connection.py
     -   const.py
@@ -48,8 +48,8 @@ All <span style="color:yellow">yellow</span> *.py* files consist of functions th
     -   main_execute.py
   
     - **address**
-      -   <span style="color:yellow">address.py</span>
-      -  <span style="color:pink">address.csv</span>
+      -  <ins>address.py</ins>
+      -  <ins>address.csv</ins>
       -   postal_codes.csv
          
     - **analysis**
@@ -58,48 +58,48 @@ All <span style="color:yellow">yellow</span> *.py* files consist of functions th
       -   plot_rentals.png
            
     - **create_staff_schedule**
-       -  create_staff_schedule.py
-       -  <span style="color:pink">staff_schedule.csv</span> 
+       -  <ins>create_staff_schedule.py<ins>
+       -  <ins>staff_schedule.csv</ins> 
 
     - **customer_rental**
-      -  <span style="color:yellow">customer_rental.py</span>
-      -  <span style="color:pink">customers.csv</span> 
-      -  <span style="color:pink">rentals.csv</span> 
+      -  <ins>customer_rental.py</ins>
+      -  <ins>customers.csv</ins> 
+      -  <ins>rentals.csv</ins> 
  
     - **game**
-      -   <span style="color:yellow">game.py</span>
-      -  <span style="color:pink">game.csv</span> 
+      -   <ins>game.py</ins>
+      -  <ins>game.csv</ins> 
       -   all_games.xlsx
       -   games_dataset.csv
       -   selected_games.xlsx
 
     - **inventory_buy_purchase**
-      -   <span style="color:yellow">inventory_buy_purchase.py</span>
+      -   <ins>inventory_buy_purchase.py</ins>
       -   inventory_buy, purchase.ipynb
-      -  <span style="color:pink">inventory_buy.csv</span> 
-      -  <span style="color:pink">purchases.csv</span>
+      -  <ins>inventory_buy.csv</ins> 
+      -  <ins>purchases.csv</ins>
       -   purchases.csv
   
     - **inventory_rent**
-      -  <span style="color:yellow">inventory_rent.py</span>
-      -  <span style="color:pink">inventory_rent.csv</span>
+      -  <ins>inventory_rent.py</ins>
+      -  <ins>inventory_rent.csv</ins>
 
     - **staff**
-      -   <span style="color:yellow">staff.py</span>
-      -  <span style="color:pink">staff.csv</span>
+      -   <ins>staff.py</ins>
+      -  <ins>staff.csv</ins>
           
     - **tournament**
-      -   <span style="color:yellow">tournament.py</span>
+      -   <ins>tournament.py</ins>
       -   tournament.ipynb
-      -  <span style="color:pink">tournaments.csv</span>
+      -  <ins>tournaments.csv</ins>
            
     - **tournament_rental_consistency**
       -   tournament_rental_consistency.py
           
     - **tournament_results**
-      -   <span style="color:yellow">tournament_results.py</span>
+      -   <ins>tournament_results.py</ins>
       -   tournament_results.ipynb
-      -  <span style="color:pink">tournament_results.csv</span>
+      -  <ins>tournament_results.csv</ins>
 
 # How to run a program <a name=running></a>
 **on Windows** 
