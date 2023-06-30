@@ -11,7 +11,7 @@ def connect():
         username="team21",
         password="te@mzi", 
         host="giniewicz.it",
-        database="team21",
+        database="team21"
     )
 
     engine = create_engine(url_object)
@@ -32,7 +32,7 @@ def connect():
         conn.execute(text(command))    
 
 
-    #insert_data(engine=engine, conn=conn)
+    insert_data(engine=engine, conn=conn)
 
 
     conn.execute(text("SET FOREIGN_KEY_CHECKS=1"))
@@ -56,6 +56,7 @@ def insert_data(engine, conn):
 
     #conn.execute(text('TRUNCATE TABLE games'))
     #conn.execute(text('ALTER TABLE game DROP CONSTRAINT '))
+    conn.execute(text("SET FOREIGN_KEY_CHECKS=0"))
     df_games.to_sql("games", con=engine, if_exists="replace", index=False, )
     print("games done")
 
