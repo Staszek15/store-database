@@ -37,7 +37,7 @@ It was used for creating the database schema and analysing data.
 This tool was applied to generate a report.
 
 # Files  
-Every ![#ffcccc]`pink` *.csv* file contains a complete dataset that later is used to fill a table of the same name. 
+Every <span style="color: red;">Czerwony tekst</span> *.csv* file contains a complete dataset that later is used to fill a table of the same name. 
 All <span style="color:yellow">yellow</span> *.py* files consist of functions that generate data, process it and return as a dataframe. (e.g. *address.py* provides data for table *address*, *customer_rental.py* for table *customers* and table *rentals*.) 
 * **generate_data:**
     -   connection.py
