@@ -8,8 +8,9 @@
 * [Technologies](#technologies)
 * [Files](#files)
 * [How to run a program](#running)
-* [The greatest challenges](#challenges)
 * [EKNF](#eknf)
+* [The greatest challenges](#challenges)
+
 
 # Introduction <a name="introduction"></a>
 These days in the fast changing world we are inundated with big volumes of data. It provokes higher demand for people specialized in processing it. A vast majority of companies and institutions could not work without efficient databases systems what makes an ability of creating and maintaining them a valuable skill. To gain it we developed a project during databases course at Wroclaw University of Science and Technology.
