@@ -124,6 +124,13 @@ All underlined *.py* files consist of functions that generate data, process it a
 - database is 1NF
 - all non-key attributes in any table depend on the entire primary key
 
+3NF:
+- databaase is 2NF
+- none non-key attribute depend on another non-key attribute within the same table
+
+EKNF:
+- database is 3NF
+
 # The greatest challenges <a name='challenges'></a>
 This project is complex and combines the knowledge from various areas. That's why encountering some problems was unavoidable. Generally there were easy to solve so there's no point in elaborating on them. But there were some difficulties that consumed a lot of time and involved doing extensive research. 
 1. Providing data integrity \
