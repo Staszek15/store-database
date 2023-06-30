@@ -24,6 +24,8 @@ header-includes:
     - \usepackage[utf8]{inputenc}
     - \usepackage[T2A,T1]{fontenc}
     - \usepackage[polish, ukrainian]{babel}
+    
+    
 ---
 
 \newpage
@@ -68,9 +70,9 @@ engine = create_engine(url_object)
 connection = engine.connect()
 ```
 \section{Rozkład danych}
-Wykonano wykresy słupkowe przedstawiające jak zmieniała się liczba zarejestrowanych klientów w sklepie w danym miesiącu (wykres \ref{fig:liczba_rejestracji}) oraz liczba wypożyczeń (wykres \ref{fig:liczba_wypozyczen}). 
+Wykonano wykresy słupkowe przedstawiające jak zmieniała się liczba zarejestrowanych klientów w sklepie w danym miesiącu oraz liczba wypożyczeń.
 
-```{python, echo=FALSE, results='hide',  fig.cap = "\\label{fig:liczba_rejestracji} Liczba rejestracji w sklepie w kolejnych miesiącach."}
+```{python, echo=FALSE, results='hide'}
 registr_month = connection.execute(text('''SELECT 
   DATE_FORMAT(registration_date,'%Y-%m') AS registration_month, 
   COUNT(*) AS num_of_registrations
@@ -78,14 +80,14 @@ FROM customers
 GROUP BY registration_month'''))
 
 reg_month = pd.DataFrame(registr_month.fetchall(), columns=registr_month.keys())
-sns.set(rc={'figure.figsize':(13,8)})
+sns.set(rc={'figure.figsize':(14,9)})
 ax = sns.barplot(x='registration_month', y='num_of_registrations', data=reg_month, color='steelblue')
 plt.xticks(rotation=45)
 plt.ylabel("Liczba rejestracji w sklepie")
 plt.xlabel("Data")
 plt.show()
 ```
-```{python, echo = FALSE, results='hide',  fig.cap = "\\label{fig:liczba_wypozyczen} Liczba wypożyczeń gier w kolejnych miesiącach."}
+```{python, echo = FALSE, results='hide'}
 rentals = connection.execute(text('''SELECT 
   DATE_FORMAT(rental_date, '%Y-%m') AS rental_month,
   COUNT(*) AS num_of_rentals
@@ -180,7 +182,7 @@ Pracownikiem, który został w tym okresie najczęściej wyróżniony jest `r py
 
 
 \section{Top zawodnicy}
-Ranking zawodników został wyznaczony dla trzech wybranych gier turniejowych na podstawie sumy zdobytych przez zawodnika punktów (tabele \ref{tab:top10_1}, \ref{tab:top10_2}, \ref{tab:top10_3}). Przyznawane one były w zależności od ilości uczestników w danym turnieju według schematu, że pierwsze miejsce otrzymuje liczbę punktów równą liczbie wszystkich uczestników pomniejszoną o jeden, a każde kolejne miejsce o jeden punkt mniej. Dla każdej wybranej gry wyróżniono 10 osób,
+Ranking zawodników został wyznaczony dla trzech wybranych gier turniejowych na podstawie sumy zdobytych przez zawodnika punktów (tabele \ref{tab:top10_1}, \ref{tab:top10_2}, \ref{tab:top10_3}). Przyznawane one były w zależności od ilości uczestników w danym turnieju według schematu, że pierwsze miejsce otrzymuje liczbę punktów równą liczbie wszystkich uczestników pomniejszoną o jeden, a&nbsp;każde kolejne miejsce o jeden punkt mniej. Dla każdej wybranej gry wyróżniono 10 osób.
 
 ```{python, echo = FALSE, results='hide'}
 query2 = connection.execute(text('''SELECT g.name AS game, CONCAT(c.first_name, ' ', c.last_name) AS player, score
@@ -413,7 +415,7 @@ avg_pr = pd.DataFrame(avg_price.fetchall(), columns=avg_price.keys())['avg_price
 Średnia cena za wypożyczenie gier dostępnych w sklepie "Gamestalgia" to `r py$avg_pr`. Gry, których wypożyczenie wiąże się z większymi od średniej kosztami były wypożyczane łącznie `r py$drozsze` razy, a z mniejszymi `r py$tansze`. 
 
 \section{Liczba wypożyczeń względem grupy wiekowej}
-
+Klientów podzielono na cztery grupy wiekowe i dla każdej sprawdzono liczbę wypożyczeń (tabela \ref{tab:age_rent}). 
 ```{python, echo = FALSE, results='hide'}
 age_rent = connection.execute(text('''select 
     CASE 
@@ -442,10 +444,35 @@ with open('tex_tables/age_rentdf.tex', 'w') as f:
     f.write(latex_table_with_caption_and_label)
 f.close()
 ```
-
 \begin{center}
 \input{tex_tables/age_rentdf.tex}
 \end{center}
+
+```{python, echo=FALSE, results='hide'}
+max_rent_age = connection.execute(text('''SELECT 
+    CASE 
+        WHEN (2023-YEAR(c.birthdate)) <= 30 THEN '30 lub mniej' 
+        WHEN (2023-YEAR(c.birthdate)) > 30 and (2023-YEAR(c.birthdate)) <= 45 THEN 'od 31 do 45' 
+        WHEN (2023-YEAR(c.birthdate)) > 45 and (2023-YEAR(c.birthdate)) <= 60 THEN 'od 46 do 60' 
+        ELSE 'powyżej 60' 
+    END AS years,
+    COUNT(r.rental_id) AS rentals_number
+FROM rentals AS r
+INNER JOIN customers AS c ON c.customer_id=r.customer_id
+GROUP BY 
+    CASE 
+        WHEN (2023-YEAR(c.birthdate)) <= 30 THEN '30 lub mniej' 
+        WHEN (2023-YEAR(c.birthdate)) > 30 and (2023-YEAR(c.birthdate)) <= 45 THEN 'od 31 do 45' 
+        WHEN (2023-YEAR(c.birthdate)) > 45 and (2023-YEAR(c.birthdate)) <= 60 THEN 'od 46 do 60' 
+        ELSE 'powyżej 60' 
+    END
+ORDER BY rentals_number DESC
+LIMIT 1'''))
+max_df = pd.DataFrame(max_rent_age.fetchall(), columns=max_rent_age.keys())
+number = max_df['rentals_number']
+age = max_df['years']
+```
+Grupą wiekową, która najwięcej razy wypożyczała gry jest grupa `r py$age`, która dokonała `r py$number` wypożyczeń.
 ```{python, echo=FALSE, results='hide'}
 connection.close()
 ```
