@@ -48,7 +48,7 @@ def main():
     purchases.to_csv('inventory_buy_purchase/purchases.csv', index=False)
 
 
-    #connect()
+    connect()
 
 
 
