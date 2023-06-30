@@ -35,19 +35,20 @@ This tool was applied to generate a report.
 Every underlined *.csv* file contains a complete dataset that later is used to fill a table of a similar name. 
 All underlined *.py* files consist of functions that generate data, process it and return as a dataframe. (e.g. *address.py* provides data for table *address*, *customer_rental.py* for table *customers* and table *rentals*.) 
 * **generate_data:**
-    -   connection.py 
+    -   connection.py \
     It connects to the database by SQLAlchemy, read ....sql file and insert data. łączy sie z baza danych, odczytuje plik sql i odpala query ktore sie w nim znajdujatworzy tabele wprowadza dane
-    -   const.py 
+    -   const.py \
         In this file constants are stored.
-    -   create_tables.sql - stores sql code responsible for creating tables
+    -   create_tables.sql \
+        Here sql code responsible for creating tables is stored.
     -   foreign_keys.sql
     -   main_execute.ipynb
-    -   main_execute.py
+    -   main_execute.py \
         Main function of the program. It run programs that generate data then writes results to csv and run programs responsible for linking to the database by SQLAlchemy and inserting data to tables.
     - **address**
       -  ![#cce6ff](https://placehold.co/15x15/cce6ff/cce6ff.png) address.py
       -  ![#ffcccc](https://placehold.co/15x15/ffcccc/ffcccc.png) address.csv
-      -   postal_codes.csv
+      -   postal_codes.csv \
           Auxiliary csv file which store generated postal codes.
     - **analysis**
       -   plots.py
@@ -66,7 +67,7 @@ All underlined *.py* files consist of functions that generate data, process it a
       -  ![#cce6ff](https://placehold.co/15x15/cce6ff/cce6ff.png) game.py
       -  ![#ffcccc](https://placehold.co/15x15/ffcccc/ffcccc.png) game.csv
       -   all_games.xlsx
-      -   games_dataset.csv
+      -   games_dataset.csv \
           Initial dataset that was downloaded from the Internet and modified. Results of the modifications were written to game.csv.
       -   selected_games.xlsx
 
@@ -91,7 +92,7 @@ All underlined *.py* files consist of functions that generate data, process it a
       -  ![#ffcccc](https://placehold.co/15x15/ffcccc/ffcccc.png) tournaments.csv
            
     - **tournament_rental_consistency**
-      -   tournament_rental_consistency.py
+      -   tournament_rental_consistency.py \
       It prevents from lack of games during a tournament
           
     - **tournament_results**
