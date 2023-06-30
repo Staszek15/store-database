@@ -7,6 +7,7 @@ date: "`r Sys.Date()`"
 fontsize: 12pt
 output: 
   pdf_document:
+    latex_engine: xelatex
     number_sections: true
     toc: true
     fig_caption: true
@@ -18,8 +19,11 @@ header-includes:
     - \floatplacement{figure}{H}
     - \usepackage{titling}
     - \pretitle{\begin{center}
-      \includegraphics{logo_store.png}\Huge\\}
+    - \includegraphics{logo_store.png}\Huge\\}
     - \posttitle{\end{center}}
+    - \usepackage[utf8]{inputenc}
+    - \usepackage[T2A,T1]{fontenc}
+    - \usepackage[polish, ukrainian]{babel}
 ---
 
 \newpage
@@ -96,9 +100,9 @@ generate_rentals_plot()
 ```
 
 \section{Pracownik miesiąca}
-Dla każdego miesiąca działania sklepu wygenerowano tabele z pracownikiem danego miesiąca, na podstawie liczby sprzedanych przez niego gier (tabela \ref{tab:tab1}).
+Dla każdego miesiąca działania sklepu wyłoniono pracownika miesiąca, na podstawie liczby sprzedanych przez niego gier (tabela \ref{tab:tab1}, wykres \ref{fig:pracownik_miesiąca}).
 
-```{python, echo = FALSE, results = 'hide'}
+```{python, echo = FALSE, results = 'hide', fig.cap = "\\label{fig:pracownik_miesiąca} Pracownicy miesiąca wraz z liczbą sprzedanych gier."}
 query1 = connection.execute(text('''SELECT date, CONCAT(s.first_name, ' ', s.last_name) AS employee, sales_number
                                 FROM (
                                   SELECT DATE_FORMAT(date,'%Y-%m') AS date, staff_id, COUNT(purchase_id) AS sales_number,
@@ -133,7 +137,7 @@ plt.show()
 \input{df1.tex}
 \end{center}
 
-```{python}
+```{python, results='hide'}
 query11 = connection.execute(text('''SELECT employee, COUNT(*) AS how_often
                   FROM (SELECT date, CONCAT(s.first_name, ' ', s.last_name) AS employee, sales_number
                   FROM (
@@ -170,15 +174,15 @@ date = df12['date'][0]
 ```
 
 
-Pracownikiem, który został w tym okresie najczęściej wyróżniony jest `r py$best_employee` , który tytuł ten otrzymał łącznie `r py$how_often` razy. Najwięcej odnotowanych sprzedaży obsłużonych przez jednego pracownika, czyli aż `r py$max_sales` wystąpiło `r py$date`, a pracownikiem tym był `r py$employee`.
+Pracownikiem, który został w tym okresie najczęściej wyróżniony jest `r py$best_employee`, który/a tytuł ten otrzymał/a łącznie `r py$how_often` razy. Najwięcej odnotowanych sprzedaży obsłużonych przez jednego pracownika, czyli aż `r py$max_sales` wystąpiło `r py$date`, a pracownikiem tym był/a `r py$employee`.
 
 
 
-\section{Top 10 zawodników}
-Ranking zawodników został wyznaczony dla każdej gry turniejowej na podstawie sumy zdobytych przez zawodnika punktów. (tabela \ref{tab:tab2}) Przyznawane one były w zależności od ilości uczestników w danym turnieju według schematu, że pierwsze miejsce otrzymuje liczbę punktów równą liczbie wszystkich uczestników pomniejszoną o jeden, a każde kolejne miejsce o jeden punkt mniej. 
+\section{Top zawodnicy}
+Ranking zawodników został wyznaczony dla trzech wybranych gier turniejowych na podstawie sumy zdobytych przez zawodnika punktów (tabele \ref{tab:top10_1}, \ref{tab:top10_2}, \ref{tab:top10_3}). Przyznawane one były w zależności od ilości uczestników w danym turnieju według schematu, że pierwsze miejsce otrzymuje liczbę punktów równą liczbie wszystkich uczestników pomniejszoną o jeden, a każde kolejne miejsce o jeden punkt mniej. Dla każdej wybranej gry wyróżniono 10 osób,
 
-```{python, echo = FALSE}
-"""query2 = connection.execute(text('''SELECT g.name AS game, CONCAT(c.first_name, ' ', c.last_name) AS player, score
+```{python, echo = FALSE, results='hide'}
+query2 = connection.execute(text('''SELECT g.name AS game, CONCAT(c.first_name, ' ', c.last_name) AS player, score
 FROM (
   SELECT t.game_id, customer_id, SUM(score) AS score,
         ROW_NUMBER() OVER (PARTITION BY game_id ORDER BY SUM(score) DESC) AS row_num
@@ -191,25 +195,75 @@ LEFT JOIN games AS g USING(game_id)
 WHERE row_num IN (1,2,3,4,5,6,7,8,9,10) 
 AND game_id IN (
     SELECT game_id FROM (
-      SELECT game_id FROM tournament ORDER BY RAND() LIMIT 3
+      SELECT DISTINCT game_id FROM tournament ORDER BY RAND() LIMIT 3
     ) AS random_games
   )
-ORDER BY game_id, score DESC;'''))
+ORDER BY game_id, score DESC'''))
 df2 = pd.DataFrame(query2.fetchall(), columns = query2.keys())
+game1 = df2['game'][0] 
+game2 = df2['game'][10]
+game3 = df2['game'][20]
+df2_game1 = df2[df2['game']==game1][['player', 'score']]
+df2_game2 = df2[df2['game']==game2][['player', 'score']]
+df2_game3 = df2[df2['game']==game3][['player', 'score']]
 
-latex_table = tabulate(df2, headers='keys', tablefmt='latex')
-caption = 'Ranking top 10 zawodników dla każdej gry turniejowej.'
-label = 'tab:tab2'
-latex_table_with_caption_and_label = f"\\begin{{table}}[h]\n\\centering\n\\caption{{{caption}}}\\label{{{label}}}\n{latex_table}\\end{{table}}"
+latex_table_game1 = tabulate(df2_game1, headers='keys', tablefmt='latex')
+latex_table_game2 = tabulate(df2_game2, headers='keys', tablefmt='latex')
+latex_table_game3 = tabulate(df2_game3, headers='keys', tablefmt='latex')
+latex_table_3 = f"""
+\\begin{{table}}[h]
+\\caption{{Top 10 zawodników dla gry {game3}}}\\label{{tab:top10_3}}
+\\centering
+{latex_table_game3}
+\\end{{table}}
+"""
+
+latex_tables1 = f"""
+\\begin{{table}}[h]
+\\begin{{minipage}}{{.5\\linewidth}}
+\\caption{{Top 10 zawodników dla gry {game1}}}\\label{{tab:top10_1}}
+\\centering
+{latex_table_game1}
+\\end{{minipage}}%
+\\begin{{minipage}}{{.5\\linewidth}}
+\\centering
+\\caption{{Top 10 zawodników dla gry {game2}}}\\label{{tab:top10_2}}
+{latex_table_game2}
+\\end{{minipage}}%
+\\end{{table}}
+"""
 
 with open('df2.tex', 'w') as f:
-    f.write(latex_table_with_caption_and_label)
-f.close()"""
+    f.write(latex_tables1)
+f.close()
+
+with open('df22.tex', 'w') as f:
+  f.write(latex_table_3)
+f.close() 
 ```
 
-<!-- #\begin{center} -->
-<!-- #\input{df2.tex} -->
-<!-- #\end{center} -->
+\begin{center}
+\input{df2.tex}
+\end{center}
+
+\begin{center}
+\input{df22.tex}
+\end{center}
+
+```{python, echo = FALSE, results='hide'}
+best_player = connection.execute(text('''SELECT CONCAT(c.first_name, ' ', c.last_name) AS player, SUM(r.score) AS total_score
+FROM tournament_results AS r
+LEFT JOIN customers AS c USING(customer_id)
+GROUP BY player
+ORDER BY total_score DESC
+LIMIT 1'''))
+
+best_pl_df = pd.DataFrame(best_player.fetchall(), columns=best_player.keys())
+best_pl = best_pl_df['player'][0]
+total_sc = str(best_pl_df['total_score'][0])
+```
+
+Wyróżniono również zawodnika, który łącznie ze wszystkich rozegranych turniejów uzyskał największa liczbę punktów. Do tej pory zawodnikiem tym jest `r py$best_pl` z wynikiem `r py$total_sc`.
 
 \section{Najbardziej dochodowe gry}
 Trzy najbardziej dochodowe gry z wypożyczeń to gry, dla których łączna suma podstawowych opłat oraz kar naliczanych za opóźnienie w oddaniu po odjęciu kosztu zakupu gry przez sklep jest największa. Podobnie w przypadku sprzedaży, jednak w tym przypadku nie występuje kara pieniężna.
