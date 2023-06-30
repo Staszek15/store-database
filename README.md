@@ -1,4 +1,4 @@
-![image](https://github.com/Staszek15/store-database/assets/118693043/bc35ea81-0b2c-4ad3-bdcb-32fa844dbc0f)# Gamestalgia
+# Gamestalgia
 # Authors
 ### Wiktoria Fimińska, Julia Grzegorzewska, Mateusz Stasiak, Karolina Wypych
   
