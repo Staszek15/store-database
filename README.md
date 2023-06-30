@@ -24,6 +24,8 @@ The project generally consists of generating a database and a report for Gamesta
   <img src="https://github.com/Staszek15/store-database/blob/main/database_schema.png" width=80%>
 </p>
 
+Above schema presents tables included in Gamestalgia's database and relations between them. Types of relations are symbolized by endings of lines connecting tables with each other.
+
 # Technologies <a name=technnologies></a>
 Making this project involved using following technologies:
 - **Python**
@@ -114,6 +116,7 @@ All underlined *.py* files consist of functions that generate data, process it a
 
 # The greatest challenges <a name='challenges'></a>
 This project is complex and combines the knowledge from various areas. That's why encountering some problems was unavoidable. Generally there were easy to solve so there's no point in elaborating on them. But there were some difficulties that consumed a lot of time and involved doing extensive research. 
-1. Providing data integrity
-It was a priority to prepare a correct dataset. Taking care of consistency between tables and keeping them realistic enabled discussions and modifying tables not only at the beginning of working but also during further work. Some contradictions in seemingly proper datasets were noticed during generating completely different dataset that  
+1. Providing data integrity \
+It was a priority to prepare a correct dataset. Taking care of consistency between tables and keeping them realistic enabled discussions and modifying tables not only at the beginning of working but also during further work. Some contradictions in seemingly proper datasets were noticed during generating other dependent tables. Sometimes it forced changes in schema of more than one table and modifications of code.
+2. Connecting to server and filling the database in \
 
