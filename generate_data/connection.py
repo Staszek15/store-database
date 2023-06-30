@@ -57,35 +57,43 @@ def insert_data(engine, conn):
     #conn.execute(text('TRUNCATE TABLE games'))
     #conn.execute(text('ALTER TABLE game DROP CONSTRAINT '))
     conn.execute(text("SET FOREIGN_KEY_CHECKS=0"))
-    df_games.to_sql("games", con=engine, if_exists="replace", index=False, )
+    df_games.to_sql("games", con=engine, if_exists="append", index=False)
     print("games done")
 
     #conn.execute(text('TRUNCATE TABLE addresses'))
-    df_addresses.to_sql("addresses", con=engine, if_exists="replace", index=False)
+    df_addresses.to_sql("addresses", con=engine, if_exists="append", index=False)
 
     #conn.execute(text('TRUNCATE TABLE customers'))
-    df_customers.to_sql("customers", con=engine, if_exists="replace", index=False)
+    df_customers.to_sql("customers", con=engine, if_exists="append", index=False)
+    print("customers done")
 
     #conn.execute(text('TRUNCATE TABLE inventory_buy'))
-    df_inventory_buy.to_sql("inventory_buy", con=engine, if_exists="replace", index=False)
+    df_inventory_buy.to_sql("inventory_buy", con=engine, if_exists="append", index=False)
+    print("inventory_buy done")
+
 
     #conn.execute(text('TRUNCATE TABLE inventory_rent'))
-    df_inventory_rent.to_sql("inventory_rent", con=engine, if_exists="replace", index=False)
+    df_inventory_rent.to_sql("inventory_rent", con=engine, if_exists="append", index=False)
+    print("inventory_rent done")
+
 
     #conn.execute(text('TRUNCATE TABLE purchases'))
-    df_purchases.to_sql("purchases", con=engine, if_exists="replace", index=False)
+    df_purchases.to_sql("purchases", con=engine, if_exists="append", index=False)
+    print("purchases done")
 
     #conn.execute(text('TRUNCATE TABLE rentals'))
-    df_rentals.to_sql("rentals", con=engine, if_exists="replace", index=False)
+    df_rentals.to_sql("rentals", con=engine, if_exists="append", index=False)
+    print("rentals done")
+    
 
     #conn.execute(text('TRUNCATE TABLE staff'))
-    df_staff.to_sql("staff", con=engine, if_exists="replace", index=False)
+    df_staff.to_sql("staff", con=engine, if_exists="append", index=False)
 
     #conn.execute(text('TRUNCATE TABLE tournament'))
-    df_tournament.to_sql("tournament", con=engine, if_exists="replace", index=False)
+    df_tournament.to_sql("tournament", con=engine, if_exists="append", index=False)
 
     #conn.execute(text('TRUNCATE TABLE tournament_results'))
-    df_tournament_results.to_sql("tournament_results", con=engine, if_exists="replace", index=False)
+    df_tournament_results.to_sql("tournament_results", con=engine, if_exists="append", index=False)
 
 
 if __name__ == "__main__":
