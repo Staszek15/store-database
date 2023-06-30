@@ -50,7 +50,6 @@ All underlined *.py* files consist of functions that generate data, process it a
         In this file constants are stored.
     -   create_tables.sql \
         Here sql code responsible for creating tables is stored.
-    -   foreign_keys.sql
     -   main_execute.ipynb
     -   main_execute.py \
         Main function of the program. It run programs that generate data then writes results to csv and run programs responsible for linking to the database by SQLAlchemy and inserting data to tables.
