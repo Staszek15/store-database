@@ -1,6 +1,6 @@
 # Gamestalgia
 ## Authors
-### Wiktoria Fimińska, Julia Grzegorzewska, Mateusz Stasiak, Karolina Wypych
+### Julia Grzegorzewska, Karolina Wypych, Wiktoria Fimińska, Mateusz Stasiak
   
 ## Table of contents
 * [Introduction](#introduction)
@@ -45,7 +45,7 @@ Every underlined *.csv* file contains a complete dataset that later is used to f
 All underlined *.py* files consist of functions that generate data, process it and return as a dataframe. (e.g. *address.py* provides data for table *address*, *customer_rental.py* for table *customers* and table *rentals*.) 
 * **generate_data:**
     -   connection.py \
-    It connects to the database by SQLAlchemy, read ....sql file and insert data. łączy sie z baza danych, odczytuje plik sql i odpala query ktore sie w nim znajdujatworzy tabele wprowadza dane
+    It connects to the database by SQLAlchemy, reads the create_tables.sql and runs all the queries stored in this file. Then it inserts data from saved csv files.
     -   const.py \
         In this file constants are stored.
     -   create_tables.sql \
@@ -111,12 +111,7 @@ All underlined *.py* files consist of functions that generate data, process it a
 # How to run a program (on Windows)<a name=running></a>
 1. clone repository
 ` git clone https://github.com/Staszek15/store-database.git`
-2. using console move to repository directory on your device and install necessary packages e.g in a virtual environment
- `python -m venv venv` 
- `venv\Scripts\activate.bat` 
- `pip install -r requirements.txt`
-3. run a program
-`python main_execute.py`
+
 
 # The greatest challenges <a name='challenges'></a>
 This project is complex and combines the knowledge from various areas. That's why encountering some problems was unavoidable. Generally there were easy to solve so there's no point in elaborating on them. But there were some difficulties that consumed a lot of time and involved doing extensive research. 
