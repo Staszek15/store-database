@@ -1,8 +1,8 @@
 # Gamestalgia
-# Authors
+## Authors
 ### Wiktoria Fimińska, Julia Grzegorzewska, Mateusz Stasiak, Karolina Wypych
   
-# Table of contents
+## Table of contents
 * [Introduction](#introduction)
 * [Description](#description)
 * [Technologies](#technologies)
