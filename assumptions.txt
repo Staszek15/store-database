@@ -1,0 +1,27 @@
+########## customers
+
+- plec losowana z rownym p
+- wiek od 13 do 80
+- klienci z 4 panstw z prawdopodobienstwami [0.78, 0.08, 0.04, 0.1]
+- imiona losowane z biblioteki imion danego kraju
+- wszyscy klienci mieszkaja na terenie polski
+- email generowany z losowych dlugosci poczatków imienia i nazwiska plus mozliwe dodanie dowolnej liczby do 100. nastepnie '@' i jedna z najbardziej popularna domena z danego kraju
+- rejestracja klientow, pierwsze 3 dni otwarcia sklepu - duzo rejestracji, prawdopodobienstwa rejestracji w kolejnych dniach wyrazone sa szeregiem sumujacym sie do 1. Zmienne z rozkladu jednostajnego (0,1) sa skalowane przez sume szeregu. Jak juz mamy duzo klientow to kolejne rejestracje sa mniej prawdopodobne.
+- data rejestracji nie jest równoznaczna transakcji bo mona przyjść się zarejestrować tylko. 
+- status VIP otrzymuje sie po oddaniu 10 wypozyczenia
+
+
+
+######### rentals
+
+- wypozyczenia moga trwac 0 dni bo zakladamy ze mozna w sklepie usiasc z gra i zwrocic po zagraniu
+- to ile trwa wypozyczenie: losowa liczba z przedzialu, ktory losowany jest z roznymi prawdopodobienstwami 
+- dni ktore minely od ostatniego wypozyczenia - tez losowane przedzialy ale z dynamicznymi prawdopodobienstwami. Wlasna funkcja gestosci dotyczaca wyliczania prawdopodobienstw dla 3 z 5 przedzialow. Symuluje to realistyczny rozwoj sklepu.
+- przy wypozyczeniu sprawdzany jest minimalny wiek i zeby data wypożyczenia nie była wczesniejsza niz data rejestracji w sklepie.
+- Prawdopodobienstwa wypożyczenia i kupna gier są na podstawie max liczby zawodników a wśród każdej tej grupy na podstawie ratingu
+
+
+
+######## connection.py
+
+- laczy z baza, SET FOREIGN_KEY_CHECKS=0, drop wszystkich tabel, otwiera plik create_tables.sql i robi split po ;, wykonuje query tworzace tabele, dane odczytane z csv, insert dataframeow, close()
