@@ -19,8 +19,6 @@
 - dni ktore minely od ostatniego wypozyczenia - tez losowane przedzialy ale z dynamicznymi prawdopodobienstwami. Wlasna funkcja gestosci dotyczaca wyliczania prawdopodobienstw dla 3 z 5 przedzialow. Symuluje to realistyczny rozwoj sklepu.
 - przy wypozyczeniu sprawdzany jest minimalny wiek i zeby data wypożyczenia nie była wczesniejsza niz data rejestracji w sklepie.
 - Prawdopodobienstwa wypożyczenia i kupna gier są na podstawie max liczby zawodników a wśród każdej tej grupy na podstawie ratingu
-- 10% znizki za wypozyczenie dla VIPA
-- za opoznienie w oddaniu kary (fine)
 
 
 
